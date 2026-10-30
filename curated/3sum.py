@@ -44,7 +44,9 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    assert sorted(sorted(items) for items in solution.threeSum([-1, 0, 1, 2, -1, -4])) == [
+    assert sorted(
+        sorted(items) for items in solution.threeSum([-1, 0, 1, 2, -1, -4])
+    ) == [
         [-1, -1, 2],
         [-1, 0, 1],
     ]
@@ -53,7 +55,8 @@ if __name__ == "__main__":
         [0, 0, 0]
     ]
     assert solution.threeSum([]) == []
-    assert sorted(
-        sorted(items) for items in solution.threeSum([-2, 0, 1, 1, 2])
-    ) == [[-2, 0, 2], [-2, 1, 1]]
+    assert sorted(sorted(items) for items in solution.threeSum([-2, 0, 1, 1, 2])) == [
+        [-2, 0, 2],
+        [-2, 1, 1],
+    ]
     print("All tests passed")

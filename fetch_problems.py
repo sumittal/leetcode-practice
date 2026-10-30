@@ -288,6 +288,52 @@ def numeric_id(problem: Dict[str, Any]) -> int:
         return 0
 
 
+def problem_directory_name(problem_id: int, slug: str, difficulty: str) -> str:
+    return "%04d-%s-%s" % (problem_id, slug, str(difficulty).lower())
+
+
+def parse_problem_directory(
+    directory_name: str,
+) -> Optional[Tuple[int, str, Optional[str]]]:
+    match = re.match(r"^(\d{4,})-(.+?)-(easy|medium|hard)$", directory_name)
+    if match:
+        return int(match.group(1)), match.group(2), match.group(3)
+    match = re.match(r"^(\d{4,})-(.+)$", directory_name)
+    if match:
+        return int(match.group(1)), match.group(2), None
+    return None
+
+
+def migrate_problem_directory(
+    problem_id: int, slug: str, difficulty: str
+) -> Path:
+    destination = ROOT / problem_directory_name(problem_id, slug, difficulty)
+    if destination.exists():
+        return destination
+
+    legacy_name = "%04d-%s" % (problem_id, slug)
+    legacy_path = ROOT / legacy_name
+    candidates = []  # type: List[Path]
+    if legacy_path.is_dir():
+        candidates.append(legacy_path)
+    for path in ROOT.iterdir():
+        parsed = parse_problem_directory(path.name)
+        if (
+            path.is_dir()
+            and parsed is not None
+            and parsed[0] == problem_id
+            and parsed[1] == slug
+            and path.name != destination.name
+            and path not in candidates
+        ):
+            candidates.append(path)
+    if candidates:
+        source = candidates[0]
+        source.rename(destination)
+        print("Migrated %s to %s" % (source.name, destination.name))
+    return destination
+
+
 def list_all_problems(
     client: LeetCodeClient, batch_size: int
 ) -> List[Dict[str, Any]]:
@@ -474,34 +520,47 @@ def render_problem_readme(
     video_url: str,
     is_specific_video: bool,
     notes: Optional[Dict[str, Any]],
+    premium_description: Optional[str] = None,
 ) -> str:
     problem_id = int(question["questionFrontendId"])
     title = str(question.get("title") or "")
     slug = str(question.get("titleSlug") or "")
     difficulty = str(question.get("difficulty") or "Unknown")
     topics = topic_names(question)
-    content = HTMLToMarkdown()
-    content.feed(str(question.get("content") or ""))
-    description = content.markdown() or "_Problem description unavailable._"
+    problem_heading = "## Problem\n\n"
+    if premium_description is not None:
+        description = premium_description.strip()
+    else:
+        content = HTMLToMarkdown()
+        content.feed(str(question.get("content") or ""))
+        description = content.markdown() or "_Problem description unavailable._"
     video_label = video_title if is_specific_video else "YouTube search: " + video_title
+    premium_notice = (
+        "> 🔒 LeetCode Premium problem — statement paraphrased.\n\n"
+        if premium_description is not None
+        else ""
+    )
     return (
         "# %d. %s\n\n"
+        "%s"
         "**Difficulty:** %s  \n"
         "**Tags:** %s  \n"
         "**Pattern:** %s  \n"
         "**LeetCode:** [https://leetcode.com/problems/%s/]"
         "(https://leetcode.com/problems/%s/)\n\n"
-        "## Problem\n\n%s\n\n"
+        "%s%s\n\n"
         "## Video Explanation\n\n[%s](%s)\n\n"
         "%s"
         % (
             problem_id,
             title,
+            premium_notice,
             difficulty,
             ", ".join(topics) if topics else "None",
             pattern,
             slug,
             slug,
+            problem_heading,
             description,
             video_label,
             video_url,
@@ -676,12 +735,6 @@ def generate_problem(
     if not question:
         print("Skipping %s: LeetCode returned no question data" % slug)
         return None
-    if question.get("isPaidOnly"):
-        print("Skipping %s: paid-only problem" % slug)
-        return None
-    if not question.get("content"):
-        print("Skipping %s: problem content is null" % slug)
-        return None
     try:
         problem_id = int(question["questionFrontendId"])
     except (KeyError, TypeError, ValueError):
@@ -689,16 +742,34 @@ def generate_problem(
         return None
     title = str(question.get("title") or slug)
     notes, curated_code = load_curated(slug)
+    is_premium = bool(question.get("isPaidOnly"))
+    premium_description = None
+    if notes and isinstance(notes.get("description"), str):
+        premium_description = notes["description"].strip()
+    if is_premium and not premium_description:
+        print("Skipping %s: paid-only problem" % slug)
+        return None
+    if not is_premium and not question.get("content"):
+        print("Skipping %s: problem content is null" % slug)
+        return None
     topics = topic_names(question)
     pattern = problem_pattern(notes, neetcode_entry, topics)
     video_title, video_url, has_video = build_video(
         client, videos, neetcode_entry, problem_id, title
     )
-    directory = ROOT / ("%04d-%s" % (problem_id, slug))
+    directory = migrate_problem_directory(
+        problem_id, slug, str(question.get("difficulty") or "Unknown")
+    )
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "README.md").write_text(
         render_problem_readme(
-            question, pattern, video_title, video_url, has_video, notes
+            question,
+            pattern,
+            video_title,
+            video_url,
+            has_video,
+            notes,
+            premium_description if is_premium else None,
         ),
         encoding="utf-8",
     )
@@ -723,6 +794,25 @@ def load_question_cache(slug: str) -> Optional[Dict[str, Any]]:
         return None
 
 
+def migrate_existing_problem_directories() -> None:
+    directories = [
+        path
+        for path in ROOT.iterdir()
+        if path.is_dir() and parse_problem_directory(path.name) is not None
+    ]
+    for path in directories:
+        parsed = parse_problem_directory(path.name)
+        if parsed is None:
+            continue
+        problem_id, slug, unused_suffix = parsed
+        del unused_suffix
+        question = load_question_cache(slug)
+        difficulty = str((question or {}).get("difficulty") or "").lower()
+        if difficulty not in ("easy", "medium", "hard"):
+            continue
+        migrate_problem_directory(problem_id, slug, difficulty)
+
+
 def readme_title(path: Path) -> str:
     try:
         first_line = path.read_text(encoding="utf-8").splitlines()[0]
@@ -735,8 +825,13 @@ def readme_title(path: Path) -> str:
 def run_solutions() -> Dict[str, Tuple[str, str]]:
     statuses = {}  # type: Dict[str, Tuple[str, str]]
     for solution in sorted(ROOT.glob("*/solution.py")):
-        if not re.match(r"^\d{4,}-", solution.parent.name):
+        parsed = parse_problem_directory(solution.parent.name)
+        if parsed is None:
             continue
+        problem_id, slug, suffix = parsed
+        question = load_question_cache(slug)
+        difficulty = suffix or str((question or {}).get("difficulty") or "Unknown")
+        directory_name = problem_directory_name(problem_id, slug, difficulty)
         try:
             result = subprocess.run(
                 [sys.executable, str(solution)],
@@ -757,7 +852,7 @@ def run_solutions() -> Dict[str, Tuple[str, str]]:
         except OSError as error:
             output = str(error)
             status = "❌ Failing"
-        statuses[solution.parent.name] = (status, output)
+        statuses[directory_name] = (status, output)
         print("%s %s" % (status, solution.parent.name))
         if status == "❌ Failing":
             print(output.rstrip() or "(no output)")
@@ -769,16 +864,18 @@ def row_metadata(
     neetcode: Dict[str, Dict[str, Any]],
     videos: Dict[str, Any],
 ) -> Dict[str, Any]:
-    slug = directory.name.split("-", 1)[1]
+    parsed = parse_problem_directory(directory.name)
+    if parsed is None:
+        raise ValueError("Unrecognized problem directory: " + directory.name)
+    problem_id, slug, directory_difficulty = parsed
     question = load_question_cache(slug) or {}
     notes, unused_code = load_curated(slug)
     del unused_code
     nc = neetcode.get(slug, {})
     tags = topic_names(question)
     pattern = problem_pattern(notes, nc, tags)
-    problem_id = int(directory.name.split("-", 1)[0])
     title = str(question.get("title") or readme_title(directory / "README.md"))
-    difficulty = str(question.get("difficulty") or "Unknown")
+    difficulty = str(question.get("difficulty") or directory_difficulty or "Unknown")
     video_id = str(nc.get("video") or "").strip()
     if video_id:
         video_url = "https://www.youtube.com/watch?v=" + video_id
@@ -805,6 +902,7 @@ def row_metadata(
         "video_url": video_url,
         "video_title": video_title,
         "video_kind": video_kind,
+        "premium": bool(question.get("isPaidOnly")),
     }
 
 
@@ -818,13 +916,16 @@ def rebuild_root_readme(
         path
         for path in ROOT.iterdir()
         if path.is_dir()
-        and re.match(r"^\d{4,}-.+", path.name)
+        and parse_problem_directory(path.name) is not None
         and (path / "solution.py").exists()
     ]
     rows = []
     for directory in directories:
         metadata = row_metadata(directory, nc_by_slug, videos)
-        status = statuses.get(directory.name, ("⬜ Todo", ""))[0]
+        status_name = problem_directory_name(
+            metadata["id"], metadata["slug"], metadata["difficulty"]
+        )
+        status = statuses.get(status_name, ("⬜ Todo", ""))[0]
         rows.append((metadata, status))
     rows.sort(key=lambda item: item[0]["id"])
     difficulties = {}
@@ -866,8 +967,11 @@ def rebuild_root_readme(
         "| ---: | --- | --- | --- | --- | --- | --- |",
     ]
     for metadata, status in rows:
-        problem_dir = "%04d-%s" % (metadata["id"], metadata["slug"])
+        problem_dir = problem_directory_name(
+            metadata["id"], metadata["slug"], metadata["difficulty"]
+        )
         title_url = "https://leetcode.com/problems/%s/" % metadata["slug"]
+        display_title = metadata["title"] + (" 🔒" if metadata["premium"] else "")
         video_icon = "▶" if metadata["video_kind"] == "NeetCode" else "🔎"
         video_label = metadata["video_kind"]
         lines.append(
@@ -875,7 +979,7 @@ def rebuild_root_readme(
             "[%s %s](%s) | %s |"
             % (
                 metadata["id"],
-                metadata["title"],
+                display_title,
                 title_url,
                 metadata["pattern"],
                 metadata["difficulty"],
@@ -930,12 +1034,14 @@ def main() -> int:
                     neetcode_entries = cached_neetcode
             except (OSError, ValueError):
                 pass
+        migrate_existing_problem_directories()
     else:
         try:
             neetcode_entries = load_neetcode(client)
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to load NeetCode data: %s" % error)
             return 1
+        migrate_existing_problem_directories()
         try:
             selected = select_problems(args, client, neetcode_entries)
         except (HTTPError, URLError, ValueError, OSError) as error:

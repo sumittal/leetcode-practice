@@ -27,9 +27,7 @@ def to_list(head: Optional[ListNode]) -> List[int]:
 
 
 class Solution:
-    def removeNthFromEnd(
-        self, head: Optional[ListNode], n: int
-    ) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         # The sentinel gives the head a predecessor when the head itself is removed.
         dummy = ListNode(0, head)
         # Starting together, fast is advanced n links to establish a fixed gap.
