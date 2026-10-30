@@ -1,0 +1,18 @@
+{
+  "intuition": "Expand a window until it contains all required character counts, then shrink its left edge while it remains valid.",
+  "brute_force": {
+    "approach": "Enumerate substrings, count their characters, and keep the shortest substring covering every required count.",
+    "time": "O((m+n) * m)",
+    "space": "O(k)"
+  },
+  "optimal": {
+    "approach": "Track required and current counts plus how many distinct requirements are satisfied. Expand right, then contract left while all requirements remain satisfied.",
+    "time": "O(m+n)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "An empty target needs no characters, so return the empty string.",
+    "If the source is shorter than the target or lacks a required multiplicity, no window exists.",
+    "Repeated characters in the target require matching counts, not just presence."
+  ]
+}

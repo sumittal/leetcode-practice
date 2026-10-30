@@ -1,0 +1,18 @@
+{
+  "intuition": "Only the start of each consecutive run needs to count forward; all other values in that run can be skipped.",
+  "brute_force": {
+    "approach": "From every value, repeatedly check whether its successor exists and count the resulting run.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Put values in a set and expand only when value - 1 is absent, so every run is traversed once.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty input has a longest run of length zero.",
+    "Duplicates do not lengthen a run because membership is tested in a set.",
+    "Negative values and runs crossing zero need no special handling."
+  ]
+}

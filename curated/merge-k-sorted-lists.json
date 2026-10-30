@@ -1,0 +1,18 @@
+{
+  "intuition": "The next output node is the smallest current head among all nonempty lists.",
+  "brute_force": {
+    "approach": "Collect all node values, sort them, and build a merged list.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep one current node per list in a min-heap, repeatedly pop the smallest and push its successor. Divide and conquer is an alternative with O(n log k) time.",
+    "time": "O(n log k)",
+    "space": "O(k) heap"
+  },
+  "edge_cases": [
+    "An empty collection or a collection of empty lists returns None.",
+    "The heap tuple uses a list index to break equal-value ties because ListNode instances are not orderable.",
+    "Push a successor only after removing its predecessor from the heap."
+  ]
+}

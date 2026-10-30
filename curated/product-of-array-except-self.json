@@ -1,0 +1,17 @@
+{
+  "intuition": "For each position, multiply the product of values to its left by the product of values to its right.",
+  "brute_force": {
+    "approach": "For every index, multiply all elements except the one at that index.",
+    "time": "O(n^2)",
+    "space": "O(1) extra"
+  },
+  "optimal": {
+    "approach": "Write prefix products into the output, then scan backward while multiplying in the suffix product. The output array is excluded from extra-space accounting.",
+    "time": "O(n)",
+    "space": "O(1) extra"
+  },
+  "edge_cases": [
+    "A single element produces [1], the empty product.",
+    "Zeros need no special branch: prefix and suffix products naturally produce zero outputs, including when exactly one input is zero."
+  ]
+}

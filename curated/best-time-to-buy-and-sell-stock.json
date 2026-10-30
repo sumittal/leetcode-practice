@@ -1,0 +1,17 @@
+{
+  "intuition": "For each sell day, the best earlier buy is the minimum price seen so far.",
+  "brute_force": {
+    "approach": "Try each buy day with every later sell day and keep the greatest nonnegative profit.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Scan once, update the minimum price, and compare today's price against that minimum to update the best profit.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A decreasing price sequence allows no profitable trade, so the answer stays zero.",
+    "A single price cannot produce a transaction and yields zero."
+  ]
+}

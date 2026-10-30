@@ -1,0 +1,18 @@
+{
+  "intuition": "A window can be made uniform when its length minus its most frequent character count is at most k.",
+  "brute_force": {
+    "approach": "Enumerate substrings, count their characters, and check the minimum number of replacements needed.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Use a sliding window with character counts and a running maximum frequency; shrink when the window needs more than k replacements.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "With k equal to zero, only an existing repeated-character run can be used.",
+    "An empty string yields zero.",
+    "The running maximum frequency may be stale after shrinking; retaining it avoids rescans and still preserves the maximum window length."
+  ]
+}

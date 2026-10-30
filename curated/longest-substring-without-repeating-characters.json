@@ -1,0 +1,18 @@
+{
+  "intuition": "Maintain a window with unique characters; when a repeated character appears, move the left edge past its previous occurrence.",
+  "brute_force": {
+    "approach": "Check every substring and test whether its characters are unique.",
+    "time": "O(n^3)",
+    "space": "O(k)"
+  },
+  "optimal": {
+    "approach": "Track each character's most recent index and move the left boundary forward only when that occurrence is inside the current window.",
+    "time": "O(n)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "An empty string has answer zero.",
+    "Repeated adjacent characters reduce the window to one character.",
+    "A previous occurrence before the current window must not move the left boundary backward."
+  ]
+}

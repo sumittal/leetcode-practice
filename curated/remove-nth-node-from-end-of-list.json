@@ -1,0 +1,18 @@
+{
+  "intuition": "Two pointers separated by n nodes reach the target predecessor when the fast pointer reaches the end.",
+  "brute_force": {
+    "approach": "Count nodes, convert the position from the end to an index from the start, then remove that node.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Start both pointers at a dummy node, advance fast n steps, then move both until fast reaches the tail and bypass slow.next.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Removing the head is handled by the dummy predecessor.",
+    "A one-node list removed with n=1 returns None.",
+    "Advance fast exactly n nodes so slow stops immediately before the target."
+  ]
+}

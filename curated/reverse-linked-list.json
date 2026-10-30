@@ -1,0 +1,18 @@
+{
+  "intuition": "Reverse each link as the list is traversed, keeping the reversed prefix and the untouched suffix separate.",
+  "brute_force": {
+    "approach": "Copy node values, reverse the values, and write them back into the nodes.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Iteratively save the next node, point the current node backward, then advance the previous and current pointers. A recursive version uses O(n) call-stack space.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "An empty list remains empty.",
+    "A one-node list already has the required direction.",
+    "Save the original next pointer before reversing the current link."
+  ]
+}

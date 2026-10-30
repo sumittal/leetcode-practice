@@ -1,0 +1,18 @@
+{
+  "intuition": "If traversal enters a cycle, a faster pointer eventually laps a slower pointer.",
+  "brute_force": {
+    "approach": "Track visited node identities and return true when a node is visited twice.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Advance slow by one link and fast by two; equality of node identity proves a cycle.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "An empty list or a single node without a self-link has no cycle.",
+    "Compare node identity, not node values.",
+    "Check fast and fast.next before advancing two steps."
+  ]
+}

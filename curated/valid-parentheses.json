@@ -1,0 +1,18 @@
+{
+  "intuition": "Every closing bracket must match the most recent unmatched opening bracket.",
+  "brute_force": {
+    "approach": "Repeatedly remove adjacent matching bracket pairs until no more pairs can be removed.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Push opening brackets onto a stack; each closing bracket must match and pop the stack top.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty string is valid.",
+    "A closing bracket with an empty stack is immediately invalid.",
+    "A nonempty stack at the end means one or more openings were unmatched."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "intuition": "The rotation pivot separates two sorted ranges; comparing the midpoint with the right endpoint identifies which range contains the minimum.",
+  "brute_force": {
+    "approach": "Scan the array and return its smallest value.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary search while maintaining a range containing the minimum. If mid is larger than right, discard the left half through mid; otherwise keep mid and discard the right side.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-element array is already its own minimum.",
+    "An unrotated array repeatedly keeps the left half until its first element remains.",
+    "Do not discard mid when nums[mid] may itself be the minimum."
+  ]
+}

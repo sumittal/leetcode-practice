@@ -1,0 +1,18 @@
+{
+  "intuition": "Inverting a tree swaps the left and right child at every node.",
+  "brute_force": {
+    "approach": "Collect nodes by level and rebuild a tree with each level reversed.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Recursively invert both subtrees and swap the returned children at each node.",
+    "time": "O(n)",
+    "space": "O(h) recursion stack"
+  },
+  "edge_cases": [
+    "An empty tree remains None.",
+    "A leaf has no children to swap.",
+    "Swap the child references at every visited node, not just at the root."
+  ]
+}

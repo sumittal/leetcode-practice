@@ -3,10 +3,11 @@ from collections import Counter
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # Unequal lengths cannot have matching character counts.
+        # Rearrangement preserves length, so this rejects impossible pairs early.
         if len(s) != len(t):
             return False
         # Counter retains multiplicities, unlike comparing sets of characters.
+        # Equality of the counters means every character occurs equally often.
         return Counter(s) == Counter(t)
 
 

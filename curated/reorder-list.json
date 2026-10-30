@@ -1,0 +1,18 @@
+{
+  "intuition": "The target order alternates the first half with the reversed second half.",
+  "brute_force": {
+    "approach": "Store all node references in an array and reconnect them from the two ends inward.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Find the midpoint, reverse the second half in place, then weave nodes from both halves together.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Lists with fewer than three nodes need no meaningful reorder.",
+    "Terminate the first half before reversing so the original halves do not remain linked.",
+    "The final node may be from either half; ensure no cycle remains."
+  ]
+}

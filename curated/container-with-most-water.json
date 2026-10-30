@@ -1,0 +1,17 @@
+{
+  "intuition": "The area is bounded by the shorter wall. Moving the taller wall cannot improve the limiting height while it also narrows the width.",
+  "brute_force": {
+    "approach": "Evaluate the area for every pair of lines.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Start at both ends, record the area, and move only the pointer at the shorter line.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "At least two lines are required by the problem constraints.",
+    "Equal-height lines may move either side; moving one still explores narrower candidates."
+  ]
+}

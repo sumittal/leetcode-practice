@@ -1,0 +1,17 @@
+{
+  "intuition": "A duplicate exists exactly when a value is encountered a second time. A set records which values have already appeared.",
+  "brute_force": {
+    "approach": "Compare every pair of values and return true when two are equal.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Insert values into a set while scanning; a value already in the set proves a duplicate.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty or one-element input has no duplicate.",
+    "Negative values and repeated values are handled the same way as positive values."
+  ]
+}

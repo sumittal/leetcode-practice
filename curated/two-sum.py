@@ -3,14 +3,18 @@ from typing import Dict, List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Map values already scanned to indices, so a match always uses two positions.
         indices = {}  # type: Dict[int, int]
         for index, value in enumerate(nums):
+            # The complement is the only earlier value that can complete this pair.
             complement = target - value
             # Only earlier indices are stored, so this lookup cannot reuse this element.
             if complement in indices:
+                # Return both indices as soon as the unique required pair is complete.
                 return [indices[complement], index]
             # Store after lookup so equal values at different indices can form a pair.
             indices[value] = index
+        # No pair was found; valid LeetCode inputs guarantee one exists.
         return []
 
 

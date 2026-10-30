@@ -1,0 +1,18 @@
+{
+  "intuition": "After sorting, fixing one value turns the remaining search into a two-sum scan over the suffix.",
+  "brute_force": {
+    "approach": "Try every triple, keep triples summing to zero, and deduplicate the results.",
+    "time": "O(n^3)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Sort once, then use two pointers for each first value. Skip repeated first, left, and right values so each value-triplet is emitted once.",
+    "time": "O(n^2)",
+    "space": "O(1) extra, excluding output"
+  },
+  "edge_cases": [
+    "Fewer than three values cannot form a triplet.",
+    "Skip duplicate values after recording a match to avoid repeated triplets.",
+    "Break when the fixed value is positive because the sorted suffix cannot bring the sum back to zero."
+  ]
+}

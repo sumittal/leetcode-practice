@@ -1,0 +1,18 @@
+{
+  "intuition": "The smallest remaining node must be one of the two list heads.",
+  "brute_force": {
+    "approach": "Collect all values, sort them, and build a new linked list.",
+    "time": "O((m+n) log(m+n))",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Use a sentinel and repeatedly attach the smaller current node, then append whichever list remains.",
+    "time": "O(m+n)",
+    "space": "O(1) extra"
+  },
+  "edge_cases": [
+    "Either input list may be empty.",
+    "Equal values can be taken from either list without changing sorted order.",
+    "Append the untouched remainder once one list is exhausted."
+  ]
+}

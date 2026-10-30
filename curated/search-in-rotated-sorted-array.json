@@ -1,0 +1,18 @@
+{
+  "intuition": "At least one half of a rotated, distinct sorted array is ordered; determine whether the target lies in that half.",
+  "brute_force": {
+    "approach": "Scan all values and return the index of the target when found.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary search. Identify the sorted half, keep it only if the target is within its inclusive bounds, and otherwise search the other half.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-element array can match at index zero or return -1.",
+    "Use inclusive range checks so targets at either endpoint remain searchable.",
+    "When the target is absent, each iteration must still discard at least one index."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "intuition": "A nonempty tree's depth is one plus the larger depth of its left and right subtrees.",
+  "brute_force": {
+    "approach": "Traverse each root-to-leaf path and record the greatest path length.",
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "optimal": {
+    "approach": "Recursively compute both subtree depths and return one plus their maximum.",
+    "time": "O(n)",
+    "space": "O(h) recursion stack"
+  },
+  "edge_cases": [
+    "An empty tree has depth zero.",
+    "A single node has depth one.",
+    "A missing child contributes depth zero."
+  ]
+}
