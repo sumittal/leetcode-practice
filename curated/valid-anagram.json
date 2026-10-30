@@ -1,0 +1,18 @@
+{
+  "intuition": "Two strings are anagrams exactly when every character appears the same number of times in both strings.",
+  "brute_force": {
+    "approach": "Sort both strings and compare the resulting character sequences.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Count the characters in one string and subtract the counts from the other; all counts must finish at zero.",
+    "time": "O(n)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "Different lengths cannot be anagrams.",
+    "Empty strings are anagrams.",
+    "Character counts must include repeated characters."
+  ]
+}

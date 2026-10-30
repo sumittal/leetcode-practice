@@ -1,0 +1,18 @@
+{
+  "intuition": "Anagrams have the same character counts, so a canonical representation of those counts can group words together.",
+  "brute_force": {
+    "approach": "For each word, compare its sorted characters against the representative of each existing group.",
+    "time": "O(n^2 k log k)",
+    "space": "O(nk)"
+  },
+  "optimal": {
+    "approach": "Use the tuple of 26 lowercase-letter counts as a dictionary key and append each word to that key's group.",
+    "time": "O(nk)",
+    "space": "O(nk)"
+  },
+  "edge_cases": [
+    "An empty string forms a valid one-word group.",
+    "Repeated letters must be represented by their counts, not just their presence.",
+    "The order of groups and words within groups is not significant."
+  ]
+}

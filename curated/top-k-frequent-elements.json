@@ -1,0 +1,17 @@
+{
+  "intuition": "Count each value once, then select the values with the greatest frequencies.",
+  "brute_force": {
+    "approach": "Count values and repeatedly scan the remaining counts to select the next most frequent value.",
+    "time": "O(nk)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Bucket values by frequency and scan buckets from highest frequency down until k values are collected. A heap is an alternative with O(n log k) time.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "When k equals the number of distinct values, return each distinct value once.",
+    "Ties in frequency may be returned in any order."
+  ]
+}

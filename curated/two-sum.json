@@ -1,0 +1,17 @@
+{
+  "intuition": "For each value, the only useful partner is its complement (`target - value`). Remember values already seen so each pair can be found in one pass.",
+  "brute_force": {
+    "approach": "Try every pair of indices and return the first pair whose values sum to the target.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Scan once while mapping each value to its index. Check for the complement before recording the current value so an element is never paired with itself.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Duplicate values can form the answer; check the complement before inserting the current value.",
+    "Negative values and a negative target work with the same complement calculation."
+  ]
+}
