@@ -794,6 +794,18 @@ def load_question_cache(slug: str) -> Optional[Dict[str, Any]]:
         return None
 
 
+def warm_question_cache(client: LeetCodeClient) -> None:
+    # A fresh clone has no .cache/, so fetch metadata the index needs.
+    for path in sorted(ROOT.iterdir()):
+        parsed = parse_problem_directory(path.name) if path.is_dir() else None
+        if parsed is None or load_question_cache(parsed[1]) is not None:
+            continue
+        try:
+            get_question(client, parsed[1])
+        except (HTTPError, URLError, ValueError, OSError) as error:
+            print("Failed to fetch %s: %s" % (parsed[1], error))
+
+
 def migrate_existing_problem_directories() -> None:
     directories = [
         path
@@ -1024,16 +1036,11 @@ def main() -> int:
     neetcode_entries = []  # type: List[Dict[str, Any]]
     videos = load_video_cache() if args.index_only or not args.refresh else {}
     if args.index_only:
-        neetcode_path = ROOT / ".cache" / "neetcode.json"
-        if neetcode_path.exists():
-            try:
-                cached_neetcode = json.loads(
-                    neetcode_path.read_text(encoding="utf-8")
-                )
-                if isinstance(cached_neetcode, list):
-                    neetcode_entries = cached_neetcode
-            except (OSError, ValueError):
-                pass
+        try:
+            neetcode_entries = load_neetcode(client)
+        except (HTTPError, URLError, ValueError, OSError) as error:
+            print("Unable to load NeetCode data: %s" % error)
+        warm_question_cache(client)
         migrate_existing_problem_directories()
     else:
         try:
