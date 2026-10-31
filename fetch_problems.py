@@ -1439,6 +1439,17 @@ def rebuild_root_readme(
             "ranked by frequency.",
         ]
     )
+    system_design_index = ROOT / "system_design" / "README.md"
+    if system_design_index.is_file():
+        lines.extend(
+            [
+                "",
+                "## System Design",
+                "",
+                "Read the interview-oriented "
+                "[system design notes](./system_design/README.md).",
+            ]
+        )
     (ROOT / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

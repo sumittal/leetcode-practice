@@ -1,0 +1,17 @@
+{
+  "intuition": "Only the length of the current suffix equal to the target value matters.",
+  "brute_force": {
+    "approach": "Store the entire stream and inspect its last k elements after every call.",
+    "time": "consec O(k)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain a streak counter that increases for the target and resets for any other value.",
+    "time": "consec O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "The result is false until at least k matching values arrive consecutively.",
+    "Any nonmatching value resets the run."
+  ]
+}

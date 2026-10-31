@@ -1,0 +1,18 @@
+{
+  "description": "Implement a trie that supports insertion, exact-word counts, prefix counts, and erasing one copy of an inserted word. Example 1: after inserting apple, search counts apple once, app zero times, and the app prefix once; after inserting app and erasing it, app's exact count is zero. Example 2: inserting the same word twice and erasing it once leaves one copy. Constraints: words contain lowercase English letters and erase is called for a word present in the trie.",
+  "intuition": "Trie nodes share common prefixes, while counters distinguish how many inserted words pass through or end at each node.",
+  "brute_force": {
+    "approach": "Store every word in a list and scan the list for exact and prefix counts.",
+    "time": "insert O(1), erase/count O(total stored characters)",
+    "space": "O(total stored characters)"
+  },
+  "optimal": {
+    "approach": "Store child links, a pass count, and an ending count at each trie node.",
+    "time": "insert/erase/search/prefix count O(L)",
+    "space": "O(total distinct prefix nodes)"
+  },
+  "edge_cases": [
+    "Repeated insertions increase both path and terminal counts.",
+    "Erasing one copy must not remove other copies of the same word."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "The longest complete prefix is the first index beyond a contiguous run of uploaded videos.",
+  "brute_force": {
+    "approach": "After every upload, rescan from video 1 until the first missing video.",
+    "time": "upload O(n), longest O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track uploaded IDs in a Boolean array and advance one pointer whenever its next video becomes available.",
+    "time": "upload O(1) amortized, longest O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Uploading a video past a gap does not advance the prefix.",
+    "The pointer may advance across several already-uploaded videos at once."
+  ]
+}

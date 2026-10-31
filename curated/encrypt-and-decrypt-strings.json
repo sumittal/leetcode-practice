@@ -1,0 +1,17 @@
+{
+  "intuition": "Encryption is deterministic, while decryption may have several preimages, so the fixed dictionary can be summarized by encrypted-word counts.",
+  "brute_force": {
+    "approach": "For each decrypt request, enumerate every character mapping combination and check generated words against the dictionary.",
+    "time": "encrypt O(L), decrypt O(b^L)",
+    "space": "O(DL)"
+  },
+  "optimal": {
+    "approach": "Map plaintext characters to codes and pre-encrypt every dictionary word into a frequency table.",
+    "time": "construction O(DL), encrypt O(L), decrypt O(C)",
+    "space": "O(DL + K)"
+  },
+  "edge_cases": [
+    "Encryption returns an empty string if any plaintext character has no mapping.",
+    "Multiple dictionary words may produce the same ciphertext."
+  ]
+}

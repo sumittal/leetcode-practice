@@ -1,0 +1,18 @@
+{
+  "description": "Maintain an n by n by n binary matrix and support setting or clearing a cell. Query the layer index containing the most ones; ties go to the largest layer index. Example 1: in a three-layer matrix, setting two cells in layer 0 and one in layer 2 makes largestMatrix return 0. Example 2: when all layers contain zero ones, the tie rule returns n - 1. Constraints: 1 <= n <= 100, coordinates are in range, and there are at most 100000 updates and 10000 queries.",
+  "intuition": "Only the count for the changed layer can move, and a priority queue can expose the highest count with the required index tie-break.",
+  "brute_force": {
+    "approach": "Store all cells, then scan every layer and count its ones for every query.",
+    "time": "set/unset O(1), largestMatrix O(n^3)",
+    "space": "O(n^3)"
+  },
+  "optimal": {
+    "approach": "Store each layer as bytes, maintain its one-count, and lazily validate a heap ordered by count descending and layer descending.",
+    "time": "setCell/unsetCell O(log q), largestMatrix O(1) amortized",
+    "space": "O(n^3 + q)"
+  },
+  "edge_cases": [
+    "Setting an already-set cell or clearing an already-clear cell must not change a count.",
+    "The largest layer index wins ties, including the all-zero initial state."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Maintain users' tasks with sequential global IDs, due dates, descriptions, tags, and completion state. Queries return only pending descriptions in due-date order, optionally filtered by a tag. Example 1: a user's tasks due on days 4 and 2 are returned in the order of day 2 then day 4. Example 2: completing a task removes it from both task queries, but does not affect another user's task. Constraints: IDs are sequential, due dates are unique, and completion applies only to a task owned by that user.",
+  "intuition": "Each user's active task records can be filtered and sorted by the unique due date.",
+  "brute_force": {
+    "approach": "Keep all records in one list and scan every task for each user's query.",
+    "time": "addTask O(1), completeTask O(n), query O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map each user to task records and use a global increasing task ID; sort only that user's matching active tasks for a query.",
+    "time": "addTask O(1), completeTask O(1) expected, query O(t log t)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Completing a missing task or another user's task has no effect.",
+    "Completed tasks never appear in tag-filtered or unfiltered results."
+  ]
+}

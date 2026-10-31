@@ -1,0 +1,17 @@
+{
+  "intuition": "Bit operations update one logical position, while a global flip flag avoids touching every stored bit.",
+  "brute_force": {
+    "approach": "Store a string or list of bits and rewrite every bit on flip.",
+    "time": "fix/unfix O(1), flip O(n), all/one/count O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep underlying bits, a lazy inversion flag, and the current count of logical ones.",
+    "time": "fix/unfix/flip/all/one/count O(1), toString O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Repeated fix or unfix calls leave the count unchanged.",
+    "After flip, logical values are the stored bits XOR the inversion flag."
+  ]
+}

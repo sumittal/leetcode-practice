@@ -1,0 +1,18 @@
+{
+  "description": "Create a platform that assigns the smallest available nonnegative ID to each uploaded digit-string video. Support removing a video, watching an inclusive minute range, recording likes and dislikes, and retrieving engagement counts. Example 1: upload \"123\" receives ID 0; watching minutes 0 through 5 returns \"123\" and increments views. Example 2: after removing ID 0, the next upload reuses ID 0. Constraints: videos are digit strings, and video IDs are reused after removal.",
+  "intuition": "Video metadata is keyed by ID, while a min-heap tracks freed IDs so uploads reuse the smallest one.",
+  "brute_force": {
+    "approach": "Scan all IDs to find the smallest free one and scan all video records for each query.",
+    "time": "upload O(n), other operations O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a dictionary for active videos and counters, plus a min-heap of reusable IDs and a monotonic next ID.",
+    "time": "upload O(log n), remove/watch/like/dislike/get O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Operations on a missing video leave state unchanged and return the specified sentinel.",
+    "The watched end minute is clamped to the last available character."
+  ]
+}

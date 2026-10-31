@@ -1,0 +1,17 @@
+{
+  "intuition": "Queries ask whether any number occupies a frequency, so track how many distinct numbers have each frequency.",
+  "brute_force": {
+    "approach": "Store all values and count each value's occurrences for every query.",
+    "time": "add/deleteOne O(1), hasFrequency O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain number-to-frequency and frequency-to-number-count maps, updating both on each change.",
+    "time": "add/deleteOne/hasFrequency O(1) expected",
+    "space": "O(d + f)"
+  },
+  "edge_cases": [
+    "Deleting a missing number has no effect.",
+    "A number leaving a frequency bucket decrements that bucket's distinct-number count."
+  ]
+}

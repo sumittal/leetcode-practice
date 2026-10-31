@@ -1,0 +1,17 @@
+{
+  "intuition": "The robot follows one deterministic cycle around the rectangular boundary, so large step counts can be reduced modulo the perimeter.",
+  "brute_force": {
+    "approach": "Simulate every attempted step and turn counterclockwise whenever the next cell is outside the grid.",
+    "time": "step O(num)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Track total movement modulo the perimeter and map the resulting boundary index to a coordinate and heading.",
+    "time": "step O(1), getPos/getDir O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "The initial state faces East, but returning to the origin after movement faces South.",
+    "A turn occurs only when an attempted step would leave the grid."
+  ]
+}

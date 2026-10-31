@@ -1,0 +1,17 @@
+{
+  "intuition": "The answer is the sum of the middle m - 2k values among the latest m stream elements.",
+  "brute_force": {
+    "approach": "Keep the latest m values, sort them for each query, and average the middle slice.",
+    "time": "addElement O(1), calculateMKAverage O(m log m)",
+    "space": "O(m)"
+  },
+  "optimal": {
+    "approach": "Maintain a sliding window plus Fenwick trees for value counts and value sums. Prefix order statistics recover the sums of the smallest k and smallest m-k values.",
+    "time": "addElement O(log U), calculateMKAverage O(log U), where U = 100000",
+    "space": "O(m + U)"
+  },
+  "edge_cases": [
+    "Return -1 until the window contains m elements.",
+    "Use integer floor division after removing both tails."
+  ]
+}

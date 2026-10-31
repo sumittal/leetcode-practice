@@ -1,0 +1,17 @@
+{
+  "intuition": "A row can satisfy gather when its remaining capacity reaches k, while scatter needs the total remaining capacity in a row prefix.",
+  "brute_force": {
+    "approach": "Scan rows from zero for every request and track occupied seats directly.",
+    "time": "gather O(n), scatter O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "A segment tree stores both maximum free seats in one row and total free seats in a range; consume seats from the earliest eligible rows.",
+    "time": "gather O(log n), scatter O((r + 1) log n), where r is the number of touched rows",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "gather requires consecutive seats within a single row.",
+    "scatter checks prefix capacity before changing any row."
+  ]
+}

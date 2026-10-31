@@ -1,0 +1,18 @@
+{
+  "description": "Track active buy and sell orders by unique order ID, type, and price. Orders can be added, repriced, canceled, or queried by type and price; the query returns matching active IDs in any order. Example 1: orders 4 and 5 at (buy, 10) are both returned; changing order 4 to price 11 leaves only order 5 in the first query. Example 2: canceling the only order at a key makes that key return an empty list. Constraints: order IDs are globally unique, and modify/cancel target an active order.",
+  "intuition": "Updates need a direct route from order ID to its current bucket, while queries need direct access to a type-and-price bucket.",
+  "brute_force": {
+    "approach": "Store all orders by ID and scan active orders for each query.",
+    "time": "add/modify/cancel O(1), getOrdersAtPrice O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain an ID-to-order map and a reverse map from (type, price) to a set of IDs.",
+    "time": "add/modify/cancel O(1) expected, query O(k)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Changing a price removes the ID from its former bucket before inserting it into the new one.",
+    "An empty bucket is removed after cancellation or repricing."
+  ]
+}

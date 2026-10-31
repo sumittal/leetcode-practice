@@ -1,0 +1,17 @@
+{
+  "intuition": "The i-th query needs the i-th best location among everything added so far, even when new locations arrive between queries.",
+  "brute_force": {
+    "approach": "Keep all locations and sort them by score descending and name ascending for every get.",
+    "time": "add O(1), get O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain two heaps: the best q queried locations with their worst at the top, and all remaining locations with their best at the top. Rebalance after each add.",
+    "time": "add O(log n), get O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Equal scores rank the lexicographically smaller name first.",
+    "A new location may outrank a previously returned location and must move across the heap boundary."
+  ]
+}

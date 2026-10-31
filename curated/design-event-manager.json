@@ -1,0 +1,17 @@
+{
+  "intuition": "A max-priority queue exposes the event to poll, while versioned entries make priority changes cheap.",
+  "brute_force": {
+    "approach": "Store events in a map and scan all active events for every poll.",
+    "time": "updatePriority O(1), pollHighest O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map active IDs to current priority and version, and keep a lazy heap ordered by priority descending then ID ascending.",
+    "time": "updatePriority O(log n), pollHighest O(log n) amortized",
+    "space": "O(n + updates)"
+  },
+  "edge_cases": [
+    "Equal priorities choose the smallest event ID.",
+    "Heap entries from older priority updates are discarded when they reach the top."
+  ]
+}

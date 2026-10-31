@@ -1,0 +1,17 @@
+{
+  "intuition": "The graph is small and sparse updates are limited, so each shortest-path query can run Dijkstra over current outgoing edges.",
+  "brute_force": {
+    "approach": "Enumerate simple paths from the source and retain the cheapest path to the destination.",
+    "time": "shortestPath exponential in the number of nodes",
+    "space": "O(n + e)"
+  },
+  "optimal": {
+    "approach": "Store adjacency lists and use a min-priority queue with stale-distance skipping for each query.",
+    "time": "addEdge O(1), shortestPath O((n + e) log n)",
+    "space": "O(n + e)"
+  },
+  "edge_cases": [
+    "A node has distance zero to itself.",
+    "Return -1 when the destination is unreachable."
+  ]
+}

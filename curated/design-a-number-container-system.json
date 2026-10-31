@@ -1,0 +1,17 @@
+{
+  "intuition": "Each number needs its own candidate indices, but replacements make old heap entries stale.",
+  "brute_force": {
+    "approach": "Scan every occupied index to find the smallest one containing the requested number.",
+    "time": "change O(1), find O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map indices to current numbers and keep a min-heap of candidate indices per number, removing stale tops lazily.",
+    "time": "change O(log n), find O(log n) amortized",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Changing an index to its current number does not affect the answer.",
+    "A number with no current index returns -1."
+  ]
+}

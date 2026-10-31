@@ -1,0 +1,17 @@
+{
+  "intuition": "The grid is immutable, so precompute each value's coordinates once and inspect its four local neighbors per query.",
+  "brute_force": {
+    "approach": "Search the grid for the requested value, then sum adjacent or diagonal cells.",
+    "time": "query O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Map each distinct grid value to its row and column, then examine a constant set of offsets.",
+    "time": "construction O(n^2), adjacentSum/diagonalSum O(1)",
+    "space": "O(n^2)"
+  },
+  "edge_cases": [
+    "Neighbors outside the square grid are ignored.",
+    "Adjacent and diagonal directions are separate groups."
+  ]
+}

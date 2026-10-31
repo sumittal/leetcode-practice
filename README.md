@@ -19,9 +19,9 @@ python3 fetch_problems.py --index-only
 
 ## Overall Progress
 
-- Easy: 63/63 solved
-- Hard: 52/52 solved
-- Medium: 208/208 solved
+- Easy: 64/64 solved
+- Hard: 60/60 solved
+- Medium: 220/220 solved
 
 ## Blind 75
 
@@ -289,9 +289,9 @@ python3 fetch_problems.py --index-only
 
 ### Progress
 
-- Easy: 12/12 solved
-- Hard: 22/22 solved
-- Medium: 66/66 solved
+- Easy: 13/13 solved
+- Hard: 30/30 solved
+- Medium: 78/78 solved
 
 ### Problems
 
@@ -319,6 +319,7 @@ python3 fetch_problems.py --index-only
 | 379 | [Design Phone Directory 🔒](https://leetcode.com/problems/design-phone-directory/) | Array | Medium | [solution](./design/0379-design-phone-directory-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+379+Design+Phone+Directory+neetcode) | ✅ Solved |
 | 381 | [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/) | Array | Hard | [solution](./design/0381-insert-delete-getrandom-o1-duplicates-allowed-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+381+Insert+Delete+GetRandom+O%281%29+-+Duplicates+allowed+neetcode) | ✅ Solved |
 | 384 | [Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Array | Medium | [solution](./design/0384-shuffle-an-array-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+384+Shuffle+an+Array+neetcode) | ✅ Solved |
+| 431 | [Encode N-ary Tree to Binary Tree 🔒](https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree/) | Tree | Hard | [solution](./design/0431-encode-n-ary-tree-to-binary-tree-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+431+Encode+N-ary+Tree+to+Binary+Tree+neetcode) | ✅ Solved |
 | 432 | [All O`one Data Structure](https://leetcode.com/problems/all-oone-data-structure/) | Hash Table | Hard | [solution](./design/0432-all-oone-data-structure-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+432+All+O%60one+Data+Structure+neetcode) | ✅ Solved |
 | 449 | [Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst/) | String | Medium | [solution](./design/0449-serialize-and-deserialize-bst-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+449+Serialize+and+Deserialize+BST+neetcode) | ✅ Solved |
 | 460 | [LFU Cache](https://leetcode.com/problems/lfu-cache/) | Linked List | Hard | [solution](./design/0460-lfu-cache-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=bLEIHn-DgoA) | ✅ Solved |
@@ -376,26 +377,50 @@ python3 fetch_problems.py --index-only
 | 1656 | [Design an Ordered Stream](https://leetcode.com/problems/design-an-ordered-stream/) | Array | Easy | [solution](./design/1656-design-an-ordered-stream-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1656+Design+an+Ordered+Stream+neetcode) | ✅ Solved |
 | 1670 | [Design Front Middle Back Queue](https://leetcode.com/problems/design-front-middle-back-queue/) | Array | Medium | [solution](./design/1670-design-front-middle-back-queue-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1670+Design+Front+Middle+Back+Queue+neetcode) | ✅ Solved |
 | 1724 | [Checking Existence of Edge Length Limited Paths II 🔒](https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths-ii/) | Depth-First Search | Hard | [solution](./design/1724-checking-existence-of-edge-length-limited-paths-ii-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1724+Checking+Existence+of+Edge+Length+Limited+Paths+II+neetcode) | ✅ Solved |
+| 1756 | [Design Most Recently Used Queue 🔒](https://leetcode.com/problems/design-most-recently-used-queue/) | Array | Medium | [solution](./design/1756-design-most-recently-used-queue-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1756+Design+Most+Recently+Used+Queue+neetcode) | ✅ Solved |
 | 1797 | [Design Authentication Manager](https://leetcode.com/problems/design-authentication-manager/) | Hash Table | Medium | [solution](./design/1797-design-authentication-manager-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1797+Design+Authentication+Manager+neetcode) | ✅ Solved |
+| 1804 | [Implement Trie II (Prefix Tree) 🔒](https://leetcode.com/problems/implement-trie-ii-prefix-tree/) | Hash Table | Medium | [solution](./design/1804-implement-trie-ii-prefix-tree-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1804+Implement+Trie+II+%28Prefix+Tree%29+neetcode) | ✅ Solved |
+| 1825 | [Finding MK Average](https://leetcode.com/problems/finding-mk-average/) | Design | Hard | [solution](./design/1825-finding-mk-average-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1825+Finding+MK+Average+neetcode) | ✅ Solved |
 | 1845 | [Seat Reservation Manager](https://leetcode.com/problems/seat-reservation-manager/) | Heap / Priority Queue | Medium | [solution](./design/1845-seat-reservation-manager-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ahobllKXEEY) | ✅ Solved |
 | 1865 | [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) | Array | Medium | [solution](./design/1865-finding-pairs-with-a-certain-sum-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1865+Finding+Pairs+With+a+Certain+Sum+neetcode) | ✅ Solved |
 | 1912 | [Design Movie Rental System](https://leetcode.com/problems/design-movie-rental-system/) | Array | Hard | [solution](./design/1912-design-movie-rental-system-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1912+Design+Movie+Rental+System+neetcode) | ✅ Solved |
 | 1993 | [Operations on Tree](https://leetcode.com/problems/operations-on-tree/) | Trees | Medium | [solution](./design/1993-operations-on-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=qK4PtjrVD0U) | ✅ Solved |
 | 2034 | [Stock Price Fluctuation ](https://leetcode.com/problems/stock-price-fluctuation/) | Hash Table | Medium | [solution](./design/2034-stock-price-fluctuation-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2034+Stock+Price+Fluctuation++neetcode) | ✅ Solved |
 | 2043 | [Simple Bank System](https://leetcode.com/problems/simple-bank-system/) | Array | Medium | [solution](./design/2043-simple-bank-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2043+Simple+Bank+System+neetcode) | ✅ Solved |
+| 2069 | [Walking Robot Simulation II](https://leetcode.com/problems/walking-robot-simulation-ii/) | Design | Medium | [solution](./design/2069-walking-robot-simulation-ii-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2069+Walking+Robot+Simulation+II+neetcode) | ✅ Solved |
 | 2080 | [Range Frequency Queries](https://leetcode.com/problems/range-frequency-queries/) | Array | Medium | [solution](./design/2080-range-frequency-queries-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2080+Range+Frequency+Queries+neetcode) | ✅ Solved |
+| 2102 | [Sequentially Ordinal Rank Tracker](https://leetcode.com/problems/sequentially-ordinal-rank-tracker/) | Design | Hard | [solution](./design/2102-sequentially-ordinal-rank-tracker-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2102+Sequentially+Ordinal+Rank+Tracker+neetcode) | ✅ Solved |
+| 2166 | [Design Bitset](https://leetcode.com/problems/design-bitset/) | Array | Medium | [solution](./design/2166-design-bitset-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2166+Design+Bitset+neetcode) | ✅ Solved |
+| 2227 | [Encrypt and Decrypt Strings](https://leetcode.com/problems/encrypt-and-decrypt-strings/) | Array | Hard | [solution](./design/2227-encrypt-and-decrypt-strings-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2227+Encrypt+and+Decrypt+Strings+neetcode) | ✅ Solved |
 | 2241 | [Design an ATM Machine](https://leetcode.com/problems/design-an-atm-machine/) | Array | Medium | [solution](./design/2241-design-an-atm-machine-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2241+Design+an+ATM+Machine+neetcode) | ✅ Solved |
+| 2254 | [Design Video Sharing Platform 🔒](https://leetcode.com/problems/design-video-sharing-platform/) | Hash Table | Hard | [solution](./design/2254-design-video-sharing-platform-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2254+Design+Video+Sharing+Platform+neetcode) | ✅ Solved |
 | 2276 | [Count Integers in Intervals](https://leetcode.com/problems/count-integers-in-intervals/) | Design | Hard | [solution](./design/2276-count-integers-in-intervals-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2276+Count+Integers+in+Intervals+neetcode) | ✅ Solved |
+| 2286 | [Booking Concert Tickets in Groups](https://leetcode.com/problems/booking-concert-tickets-in-groups/) | Binary Search | Hard | [solution](./design/2286-booking-concert-tickets-in-groups-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2286+Booking+Concert+Tickets+in+Groups+neetcode) | ✅ Solved |
 | 2296 | [Design a Text Editor](https://leetcode.com/problems/design-a-text-editor/) | Linked List | Hard | [solution](./design/2296-design-a-text-editor-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2296+Design+a+Text+Editor+neetcode) | ✅ Solved |
 | 2336 | [Smallest Number in Infinite Set](https://leetcode.com/problems/smallest-number-in-infinite-set/) | Hash Table | Medium | [solution](./design/2336-smallest-number-in-infinite-set-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2336+Smallest+Number+in+Infinite+Set+neetcode) | ✅ Solved |
+| 2349 | [Design a Number Container System](https://leetcode.com/problems/design-a-number-container-system/) | Hash Table | Medium | [solution](./design/2349-design-a-number-container-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2349+Design+a+Number+Container+System+neetcode) | ✅ Solved |
 | 2353 | [Design a Food Rating System](https://leetcode.com/problems/design-a-food-rating-system/) | Array | Medium | [solution](./design/2353-design-a-food-rating-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2353+Design+a+Food+Rating+System+neetcode) | ✅ Solved |
 | 2408 | [Design SQL](https://leetcode.com/problems/design-sql/) | Array | Medium | [solution](./design/2408-design-sql-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2408+Design+SQL+neetcode) | ✅ Solved |
+| 2424 | [Longest Uploaded Prefix](https://leetcode.com/problems/longest-uploaded-prefix/) | Hash Table | Medium | [solution](./design/2424-longest-uploaded-prefix-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2424+Longest+Uploaded+Prefix+neetcode) | ✅ Solved |
 | 2502 | [Design Memory Allocator](https://leetcode.com/problems/design-memory-allocator/) | Array | Medium | [solution](./design/2502-design-memory-allocator-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2502+Design+Memory+Allocator+neetcode) | ✅ Solved |
+| 2526 | [Find Consecutive Integers from a Data Stream](https://leetcode.com/problems/find-consecutive-integers-from-a-data-stream/) | Hash Table | Medium | [solution](./design/2526-find-consecutive-integers-from-a-data-stream-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2526+Find+Consecutive+Integers+from+a+Data+Stream+neetcode) | ✅ Solved |
+| 2590 | [Design a Todo List 🔒](https://leetcode.com/problems/design-a-todo-list/) | Array | Medium | [solution](./design/2590-design-a-todo-list-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2590+Design+a+Todo+List+neetcode) | ✅ Solved |
+| 2642 | [Design Graph With Shortest Path Calculator](https://leetcode.com/problems/design-graph-with-shortest-path-calculator/) | Graph Theory | Hard | [solution](./design/2642-design-graph-with-shortest-path-calculator-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2642+Design+Graph+With+Shortest+Path+Calculator+neetcode) | ✅ Solved |
+| 2671 | [Frequency Tracker](https://leetcode.com/problems/frequency-tracker/) | Hash Table | Medium | [solution](./design/2671-frequency-tracker-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2671+Frequency+Tracker+neetcode) | ✅ Solved |
+| 3242 | [Design Neighbor Sum Service](https://leetcode.com/problems/design-neighbor-sum-service/) | Array | Easy | [solution](./design/3242-design-neighbor-sum-service-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3242+Design+Neighbor+Sum+Service+neetcode) | ✅ Solved |
+| 3369 | [Design an Array Statistics Tracker  🔒](https://leetcode.com/problems/design-an-array-statistics-tracker/) | Hash Table | Hard | [solution](./design/3369-design-an-array-statistics-tracker-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3369+Design+an+Array+Statistics+Tracker++neetcode) | ✅ Solved |
+| 3391 | [Design a 3D Binary Matrix with Efficient Layer Tracking 🔒](https://leetcode.com/problems/design-a-3d-binary-matrix-with-efficient-layer-tracking/) | Array | Medium | [solution](./design/3391-design-a-3d-binary-matrix-with-efficient-layer-tracking-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3391+Design+a+3D+Binary+Matrix+with+Efficient+Layer+Tracking+neetcode) | ✅ Solved |
 | 3408 | [Design Task Manager](https://leetcode.com/problems/design-task-manager/) | Hash Table | Medium | [solution](./design/3408-design-task-manager-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3408+Design+Task+Manager+neetcode) | ✅ Solved |
 | 3484 | [Design Spreadsheet](https://leetcode.com/problems/design-spreadsheet/) | Array | Medium | [solution](./design/3484-design-spreadsheet-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3484+Design+Spreadsheet+neetcode) | ✅ Solved |
 | 3508 | [Implement Router](https://leetcode.com/problems/implement-router/) | Array | Medium | [solution](./design/3508-implement-router-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3508+Implement+Router+neetcode) | ✅ Solved |
 | 3709 | [Design Exam Scores Tracker](https://leetcode.com/problems/design-exam-scores-tracker/) | Array | Medium | [solution](./design/3709-design-exam-scores-tracker-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3709+Design+Exam+Scores+Tracker+neetcode) | ✅ Solved |
 | 3815 | [Design Auction System](https://leetcode.com/problems/design-auction-system/) | Hash Table | Medium | [solution](./design/3815-design-auction-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3815+Design+Auction+System+neetcode) | ✅ Solved |
+| 3822 | [Design Order Management System 🔒](https://leetcode.com/problems/design-order-management-system/) | Hash Table | Medium | [solution](./design/3822-design-order-management-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3822+Design+Order+Management+System+neetcode) | ✅ Solved |
 | 3829 | [Design Ride Sharing System](https://leetcode.com/problems/design-ride-sharing-system/) | Hash Table | Medium | [solution](./design/3829-design-ride-sharing-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3829+Design+Ride+Sharing+System+neetcode) | ✅ Solved |
+| 3885 | [Design Event Manager](https://leetcode.com/problems/design-event-manager/) | Array | Medium | [solution](./design/3885-design-event-manager-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3885+Design+Event+Manager+neetcode) | ✅ Solved |
 
 Company tags: community-reported data from [liquidslr/leetcode-company-wise-problems](https://github.com/liquidslr/leetcode-company-wise-problems), ranked by frequency.
+
+## System Design
+
+Read the interview-oriented [system design notes](./system_design/README.md).
