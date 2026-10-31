@@ -1,0 +1,17 @@
+{
+  "intuition": "Each source node needs exactly one distinct copy, and its next and random edges must point to corresponding copies.",
+  "brute_force": {
+    "approach": "For each source node, search the list again to locate the copies of its next and random targets.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a source-to-copy dictionary, creating copies once and then wiring both pointers through the map.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A random pointer may target the same node.",
+    "A random pointer may be null."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "Because values are sorted, moving one endpoint inward changes the sum predictably.",
+  "brute_force": {
+    "approach": "Try every pair until their values sum to the target.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Start at both ends and discard the side that cannot produce the target.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "The pair may include the first or last element.",
+    "Negative values are valid inputs."
+  ]
+}

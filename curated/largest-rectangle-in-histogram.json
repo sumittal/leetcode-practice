@@ -1,0 +1,17 @@
+{
+  "intuition": "Each bar's widest rectangle ends at the first shorter bar on either side.",
+  "brute_force": {
+    "approach": "For every interval, track its minimum height and calculate its area.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Use a monotonic increasing stack of indices; when a shorter bar arrives, pop bars and finalize their maximal widths.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty histogram has area zero.",
+    "Equal-height bars must be combined to obtain their full width."
+  ]
+}

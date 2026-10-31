@@ -1,0 +1,17 @@
+{
+  "intuition": "In postfix notation, each operator combines the two most recently produced operands.",
+  "brute_force": {
+    "approach": "Repeatedly locate an operator and replace it with the result of its preceding operands.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a stack; pop the right operand before the left operand for each operator.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Division truncates toward zero rather than rounding down.",
+    "Subtraction and division are not commutative, so operand order matters."
+  ]
+}

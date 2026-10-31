@@ -1,0 +1,17 @@
+{
+  "intuition": "Each row, column, and 3-by-3 box must contain at most one copy of each digit.",
+  "brute_force": {
+    "approach": "For every filled cell, scan its row, column, and box for another copy.",
+    "time": "O(81^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Track seen digits separately for each row, column, and box while visiting filled cells once.",
+    "time": "O(81)",
+    "space": "O(81)"
+  },
+  "edge_cases": [
+    "An empty board is valid.",
+    "A duplicate may occur in a row, column, or box."
+  ]
+}

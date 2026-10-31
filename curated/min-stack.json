@@ -1,0 +1,17 @@
+{
+  "intuition": "Store each value together with the minimum up through that stack position.",
+  "brute_force": {
+    "approach": "Keep a normal stack and scan all values whenever getMin is called.",
+    "time": "O(n) for getMin; O(1) for other operations",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a parallel minimum stack so every operation, including getMin, is constant time.",
+    "time": "O(1) per operation",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Duplicate minimum values remain minimum after one copy is popped.",
+    "The operation sequence may repeatedly push and pop values."
+  ]
+}

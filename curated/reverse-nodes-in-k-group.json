@@ -1,0 +1,17 @@
+{
+  "intuition": "Reverse only complete blocks of k nodes; an incomplete suffix must remain in its original order.",
+  "brute_force": {
+    "approach": "Collect values in groups, reverse each complete group, and construct a new list.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Check that a full group exists, reverse its links in place, and connect its new head and tail to adjacent groups.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A list shorter than k remains unchanged.",
+    "The last group is left untouched when it has fewer than k nodes."
+  ]
+}

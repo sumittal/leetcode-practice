@@ -1,0 +1,17 @@
+{
+  "intuition": "A hash map locates entries while a doubly linked list keeps most- and least-recently used entries in order.",
+  "brute_force": {
+    "approach": "Store key-value pairs in a list and scan or move entries when they are accessed.",
+    "time": "O(n) per operation",
+    "space": "O(capacity)"
+  },
+  "optimal": {
+    "approach": "Combine a dictionary with a doubly linked list and sentinels so lookups, promotion, and eviction are constant time.",
+    "time": "O(1) per operation",
+    "space": "O(capacity)"
+  },
+  "edge_cases": [
+    "Updating an existing key also makes it most recently used.",
+    "Capacity one evicts the previous entry on every new key."
+  ]
+}

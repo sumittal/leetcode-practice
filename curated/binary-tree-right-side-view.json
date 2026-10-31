@@ -1,0 +1,17 @@
+{
+  "intuition": "The visible value at each depth is the last node visited at that level from left to right.",
+  "brute_force": {
+    "approach": "For every depth, search all nodes at that depth and select the rightmost one.",
+    "time": "O(nh)",
+    "space": "O(h)"
+  },
+  "optimal": {
+    "approach": "Traverse level by level with a queue and record the final node in each level.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty tree has an empty right-side view.",
+    "A right-skewed tree shows every node."
+  ]
+}

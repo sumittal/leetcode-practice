@@ -1,0 +1,17 @@
+{
+  "intuition": "A decreasing deque keeps only candidates that could still become a window maximum.",
+  "brute_force": {
+    "approach": "Take the maximum independently in every length-k slice.",
+    "time": "O(nk)",
+    "space": "O(1) besides the output"
+  },
+  "optimal": {
+    "approach": "Store candidate indices in a monotonic decreasing deque, expiring indices outside the window.",
+    "time": "O(n)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "A window of size one returns the input unchanged.",
+    "A window covering the whole array produces one maximum."
+  ]
+}

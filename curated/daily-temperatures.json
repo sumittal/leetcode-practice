@@ -1,0 +1,17 @@
+{
+  "intuition": "A warmer day resolves earlier days whose temperatures are lower.",
+  "brute_force": {
+    "approach": "For every day, scan forward to find the first higher temperature.",
+    "time": "O(n^2)",
+    "space": "O(1) besides the output"
+  },
+  "optimal": {
+    "approach": "Maintain indices of unresolved days in a decreasing-temperature stack.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A day with no warmer future day receives zero.",
+    "Equal temperatures do not resolve one another."
+  ]
+}

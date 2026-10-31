@@ -1,0 +1,17 @@
+{
+  "intuition": "For each key, timestamps are stored in increasing order, so a query is a predecessor search.",
+  "brute_force": {
+    "approach": "Keep all key-value-time records and scan matching records for the greatest eligible timestamp.",
+    "time": "O(n) per get",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store timestamp-value pairs by key and binary search for the rightmost timestamp not exceeding the query.",
+    "time": "O(log n) per get",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A key with no timestamp at or before the query returns an empty string.",
+    "A query may exactly match a stored timestamp."
+  ]
+}

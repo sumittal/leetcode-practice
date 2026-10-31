@@ -1,0 +1,17 @@
+{
+  "intuition": "A correct partition places half the combined values on each side, with every left value no greater than every right value.",
+  "brute_force": {
+    "approach": "Merge both arrays and read the middle value or average of the two middle values.",
+    "time": "O(m+n)",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Binary search a partition in the shorter array and derive the complementary partition in the other array.",
+    "time": "O(log(min(m,n)))",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "One input array may be empty.",
+    "The combined length may be odd or even."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "Feasibility is monotone: if Koko finishes at speed k, every higher speed also works.",
+  "brute_force": {
+    "approach": "Try every integer speed from one through the largest pile.",
+    "time": "O(n max(piles))",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary search the answer and sum each pile's ceiling division to test a candidate speed.",
+    "time": "O(n log(max(piles)))",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A speed equal to the largest pile handles every pile in at most one hour.",
+    "Ceiling division is needed for piles not divisible by the speed."
+  ]
+}

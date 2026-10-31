@@ -1,0 +1,17 @@
+{
+  "intuition": "A node is good when no larger value appears on the path from the root to that node.",
+  "brute_force": {
+    "approach": "For each node, walk back to the root and find the maximum value on its path.",
+    "time": "O(nh)",
+    "space": "O(h)"
+  },
+  "optimal": {
+    "approach": "Traverse once while carrying the maximum value seen on the current root-to-node path.",
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "edge_cases": [
+    "The root is always good.",
+    "Equal values to the path maximum count as good."
+  ]
+}

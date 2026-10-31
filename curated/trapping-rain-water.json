@@ -1,0 +1,17 @@
+{
+  "intuition": "Water above a bar is limited by the shorter of the tallest walls on its left and right.",
+  "brute_force": {
+    "approach": "For each index, scan both sides for their maximum heights and add the trapped depth.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Move inward from both ends while tracking the maximum wall seen on each side; the shorter side determines safe water.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Fewer than three bars trap no water.",
+    "A monotone height profile traps no water."
+  ]
+}

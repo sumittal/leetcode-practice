@@ -1,4 +1,4 @@
-from typing import Iterator, List, Optional
+from typing import List, Optional
 
 
 class TreeNode:

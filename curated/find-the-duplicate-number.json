@@ -1,0 +1,17 @@
+{
+  "intuition": "Treat each value as the next array index; the duplicate creates a cycle in this index graph.",
+  "brute_force": {
+    "approach": "Compare each value with the rest of the array to find a repeated value.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Use Floyd's slow and fast pointers to find the cycle intersection, then locate the cycle entrance.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "The duplicate can occur more than twice.",
+    "The input array must remain unmodified."
+  ]
+}

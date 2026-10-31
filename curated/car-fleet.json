@@ -1,0 +1,17 @@
+{
+  "intuition": "Cars that catch a slower car ahead become part of its fleet and share its arrival time.",
+  "brute_force": {
+    "approach": "Compute every car's arrival time and simulate catching neighboring cars in order.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Sort cars by position and scan from closest to the target, counting each new maximum arrival time.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A car already nearest the target forms the first fleet.",
+    "Cars arriving at the same time merge into one fleet."
+  ]
+}

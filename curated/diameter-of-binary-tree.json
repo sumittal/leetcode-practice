@@ -1,0 +1,17 @@
+{
+  "intuition": "At each node, the longest path turning there is the sum of its left and right subtree heights.",
+  "brute_force": {
+    "approach": "For every node, recompute both subtree heights and maximize their sum.",
+    "time": "O(n^2)",
+    "space": "O(h)"
+  },
+  "optimal": {
+    "approach": "Compute height once per node with postorder recursion while updating the best diameter in edges.",
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "edge_cases": [
+    "A single-node tree has diameter zero.",
+    "A skewed tree's diameter is its number of edges."
+  ]
+}

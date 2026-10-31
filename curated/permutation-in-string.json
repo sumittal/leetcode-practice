@@ -1,0 +1,17 @@
+{
+  "intuition": "A fixed-size window is a permutation exactly when its character counts match the pattern's counts.",
+  "brute_force": {
+    "approach": "Sort each window of the pattern's length and compare it with the sorted pattern.",
+    "time": "O((n-m+1) m log m)",
+    "space": "O(m)"
+  },
+  "optimal": {
+    "approach": "Maintain character frequencies for a window of fixed length and compare with the pattern frequencies.",
+    "time": "O(n + alphabet)",
+    "space": "O(alphabet)"
+  },
+  "edge_cases": [
+    "A pattern longer than the text cannot be contained.",
+    "Repeated characters require matching multiplicities."
+  ]
+}

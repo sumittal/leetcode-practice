@@ -1,0 +1,17 @@
+{
+  "intuition": "A valid prefix can add an opening bracket while any remain, and a closing bracket only when it will not unbalance the prefix.",
+  "brute_force": {
+    "approach": "Generate all strings of length 2n and retain those with balanced prefixes.",
+    "time": "O(2^(2n) n)",
+    "space": "O(2^(2n))"
+  },
+  "optimal": {
+    "approach": "Backtrack over only valid prefixes, tracking the number of opened and closed pairs.",
+    "time": "O(Cn)",
+    "space": "O(n) besides the output"
+  },
+  "edge_cases": [
+    "Zero pairs produce one empty string.",
+    "A closing bracket is never added before its matching opening bracket."
+  ]
+}

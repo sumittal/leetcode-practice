@@ -1,0 +1,17 @@
+{
+  "intuition": "Sorted order lets each comparison discard half of the remaining indices.",
+  "brute_force": {
+    "approach": "Scan the array until the target is found.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary search an inclusive interval and return -1 when it becomes empty.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "An empty array returns -1.",
+    "The target may be the only element."
+  ]
+}

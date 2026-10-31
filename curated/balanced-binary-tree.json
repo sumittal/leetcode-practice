@@ -1,0 +1,17 @@
+{
+  "intuition": "A tree is balanced when every subtree is balanced and its child heights differ by at most one.",
+  "brute_force": {
+    "approach": "For every node, independently compute both subtree heights and compare them.",
+    "time": "O(n^2)",
+    "space": "O(h)"
+  },
+  "optimal": {
+    "approach": "Return each subtree height bottom-up, using a sentinel value to propagate imbalance immediately.",
+    "time": "O(n)",
+    "space": "O(h)"
+  },
+  "edge_cases": [
+    "An empty tree is balanced.",
+    "A long one-sided chain is unbalanced once its height difference exceeds one."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "The row-major ordering makes the matrix behave like one sorted array.",
+  "brute_force": {
+    "approach": "Inspect each matrix value until the target is found.",
+    "time": "O(mn)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary search indices from zero to m*n-1 and map each midpoint to a row and column.",
+    "time": "O(log(mn))",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-cell matrix is either a match or a miss.",
+    "The target may be smaller than the first value or larger than the last."
+  ]
+}
