@@ -1,0 +1,18 @@
+{
+  "intuition": "The best circular subarray is either an ordinary maximum segment or the total minus a minimum segment.",
+  "brute_force": {
+    "approach": "Enumerate every circular start and length and sum its elements.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Track Kadane's maximum subarray, minimum subarray, and total sum in one pass.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A single element is its own maximum subarray.",
+    "All-negative inputs must use the ordinary maximum, not an empty wraparound.",
+    "A wrapped optimum may join a prefix and suffix."
+  ]
+}

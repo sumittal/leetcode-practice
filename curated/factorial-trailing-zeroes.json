@@ -1,0 +1,18 @@
+{
+  "intuition": "Each trailing zero needs a factor pair 2 times 5, and factorials contain more factors of 2 than 5.",
+  "brute_force": {
+    "approach": "Factor every integer from one through n and count each factor of five.",
+    "time": "O(n log n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Repeatedly divide n by five and sum the quotients to count factors contributed by powers of five.",
+    "time": "O(log_5 n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Values below five have no trailing zeros.",
+    "Multiples of 25 contribute an additional factor of five.",
+    "Zero factorial has zero trailing zeros."
+  ]
+}

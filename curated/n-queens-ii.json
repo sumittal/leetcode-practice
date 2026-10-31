@@ -1,0 +1,18 @@
+{
+  "intuition": "Place one queen per row and count only arrangements whose columns and diagonals are unused.",
+  "brute_force": {
+    "approach": "Enumerate every column permutation and reject arrangements with diagonal conflicts.",
+    "time": "O(n! * n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Backtrack row by row while tracking occupied columns and the two diagonal keys in sets.",
+    "time": "O(n!) worst case",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A one-cell board has one valid arrangement.",
+    "Boards of size two or three have no valid arrangement.",
+    "Count solutions without constructing board strings."
+  ]
+}

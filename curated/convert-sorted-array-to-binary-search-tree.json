@@ -1,0 +1,18 @@
+{
+  "intuition": "Choose a middle value as each subtree root so both recursive halves stay height-balanced.",
+  "brute_force": {
+    "approach": "Insert sorted values one at a time into a BST, then rebalance the resulting skewed tree.",
+    "time": "O(n^2) for plain insertion",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Recursively use the middle index and construct the left and right slices as subtrees.",
+    "time": "O(n)",
+    "space": "O(log n) recursion for a balanced result"
+  },
+  "edge_cases": [
+    "An empty array produces an empty tree.",
+    "One value becomes the root.",
+    "Several valid balanced shapes are acceptable; compare balance and inorder values."
+  ]
+}

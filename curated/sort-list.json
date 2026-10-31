@@ -1,0 +1,18 @@
+{
+  "intuition": "Split the linked list into halves, sort each half, then merge the sorted chains.",
+  "brute_force": {
+    "approach": "Copy node values into an array, sort them, and write them back into the list.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use top-down merge sort with slow-fast midpoint splitting and an in-place linked-list merge.",
+    "time": "O(n log n)",
+    "space": "O(log n) recursion"
+  },
+  "edge_cases": [
+    "An empty or one-node list is already sorted.",
+    "Duplicate and negative values retain correct sorted order.",
+    "The returned list reuses the original nodes."
+  ]
+}

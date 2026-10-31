@@ -1,0 +1,18 @@
+{
+  "intuition": "The insertion index is the first position whose value is not smaller than the target.",
+  "brute_force": {
+    "approach": "Scan from the beginning until reaching a value at least as large as the target.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary-search the lower bound in the sorted array.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A target below all values returns index zero.",
+    "A target above all values returns the array length.",
+    "An existing target returns its index."
+  ]
+}

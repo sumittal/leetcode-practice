@@ -1,0 +1,18 @@
+{
+  "intuition": "Count paths to each open cell by adding paths from above and from the left.",
+  "brute_force": {
+    "approach": "Recursively explore every right-and-down move unless a cell is blocked.",
+    "time": "Exponential",
+    "space": "O(m + n) recursion"
+  },
+  "optimal": {
+    "approach": "Use one DP row, clearing a cell at obstacles and accumulating paths from the left.",
+    "time": "O(m n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A blocked start or destination yields zero paths.",
+    "A single open cell has one path.",
+    "Obstacles reset the path count for all routes through that position."
+  ]
+}

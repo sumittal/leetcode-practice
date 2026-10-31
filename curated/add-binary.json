@@ -1,0 +1,18 @@
+{
+  "intuition": "Add corresponding bits from right to left while carrying overflow to the next position.",
+  "brute_force": {
+    "approach": "Parse both strings as integers, add them, and convert the result back to binary.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use two indices and a carry, appending each output bit before reversing once.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Adding zero to a binary number preserves its value.",
+    "A carry can extend the output by one leading bit.",
+    "Inputs may have different lengths."
+  ]
+}

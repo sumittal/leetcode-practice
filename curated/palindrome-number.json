@@ -1,0 +1,18 @@
+{
+  "intuition": "A nonnegative number is palindromic when its leading and trailing digits mirror each other.",
+  "brute_force": {
+    "approach": "Convert the number to text and compare it with its reversal.",
+    "time": "O(d)",
+    "space": "O(d)"
+  },
+  "optimal": {
+    "approach": "Reverse only the lower half of the digits and compare the halves.",
+    "time": "O(d)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Negative numbers are not palindromes.",
+    "A nonzero number ending in zero cannot be a palindrome.",
+    "Odd-length numbers ignore the middle digit when comparing halves."
+  ]
+}

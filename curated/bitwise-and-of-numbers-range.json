@@ -1,0 +1,18 @@
+{
+  "intuition": "Any bit that changes while counting through the interval cannot remain set in the range-wide AND.",
+  "brute_force": {
+    "approach": "AND every integer from left through right.",
+    "time": "O(right - left)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Right-shift both endpoints until their common binary prefix remains, then shift it back.",
+    "time": "O(log right)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Equal endpoints return that endpoint.",
+    "An interval crossing a power-of-two boundary clears lower common bits.",
+    "A range including zero returns zero."
+  ]
+}

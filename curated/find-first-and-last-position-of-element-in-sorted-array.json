@@ -1,0 +1,18 @@
+{
+  "intuition": "The first and last occurrences are the lower bound of target and the lower bound of target plus one, minus one.",
+  "brute_force": {
+    "approach": "Scan the full array and record the first and last matching positions.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Run two binary searches for the target's left and right boundaries.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A missing target returns [-1, -1].",
+    "A single occurrence returns the same index twice.",
+    "Duplicates spanning the array endpoints are handled by the boundary searches."
+  ]
+}

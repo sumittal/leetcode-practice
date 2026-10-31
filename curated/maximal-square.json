@@ -1,0 +1,18 @@
+{
+  "intuition": "A square ending at a cell can extend only as far as its top, left, and top-left neighbors allow.",
+  "brute_force": {
+    "approach": "Try every top-left cell and expand candidate squares while checking their borders.",
+    "time": "O(m n min(m,n)^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Use a one-dimensional DP row where each one-cell stores one plus the minimum of its three neighboring square sizes.",
+    "time": "O(m n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty matrix or one with no ones has area zero.",
+    "A one-cell matrix containing one has area one.",
+    "Track the side length and return its square."
+  ]
+}

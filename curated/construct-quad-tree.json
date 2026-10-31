@@ -1,0 +1,18 @@
+{
+  "intuition": "A uniform square becomes one leaf; otherwise split it into four equal quadrants.",
+  "brute_force": {
+    "approach": "Inspect each region cell-by-cell before recursively creating its children.",
+    "time": "O(n^2 log n) worst case",
+    "space": "O(n^2) for the tree"
+  },
+  "optimal": {
+    "approach": "Build a prefix-sum table so each region's number of ones determines uniformity in constant time.",
+    "time": "O(n^2)",
+    "space": "O(n^2) for prefix sums and output nodes"
+  },
+  "edge_cases": [
+    "A uniform grid serializes as one leaf.",
+    "A mixed 2-by-2 grid creates four leaf children.",
+    "Internal-node values are ignored by the quad-tree definition."
+  ]
+}

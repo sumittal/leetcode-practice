@@ -1,0 +1,18 @@
+{
+  "intuition": "Among projects affordable with current capital, choose the one with the highest profit.",
+  "brute_force": {
+    "approach": "For each of up to k rounds, scan all unused projects and pick the most profitable affordable one.",
+    "time": "O(k n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Sort projects by required capital and push newly affordable profits into a max-heap.",
+    "time": "O(n log n + k log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "No currently affordable project leaves capital unchanged.",
+    "Zero-profit projects may be selected without increasing capital.",
+    "Stop after k projects or when the profit heap is empty."
+  ]
+}

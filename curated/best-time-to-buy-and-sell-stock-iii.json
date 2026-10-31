@@ -1,0 +1,18 @@
+{
+  "intuition": "Track the best balance after each of at most two buys and sells as prices arrive.",
+  "brute_force": {
+    "approach": "Try every pair of nonoverlapping buy-sell intervals and keep the best combined profit.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Update four states for first buy, first sale, second buy, and second sale in one pass.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Fewer than two prices cannot yield a sale.",
+    "A decreasing price sequence yields zero profit.",
+    "The second transaction may be unused when one sale is optimal."
+  ]
+}

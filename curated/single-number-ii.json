@@ -1,0 +1,18 @@
+{
+  "intuition": "Each bit contributed by triplicated values appears a multiple of three times.",
+  "brute_force": {
+    "approach": "Count complete integer frequencies and find the value whose count is one.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Sum each of the 32 bit positions modulo three, then interpret the result as a signed 32-bit integer.",
+    "time": "O(32 n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "The unique value may be negative.",
+    "The unique value may be zero.",
+    "Sign handling must convert a set high bit back from two's-complement form."
+  ]
+}

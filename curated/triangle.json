@@ -1,0 +1,18 @@
+{
+  "intuition": "The minimum path from each cell is its value plus the cheaper reachable child below.",
+  "brute_force": {
+    "approach": "Enumerate every top-to-bottom left-or-right path and track its sum.",
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a one-dimensional bottom-up DP array and overwrite each parent with its minimum child cost.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A one-row triangle returns its only value.",
+    "Negative values are valid and may appear anywhere.",
+    "The array is updated bottom-up so both child states are still available."
+  ]
+}

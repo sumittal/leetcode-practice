@@ -1,0 +1,18 @@
+{
+  "intuition": "For each transaction count, keep the best cash balance after buying and after selling.",
+  "brute_force": {
+    "approach": "Enumerate up to k nonoverlapping buy-sell intervals and maximize their total profit.",
+    "time": "Exponential",
+    "space": "O(k)"
+  },
+  "optimal": {
+    "approach": "Update buy and sell DP states for each transaction; when k is at least n/2, sum all positive daily gains.",
+    "time": "O(n k), or O(n) in the unlimited-transactions case",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "Zero transactions or fewer than two prices yield zero.",
+    "When k >= n/2, every profitable rising segment can be captured.",
+    "A decreasing sequence remains at zero profit."
+  ]
+}

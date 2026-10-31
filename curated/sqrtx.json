@@ -1,0 +1,18 @@
+{
+  "intuition": "The integer square root is the greatest integer whose square does not exceed x.",
+  "brute_force": {
+    "approach": "Increment candidates until the next square would be too large.",
+    "time": "O(sqrt(x))",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary-search the last candidate satisfying candidate <= x // candidate.",
+    "time": "O(log x)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Zero and one are their own integer square roots.",
+    "A perfect square returns its exact root.",
+    "For non-squares, return the floor of the real square root."
+  ]
+}

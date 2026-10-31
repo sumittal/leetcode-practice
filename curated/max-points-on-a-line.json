@@ -1,0 +1,18 @@
+{
+  "intuition": "For each anchor point, points on the same line share one reduced slope.",
+  "brute_force": {
+    "approach": "Choose pairs of points, form each line, and count all points satisfying its equation.",
+    "time": "O(n^3)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "For each anchor, count gcd-reduced integer slopes and separately count duplicates.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Duplicate points add to every line through their anchor.",
+    "Vertical and horizontal slopes need canonical keys.",
+    "A single point is trivially collinear."
+  ]
+}

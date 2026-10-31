@@ -1,0 +1,18 @@
+{
+  "intuition": "The best path to a cell comes from the cheaper of the cell above and the cell to its left.",
+  "brute_force": {
+    "approach": "Recursively enumerate every right-and-down path to the bottom-right cell.",
+    "time": "Exponential in grid dimensions",
+    "space": "O(m + n) recursion"
+  },
+  "optimal": {
+    "approach": "Maintain one DP row, combining the saved value from above with the updated value from the left.",
+    "time": "O(m n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A one-cell grid returns its cell value.",
+    "Single-row and single-column grids have only one path.",
+    "Initialize the first row and column by cumulative sums."
+  ]
+}

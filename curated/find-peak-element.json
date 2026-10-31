@@ -1,0 +1,18 @@
+{
+  "intuition": "If the right neighbor is larger, some peak must exist to the right; otherwise one exists at or to the left.",
+  "brute_force": {
+    "approach": "Check each index against its neighbors and return any local maximum.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Binary-search the rising or falling side by comparing adjacent values.",
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-element array has peak index zero.",
+    "Either endpoint can be a peak.",
+    "Multiple peaks are valid; verify the returned index locally."
+  ]
+}

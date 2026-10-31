@@ -1,0 +1,18 @@
+{
+  "intuition": "Each fixed first-array value forms a sorted row of pair sums.",
+  "brute_force": {
+    "approach": "Generate every pair, sort by sum, and keep the first k.",
+    "time": "O(m n log(m n))",
+    "space": "O(m n)"
+  },
+  "optimal": {
+    "approach": "Seed a min-heap with the first pair from up to k rows; after removing a pair, add the next pair in that row.",
+    "time": "O(k log(min(k, m)))",
+    "space": "O(min(k, m))"
+  },
+  "edge_cases": [
+    "If either array is empty or k is zero, return an empty list.",
+    "If k exceeds the number of possible pairs, return every pair.",
+    "Equal sums may be returned in any order."
+  ]
+}
