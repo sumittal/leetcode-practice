@@ -1,0 +1,17 @@
+{
+  "intuition": "Each digit contributes one letter choice, so combinations are the Cartesian product of its mapped letters.",
+  "brute_force": {
+    "approach": "Build every possible prefix combination iteratively for each digit.",
+    "time": "O(4^n)",
+    "space": "O(4^n)"
+  },
+  "optimal": {
+    "approach": "Backtrack over the mapped letters for each digit and emit a string when all digits are consumed.",
+    "time": "O(4^n)",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "An empty digit string returns an empty result.",
+    "Digits 7 and 9 each map to four letters."
+  ]
+}

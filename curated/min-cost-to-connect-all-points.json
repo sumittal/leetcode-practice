@@ -1,0 +1,17 @@
+{
+  "intuition": "The minimum total connection cost is a minimum spanning tree under Manhattan distances.",
+  "brute_force": {
+    "approach": "Enumerate spanning trees and select the one with minimum total edge weight.",
+    "time": "O(n^(n-2))",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Run Prim's algorithm, repeatedly adding the closest unvisited point to the growing tree.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "One point requires no connection and costs zero.",
+    "Duplicate coordinates can be connected at zero cost."
+  ]
+}

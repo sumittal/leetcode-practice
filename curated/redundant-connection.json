@@ -1,0 +1,17 @@
+{
+  "intuition": "The extra edge is the first edge whose endpoints are already connected.",
+  "brute_force": {
+    "approach": "Remove each edge in reverse order and search whether the remaining graph stays connected.",
+    "time": "O(E(V + E))",
+    "space": "O(V + E)"
+  },
+  "optimal": {
+    "approach": "Process edges with a disjoint-set union structure and return the edge whose endpoints already share a root.",
+    "time": "O(E alpha(V))",
+    "space": "O(V)"
+  },
+  "edge_cases": [
+    "The cycle may contain all vertices.",
+    "Return the last edge in the input that closes the cycle."
+  ]
+}

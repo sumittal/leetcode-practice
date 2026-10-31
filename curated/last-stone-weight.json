@@ -1,0 +1,17 @@
+{
+  "intuition": "Repeatedly combine the two heaviest stones; a max-heap makes both available efficiently.",
+  "brute_force": {
+    "approach": "Sort the remaining stones before each collision and remove the two largest.",
+    "time": "O(n^2 log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store negated weights in a min-heap, collide the two heaviest, and reinsert their positive difference when nonzero.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "No stones or one remaining stone needs no collision.",
+    "Equal heaviest stones both disappear."
+  ]
+}

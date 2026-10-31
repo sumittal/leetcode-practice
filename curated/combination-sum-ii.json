@@ -1,0 +1,17 @@
+{
+  "intuition": "Sorted candidates allow duplicate choices to be skipped and sums that exceed the target to stop early.",
+  "brute_force": {
+    "approach": "Enumerate every subset and retain combinations whose values sum to the target.",
+    "time": "O(n 2^n)",
+    "space": "O(n) besides output"
+  },
+  "optimal": {
+    "approach": "Backtrack using each candidate at most once, skipping equal values at the same depth and pruning oversized sums.",
+    "time": "O(2^n) in the worst case",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "No subset may reach the target.",
+    "Repeated candidate values can be used only as many times as they occur."
+  ]
+}

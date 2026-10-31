@@ -1,0 +1,17 @@
+{
+  "intuition": "At most k stops permits at most k + 1 flight edges, so relax routes one edge-depth at a time.",
+  "brute_force": {
+    "approach": "Enumerate every flight route within the edge limit and choose the cheapest destination route.",
+    "time": "O(V^k)",
+    "space": "O(V)"
+  },
+  "optimal": {
+    "approach": "Apply Bellman-Ford for k + 1 rounds using a snapshot of the previous round's distances.",
+    "time": "O(kE)",
+    "space": "O(V)"
+  },
+  "edge_cases": [
+    "The destination may be unreachable within the allowed stops.",
+    "Using more stops can reduce cost, so the edge limit must be respected."
+  ]
+}

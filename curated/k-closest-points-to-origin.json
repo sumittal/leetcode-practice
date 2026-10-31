@@ -1,0 +1,17 @@
+{
+  "intuition": "Distance comparisons need only squared Euclidean distance, avoiding square roots.",
+  "brute_force": {
+    "approach": "Sort all points by squared distance and return the first k.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a max-heap of the k smallest squared distances, replacing its farthest point when a closer point arrives.",
+    "time": "O(n log k)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "A point at the origin has distance zero.",
+    "Several points may tie at the kth distance, and any valid k points may be returned."
+  ]
+}

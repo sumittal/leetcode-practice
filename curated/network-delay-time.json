@@ -1,0 +1,17 @@
+{
+  "intuition": "The delay is the longest shortest-path distance from the source to any node.",
+  "brute_force": {
+    "approach": "Run a graph traversal from the source and enumerate possible paths to every node.",
+    "time": "Exponential in the number of vertices in the worst case",
+    "space": "O(V + E)"
+  },
+  "optimal": {
+    "approach": "Use Dijkstra's algorithm with a min-heap to finalize shortest distances for nonnegative edge weights.",
+    "time": "O((V + E) log V)",
+    "space": "O(V + E)"
+  },
+  "edge_cases": [
+    "A node unreachable from the source makes the answer -1.",
+    "A one-node network has delay zero."
+  ]
+}

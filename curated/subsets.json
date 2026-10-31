@@ -1,0 +1,17 @@
+{
+  "intuition": "Each input value creates two choices for a subset: include it or leave it out.",
+  "brute_force": {
+    "approach": "Enumerate all bitmasks and include each value whose corresponding bit is set.",
+    "time": "O(n 2^n)",
+    "space": "O(n 2^n) for output"
+  },
+  "optimal": {
+    "approach": "Backtrack through the input, recording the current subset at each recursion depth.",
+    "time": "O(n 2^n)",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "An empty input produces the single empty subset.",
+    "The input values are distinct, so each subset is unique."
+  ]
+}

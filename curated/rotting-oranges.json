@@ -1,0 +1,17 @@
+{
+  "intuition": "Rotting spreads one grid step per minute from all currently rotten oranges.",
+  "brute_force": {
+    "approach": "For each minute, repeatedly scan the whole grid and rot fresh oranges adjacent to rotten ones.",
+    "time": "O((mn)^2)",
+    "space": "O(mn)"
+  },
+  "optimal": {
+    "approach": "Use multi-source BFS from all rotten oranges and measure the greatest distance needed to reach fresh ones.",
+    "time": "O(mn)",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "No fresh oranges means zero minutes.",
+    "A fresh orange unreachable from every rotten orange makes the result -1."
+  ]
+}

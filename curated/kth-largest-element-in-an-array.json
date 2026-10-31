@@ -1,0 +1,17 @@
+{
+  "intuition": "The kth-largest value is the minimum among the largest k values.",
+  "brute_force": {
+    "approach": "Sort the array and read the value k positions from the end.",
+    "time": "O(n log n)",
+    "space": "O(1) or O(n), depending on the sort"
+  },
+  "optimal": {
+    "approach": "Maintain a size-k min-heap while scanning the array; a heap gives O(n log k) worst-case time. Quickselect is O(n) on average but O(n^2) in the worst case.",
+    "time": "O(n log k) worst case",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "k may equal the array length, making the answer the minimum.",
+    "Duplicate values count as separate elements."
+  ]
+}

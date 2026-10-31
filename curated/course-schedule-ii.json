@@ -1,0 +1,17 @@
+{
+  "intuition": "A valid course order is a topological ordering of the prerequisite graph.",
+  "brute_force": {
+    "approach": "Try permutations of courses and check whether every prerequisite appears first.",
+    "time": "O(V! + E)",
+    "space": "O(V)"
+  },
+  "optimal": {
+    "approach": "Use Kahn's algorithm to repeatedly take courses with zero remaining prerequisites.",
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "edge_cases": [
+    "A directed cycle makes it impossible to finish all courses.",
+    "Multiple valid topological orders may exist."
+  ]
+}

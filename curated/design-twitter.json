@@ -1,0 +1,17 @@
+{
+  "intuition": "Store each user's recent tweets in time order and merge the followed users' streams to produce a feed.",
+  "brute_force": {
+    "approach": "Collect all tweets from the user and followed accounts, sort by time, and return the newest ten.",
+    "time": "O(T log T) per feed",
+    "space": "O(T)"
+  },
+  "optimal": {
+    "approach": "Keep per-user tweet lists and use a max-heap over their latest entries to merge only enough streams for ten results.",
+    "time": "O((F + 10) log F) per feed",
+    "space": "O(T + F)"
+  },
+  "edge_cases": [
+    "A user follows themselves implicitly.",
+    "Following or unfollowing an account does not delete its tweets."
+  ]
+}

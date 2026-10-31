@@ -1,0 +1,17 @@
+{
+  "intuition": "Use every ticket once while always choosing the smallest available destination; Hierholzer's traversal handles detours and cycles.",
+  "brute_force": {
+    "approach": "Try ticket permutations from JFK in lexical order until a route consumes every ticket.",
+    "time": "O(E!)",
+    "space": "O(E)"
+  },
+  "optimal": {
+    "approach": "Sort adjacency in reverse lexical order, run iterative Hierholzer traversal, and reverse the postorder route.",
+    "time": "O(E log E)",
+    "space": "O(E)"
+  },
+  "edge_cases": [
+    "Several tickets may share the same origin and destination.",
+    "A valid itinerary may revisit airports and contain cycles."
+  ]
+}

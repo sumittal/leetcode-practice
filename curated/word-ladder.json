@@ -1,0 +1,17 @@
+{
+  "intuition": "A shortest transformation uses one-letter changes, so breadth-first search explores words in increasing path length.",
+  "brute_force": {
+    "approach": "Compare every discovered word against every dictionary word to find one-letter neighbors.",
+    "time": "O(N^2 L)",
+    "space": "O(N)"
+  },
+  "optimal": {
+    "approach": "Build wildcard-pattern buckets and use BFS to visit each transformation level.",
+    "time": "O(N L^2)",
+    "space": "O(N L)"
+  },
+  "edge_cases": [
+    "If the end word is absent from the dictionary, no sequence can reach it.",
+    "The sequence length includes both the begin and end words."
+  ]
+}

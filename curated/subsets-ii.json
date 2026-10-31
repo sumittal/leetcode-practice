@@ -1,0 +1,17 @@
+{
+  "intuition": "Sorting groups equal values together so one recursion level can skip duplicate choices.",
+  "brute_force": {
+    "approach": "Generate all index-based subsets, then deduplicate their value sequences.",
+    "time": "O(n 2^n)",
+    "space": "O(n 2^n)"
+  },
+  "optimal": {
+    "approach": "Backtrack over sorted values and skip equal candidates at the same depth.",
+    "time": "O(n 2^n)",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "An empty input produces one empty subset.",
+    "All-equal values produce one subset for each possible length."
+  ]
+}

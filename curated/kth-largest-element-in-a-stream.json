@@ -1,0 +1,17 @@
+{
+  "intuition": "Only the largest k values can affect the kth-largest value, so keep those in a min-heap.",
+  "brute_force": {
+    "approach": "Append each new value, sort all values in descending order, and read index k - 1.",
+    "time": "O(n log n) per add",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain a min-heap of at most k values; its root is the kth-largest value seen so far.",
+    "time": "O(log k) per add after initialization",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "The initial values may contain fewer than k elements.",
+    "Repeated values occupy separate heap positions."
+  ]
+}

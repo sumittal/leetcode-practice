@@ -1,0 +1,17 @@
+{
+  "intuition": "Each connected component of land is one island, and its area is the number of visited cells.",
+  "brute_force": {
+    "approach": "For each land cell, repeatedly scan the grid to find all connected land.",
+    "time": "O((mn)^2)",
+    "space": "O(mn)"
+  },
+  "optimal": {
+    "approach": "Run DFS or BFS from each unvisited land cell and count the component's cells.",
+    "time": "O(mn)",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "An all-water grid has maximum area zero.",
+    "A single land cell forms an island of area one."
+  ]
+}

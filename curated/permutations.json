@@ -1,0 +1,17 @@
+{
+  "intuition": "A permutation is formed by choosing one unused input value at each position.",
+  "brute_force": {
+    "approach": "Generate every ordering and store the results.",
+    "time": "O(n * n!)",
+    "space": "O(n * n!) for output"
+  },
+  "optimal": {
+    "approach": "Backtrack with a used marker per index, adding and undoing one choice at each depth.",
+    "time": "O(n * n!)",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "An empty input has one empty permutation.",
+    "Distinct input values ensure each ordering is unique."
+  ]
+}

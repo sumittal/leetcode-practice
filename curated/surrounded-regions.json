@@ -1,0 +1,17 @@
+{
+  "intuition": "Only open cells connected to the border can avoid capture; all other open cells are enclosed.",
+  "brute_force": {
+    "approach": "For every open cell, search its component and determine whether it touches a border.",
+    "time": "O((mn)^2)",
+    "space": "O(mn)"
+  },
+  "optimal": {
+    "approach": "Mark open cells reachable from the border, flip unmarked open cells, and restore marked cells.",
+    "time": "O(mn)",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "A one-row or one-column board has no enclosed open region.",
+    "An open region touching any border must remain unchanged."
+  ]
+}

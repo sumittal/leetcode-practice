@@ -1,0 +1,17 @@
+{
+  "intuition": "The most frequent task determines a lower bound, with other tasks filling available cooldown slots.",
+  "brute_force": {
+    "approach": "Simulate each time unit by selecting an available task with the greatest remaining count.",
+    "time": "O(T log A)",
+    "space": "O(A)"
+  },
+  "optimal": {
+    "approach": "Count the maximum frequency and how many tasks share it, then take the larger of total tasks and the frame length imposed by that maximum.",
+    "time": "O(T + A)",
+    "space": "O(A)"
+  },
+  "edge_cases": [
+    "A zero cooldown means no idle slots are needed.",
+    "Several tasks may tie for the maximum frequency."
+  ]
+}

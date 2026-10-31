@@ -1,0 +1,17 @@
+{
+  "intuition": "A path's required water level is its highest elevation, and the goal is to minimize that maximum.",
+  "brute_force": {
+    "approach": "Enumerate paths from the top-left to the bottom-right and compare each path's highest elevation.",
+    "time": "Exponential in the grid dimensions",
+    "space": "O(mn)"
+  },
+  "optimal": {
+    "approach": "Use a min-heap to expand the lowest boundary elevation and track the greatest elevation seen along the path.",
+    "time": "O(mn log(mn))",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "A one-cell grid returns that cell's elevation.",
+    "The answer is at least the elevations of both endpoints."
+  ]
+}

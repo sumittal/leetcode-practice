@@ -1,0 +1,17 @@
+{
+  "intuition": "Choose each possible palindromic prefix, then partition the remaining suffix recursively.",
+  "brute_force": {
+    "approach": "Enumerate every cut pattern and test every resulting substring for palindromicity.",
+    "time": "O(n 2^n)",
+    "space": "O(n) besides output"
+  },
+  "optimal": {
+    "approach": "Backtrack over end indices and recurse only when the chosen substring is a palindrome.",
+    "time": "O(n 2^n)",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "An empty string has one partition containing no substrings.",
+    "A string of identical characters has a partition at every possible set of cuts."
+  ]
+}

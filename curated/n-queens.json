@@ -1,0 +1,17 @@
+{
+  "intuition": "Place one queen per row while tracking occupied columns and both diagonal directions.",
+  "brute_force": {
+    "approach": "Try every arrangement of n queen positions and reject any pair that attacks.",
+    "time": "O(n! n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Backtrack row by row and test column and diagonal sets before placing each queen.",
+    "time": "O(n!) in the common bound",
+    "space": "O(n) besides output"
+  },
+  "edge_cases": [
+    "For n = 1, the board containing one queen is the sole solution.",
+    "For n = 2 or n = 3, no valid board exists."
+  ]
+}
