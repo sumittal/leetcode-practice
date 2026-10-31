@@ -1,0 +1,17 @@
+{
+  "intuition": "A prefix of the result is valid if its last character can come from either source string after a valid earlier prefix.",
+  "brute_force": {
+    "approach": "Recursively try matching the next result character against either source string.",
+    "time": "O(2^(m+n))",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Use a rolling one-dimensional DP over the second string, updating each state from the prior row or current row's left neighbor.",
+    "time": "O(mn)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The combined lengths must equal the result length.",
+    "Either source string may be empty."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "If a route segment runs out of gas, none of its stations can be the valid start for that segment.",
+  "brute_force": {
+    "approach": "Simulate a full circuit starting from each station.",
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Track total net gas and the current candidate segment; restart the candidate after any negative running balance.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "If total gas is below total cost, no full circuit is possible.",
+    "A single station is valid when its gas covers its cost."
+  ]
+}

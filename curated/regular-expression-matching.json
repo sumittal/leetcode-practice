@@ -1,0 +1,17 @@
+{
+  "intuition": "A literal or dot consumes one matching character, while a star can either erase its preceding token or repeat it.",
+  "brute_force": {
+    "approach": "Recursively branch over each matching token and all valid repetition counts for stars.",
+    "time": "Exponential",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Use prefix DP; for star, combine the zero-occurrence state two pattern positions back with a one-more-match state in the same star column.",
+    "time": "O(mn)",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "An empty string matches only patterns reducible to empty through star pairs.",
+    "A dot matches any one character, but a star modifies only its preceding token."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "When queries are processed in sorted order, every interval that can contain the current query is available to compare by length.",
+  "brute_force": {
+    "approach": "For every query, scan every interval and select the shortest one containing it.",
+    "time": "O(nq)",
+    "space": "O(q)"
+  },
+  "optimal": {
+    "approach": "Sort intervals and indexed queries, maintain eligible intervals in a min-heap by length, and store answers at original query indices.",
+    "time": "O((n+q) log(n+q))",
+    "space": "O(n+q)"
+  },
+  "edge_cases": [
+    "A query outside all intervals returns -1.",
+    "Unsorted queries must retain their original answer positions."
+  ]
+}

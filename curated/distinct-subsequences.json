@@ -1,0 +1,17 @@
+{
+  "intuition": "Each source character can be skipped, or matched to the next needed target character.",
+  "brute_force": {
+    "approach": "Recursively choose whether each source position participates in a matching subsequence.",
+    "time": "O(2^m)",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Count ways for each target prefix in one dimension, scanning target positions backward so a source character is used once.",
+    "time": "O(mn)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The empty target has one matching subsequence.",
+    "A target longer than the source has zero matches."
+  ]
+}

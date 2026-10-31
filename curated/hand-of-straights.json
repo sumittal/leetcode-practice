@@ -1,0 +1,17 @@
+{
+  "intuition": "Every group must begin at the smallest card still remaining, and its consecutive values must have enough copies.",
+  "brute_force": {
+    "approach": "Try possible groups recursively and backtrack over which cards they consume.",
+    "time": "Exponential",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Count cards and process distinct starting values from a min-heap, subtracting each required consecutive group.",
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The hand size must be divisible by the group size.",
+    "Repeated card values are consumed according to their multiplicity."
+  ]
+}

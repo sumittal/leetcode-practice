@@ -1,0 +1,17 @@
+{
+  "intuition": "Only a suffix of nines changes; the first earlier non-nine digit absorbs the carry.",
+  "brute_force": {
+    "approach": "Convert all digits to an integer, add one, and convert back to digits.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Walk backward, zeroing nines until a digit can be incremented; prepend one if carry remains.",
+    "time": "O(n)",
+    "space": "O(1) extra apart from output"
+  },
+  "edge_cases": [
+    "A non-nine final digit increments directly.",
+    "An all-nine number grows by one digit."
+  ]
+}

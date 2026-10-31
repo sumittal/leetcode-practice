@@ -1,0 +1,17 @@
+{
+  "intuition": "For a query point, choose a stored point sharing its x-coordinate; the other two corners are fixed by the vertical side length.",
+  "brute_force": {
+    "approach": "Enumerate all point triples and test whether they form an axis-aligned square with the query.",
+    "time": "O(P^3) per count",
+    "space": "O(P)"
+  },
+  "optimal": {
+    "approach": "Count duplicate coordinates and enumerate same-x points, multiplying the multiplicities of the three required corners.",
+    "time": "O(P) per count",
+    "space": "O(P)"
+  },
+  "edge_cases": [
+    "Duplicate points increase the number of distinct point selections.",
+    "A square requires a nonzero vertical side and either horizontal direction."
+  ]
+}

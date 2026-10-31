@@ -1,0 +1,17 @@
+{
+  "intuition": "Transforming prefixes requires either a matching final character or one insert, delete, or replace operation.",
+  "brute_force": {
+    "approach": "Recursively try all three edits at each pair of mismatching suffix characters.",
+    "time": "Exponential",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Build prefix edit distances row by row, retaining only the previous row and current row.",
+    "time": "O(mn)",
+    "space": "O(min(m,n))"
+  },
+  "edge_cases": [
+    "Transforming an empty string requires one insertion per target character.",
+    "Equal strings require zero edits."
+  ]
+}

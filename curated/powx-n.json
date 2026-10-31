@@ -1,0 +1,17 @@
+{
+  "intuition": "Binary exponentiation squares the base and consumes one exponent bit at a time.",
+  "brute_force": {
+    "approach": "Multiply by x once for each positive exponent step, or divide repeatedly for a negative exponent.",
+    "time": "O(|n|)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Use exponentiation by squaring and invert the base when the exponent is negative.",
+    "time": "O(log |n|)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Exponent zero returns one.",
+    "A negative exponent returns the reciprocal of the corresponding positive power."
+  ]
+}

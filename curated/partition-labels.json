@@ -1,0 +1,17 @@
+{
+  "intuition": "A partition can end only after the final occurrence of every character seen so far.",
+  "brute_force": {
+    "approach": "Try every cut and verify that no character appears on both sides.",
+    "time": "O(n^2)",
+    "space": "O(1) for a fixed alphabet"
+  },
+  "optimal": {
+    "approach": "Precompute each character's last index and close a partition when the scan reaches the current farthest last occurrence.",
+    "time": "O(n)",
+    "space": "O(1) for a fixed alphabet"
+  },
+  "edge_cases": [
+    "A character occurring only once can form a one-character partition.",
+    "If every character repeats across the string, the result may be one partition."
+  ]
+}

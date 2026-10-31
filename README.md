@@ -15,9 +15,9 @@ python3 fetch_problems.py --index-only
 
 ## Overall Progress
 
-- Easy: 24/24 solved
-- Hard: 16/16 solved
-- Medium: 85/85 solved
+- Easy: 28/28 solved
+- Hard: 21/21 solved
+- Medium: 101/101 solved
 
 ## Blind 75
 
@@ -111,9 +111,9 @@ python3 fetch_problems.py --index-only
 
 ### Progress
 
-- Easy: 5/5 solved
-- Hard: 9/9 solved
-- Medium: 36/36 solved
+- Easy: 9/9 solved
+- Hard: 14/14 solved
+- Medium: 52/52 solved
 
 ### Problems
 
@@ -121,46 +121,68 @@ python3 fetch_problems.py --index-only
 | ---: | --- | --- | --- | --- | --- | --- |
 | 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Linked List | Medium | [solution](./neetcode_150/0002-add-two-numbers-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=wgFPrzTjm7s) | ✅ Solved |
 | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Binary Search | Hard | [solution](./neetcode_150/0004-median-of-two-sorted-arrays-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=q6IEA26hvXc) | ✅ Solved |
+| 7 | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Bit Manipulation | Medium | [solution](./neetcode_150/0007-reverse-integer-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=HAgLH58IgJQ) | ✅ Solved |
+| 10 | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) | 2-D Dynamic Programming | Hard | [solution](./neetcode_150/0010-regular-expression-matching-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=HAA8mgxlov8) | ✅ Solved |
 | 17 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Backtracking | Medium | [solution](./neetcode_150/0017-letter-combinations-of-a-phone-number-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=0snEunUacZY) | ✅ Solved |
 | 22 | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | Stack | Medium | [solution](./neetcode_150/0022-generate-parentheses-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=s9fokUqJ76A) | ✅ Solved |
 | 25 | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | Linked List | Hard | [solution](./neetcode_150/0025-reverse-nodes-in-k-group-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=1UOPsfP85V4) | ✅ Solved |
 | 36 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Arrays & Hashing | Medium | [solution](./neetcode_150/0036-valid-sudoku-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=TjFXEUCMqI8) | ✅ Solved |
 | 40 | [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) | Backtracking | Medium | [solution](./neetcode_150/0040-combination-sum-ii-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=rSA3t6BDDwg) | ✅ Solved |
 | 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Two Pointers | Hard | [solution](./neetcode_150/0042-trapping-rain-water-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ZI2z5pq0TqA) | ✅ Solved |
+| 43 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | Math & Geometry | Medium | [solution](./neetcode_150/0043-multiply-strings-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=1vZswirL8Y8) | ✅ Solved |
+| 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | Greedy | Medium | [solution](./neetcode_150/0045-jump-game-ii-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=dJ7sWiOoK7g) | ✅ Solved |
 | 46 | [Permutations](https://leetcode.com/problems/permutations/) | Backtracking | Medium | [solution](./neetcode_150/0046-permutations-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=s7AvT7cGdSo) | ✅ Solved |
+| 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Math & Geometry | Medium | [solution](./neetcode_150/0050-powx-n-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=g9YQyYi4IQQ) | ✅ Solved |
 | 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | Backtracking | Hard | [solution](./neetcode_150/0051-n-queens-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Ph95IHmRp5M) | ✅ Solved |
+| 66 | [Plus One](https://leetcode.com/problems/plus-one/) | Math & Geometry | Easy | [solution](./neetcode_150/0066-plus-one-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=jIaA8boiG1s) | ✅ Solved |
+| 72 | [Edit Distance](https://leetcode.com/problems/edit-distance/) | 2-D Dynamic Programming | Medium | [solution](./neetcode_150/0072-edit-distance-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=XYi2-LPrwm4) | ✅ Solved |
 | 74 | [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | Binary Search | Medium | [solution](./neetcode_150/0074-search-a-2d-matrix-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Ber2pi2C0j0) | ✅ Solved |
 | 78 | [Subsets](https://leetcode.com/problems/subsets/) | Backtracking | Medium | [solution](./neetcode_150/0078-subsets-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=REOH22Xwdkk) | ✅ Solved |
 | 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Stack | Hard | [solution](./neetcode_150/0084-largest-rectangle-in-histogram-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=zx5Sw9130L0) | ✅ Solved |
 | 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | Backtracking | Medium | [solution](./neetcode_150/0090-subsets-ii-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Vn2v6ajA7U0) | ✅ Solved |
+| 97 | [Interleaving String](https://leetcode.com/problems/interleaving-string/) | 2-D Dynamic Programming | Medium | [solution](./neetcode_150/0097-interleaving-string-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=3Rw3p9LrgvE) | ✅ Solved |
 | 110 | [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) | Trees | Easy | [solution](./neetcode_150/0110-balanced-binary-tree-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=QfJsau0ItOY) | ✅ Solved |
+| 115 | [Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/) | 2-D Dynamic Programming | Hard | [solution](./neetcode_150/0115-distinct-subsequences-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=-RDzMJ33nx8) | ✅ Solved |
 | 127 | [Word Ladder](https://leetcode.com/problems/word-ladder/) | Graphs | Hard | [solution](./neetcode_150/0127-word-ladder-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=h9iTnkgv05E) | ✅ Solved |
 | 130 | [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) | Graphs | Medium | [solution](./neetcode_150/0130-surrounded-regions-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=9z2BunfoZ5Y) | ✅ Solved |
 | 131 | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) | Backtracking | Medium | [solution](./neetcode_150/0131-palindrome-partitioning-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=3jvWodd7ht0) | ✅ Solved |
+| 134 | [Gas Station](https://leetcode.com/problems/gas-station/) | Greedy | Medium | [solution](./neetcode_150/0134-gas-station-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=lJwbPZGo05A) | ✅ Solved |
+| 136 | [Single Number](https://leetcode.com/problems/single-number/) | Bit Manipulation | Easy | [solution](./neetcode_150/0136-single-number-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=qMPX1AOa83k) | ✅ Solved |
 | 138 | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) | Linked List | Medium | [solution](./neetcode_150/0138-copy-list-with-random-pointer-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=5Y2EiZST97Y) | ✅ Solved |
 | 146 | [LRU Cache](https://leetcode.com/problems/lru-cache/) | Linked List | Medium | [solution](./neetcode_150/0146-lru-cache-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=7ABFKPK2hD4) | ✅ Solved |
 | 150 | [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Stack | Medium | [solution](./neetcode_150/0150-evaluate-reverse-polish-notation-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=iu0082c4HDE) | ✅ Solved |
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack/) | Stack | Medium | [solution](./neetcode_150/0155-min-stack-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=qkLl7nAwDPo) | ✅ Solved |
 | 167 | [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Two Pointers | Medium | [solution](./neetcode_150/0167-two-sum-ii-input-array-is-sorted-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=cQ1Oz4ckceM) | ✅ Solved |
 | 199 | [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | Trees | Medium | [solution](./neetcode_150/0199-binary-tree-right-side-view-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=d4zLyf32e3I) | ✅ Solved |
+| 202 | [Happy Number](https://leetcode.com/problems/happy-number/) | Math & Geometry | Easy | [solution](./neetcode_150/0202-happy-number-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ljz85bxOYJ0) | ✅ Solved |
 | 210 | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Graphs | Medium | [solution](./neetcode_150/0210-course-schedule-ii-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Akt3glAwyfY) | ✅ Solved |
 | 215 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) | Heap / Priority Queue | Medium | [solution](./neetcode_150/0215-kth-largest-element-in-an-array-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=XEmy13g1Qxc) | ✅ Solved |
 | 239 | [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | Sliding Window | Hard | [solution](./neetcode_150/0239-sliding-window-maximum-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=DfljaUwZsOk) | ✅ Solved |
 | 286 | [Walls and Gates 🔒](https://leetcode.com/problems/walls-and-gates/) | Graphs | Medium | [solution](./neetcode_150/0286-walls-and-gates-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=e69C6xhiSQE) | ✅ Solved |
 | 287 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Linked List | Medium | [solution](./neetcode_150/0287-find-the-duplicate-number-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=wjYnzkAhcNk) | ✅ Solved |
+| 309 | [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | 2-D Dynamic Programming | Medium | [solution](./neetcode_150/0309-best-time-to-buy-and-sell-stock-with-cooldown-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=I7j0F7AHpb8) | ✅ Solved |
+| 312 | [Burst Balloons](https://leetcode.com/problems/burst-balloons/) | 2-D Dynamic Programming | Hard | [solution](./neetcode_150/0312-burst-balloons-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=VFskby7lUbw) | ✅ Solved |
+| 329 | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | 2-D Dynamic Programming | Hard | [solution](./neetcode_150/0329-longest-increasing-path-in-a-matrix-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=wCc_nd-GiEc) | ✅ Solved |
 | 332 | [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/) | Advanced Graphs | Hard | [solution](./neetcode_150/0332-reconstruct-itinerary-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ZyB_gQ8vqGA) | ✅ Solved |
 | 355 | [Design Twitter](https://leetcode.com/problems/design-twitter/) | Heap / Priority Queue | Medium | [solution](./neetcode_150/0355-design-twitter-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=pNichitDD2E) | ✅ Solved |
+| 416 | [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) | 1-D Dynamic Programming | Medium | [solution](./neetcode_150/0416-partition-equal-subset-sum-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=IsvocB5BJhw) | ✅ Solved |
+| 494 | [Target Sum](https://leetcode.com/problems/target-sum/) | 2-D Dynamic Programming | Medium | [solution](./neetcode_150/0494-target-sum-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=g0npyaQtAQM) | ✅ Solved |
+| 518 | [Coin Change II](https://leetcode.com/problems/coin-change-ii/) | 2-D Dynamic Programming | Medium | [solution](./neetcode_150/0518-coin-change-ii-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Mjy4hd2xgrs) | ✅ Solved |
 | 543 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | Trees | Easy | [solution](./neetcode_150/0543-diameter-of-binary-tree-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=bkxqA8Rfv04) | ✅ Solved |
 | 567 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | Sliding Window | Medium | [solution](./neetcode_150/0567-permutation-in-string-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=UbyhOgBN834) | ✅ Solved |
 | 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler/) | Heap / Priority Queue | Medium | [solution](./neetcode_150/0621-task-scheduler-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=s8p8ukTyA2I) | ✅ Solved |
+| 678 | [Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/) | Greedy | Medium | [solution](./neetcode_150/0678-valid-parenthesis-string-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=QhPdNS143Qg) | ✅ Solved |
 | 684 | [Redundant Connection](https://leetcode.com/problems/redundant-connection/) | Graphs | Medium | [solution](./neetcode_150/0684-redundant-connection-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=FXWRE67PLL0) | ✅ Solved |
 | 695 | [Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | Graphs | Medium | [solution](./neetcode_150/0695-max-area-of-island-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=iJGr1OtmH0c) | ✅ Solved |
 | 703 | [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Heap / Priority Queue | Easy | [solution](./neetcode_150/0703-kth-largest-element-in-a-stream-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=hOjcdrqMoQ8) | ✅ Solved |
 | 704 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | Easy | [solution](./neetcode_150/0704-binary-search-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=s4DPM8ct1pI) | ✅ Solved |
 | 739 | [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | Stack | Medium | [solution](./neetcode_150/0739-daily-temperatures-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=cTBiBSnjO3c) | ✅ Solved |
 | 743 | [Network Delay Time](https://leetcode.com/problems/network-delay-time/) | Advanced Graphs | Medium | [solution](./neetcode_150/0743-network-delay-time-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=EaphyqKU4PQ) | ✅ Solved |
+| 746 | [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | 1-D Dynamic Programming | Easy | [solution](./neetcode_150/0746-min-cost-climbing-stairs-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ktmzAZWkEZ0) | ✅ Solved |
+| 763 | [Partition Labels](https://leetcode.com/problems/partition-labels/) | Greedy | Medium | [solution](./neetcode_150/0763-partition-labels-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=B7m8UmZE-vw) | ✅ Solved |
 | 778 | [Swim in Rising Water](https://leetcode.com/problems/swim-in-rising-water/) | Advanced Graphs | Hard | [solution](./neetcode_150/0778-swim-in-rising-water-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=amvrKlMLuGY) | ✅ Solved |
 | 787 | [Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/) | Advanced Graphs | Medium | [solution](./neetcode_150/0787-cheapest-flights-within-k-stops-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=5eIK3zUdYmE) | ✅ Solved |
+| 846 | [Hand of Straights](https://leetcode.com/problems/hand-of-straights/) | Greedy | Medium | [solution](./neetcode_150/0846-hand-of-straights-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=amnrMCVd2YI) | ✅ Solved |
 | 853 | [Car Fleet](https://leetcode.com/problems/car-fleet/) | Stack | Medium | [solution](./neetcode_150/0853-car-fleet-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Pr6T-3yB9RM) | ✅ Solved |
 | 875 | [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) | Binary Search | Medium | [solution](./neetcode_150/0875-koko-eating-bananas-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=U2SozAs9RzA) | ✅ Solved |
 | 973 | [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | Heap / Priority Queue | Medium | [solution](./neetcode_150/0973-k-closest-points-to-origin-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=rI2EBUEMfTk) | ✅ Solved |
@@ -169,3 +191,6 @@ python3 fetch_problems.py --index-only
 | 1046 | [Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | Heap / Priority Queue | Easy | [solution](./neetcode_150/1046-last-stone-weight-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=B-QCq79-Vfw) | ✅ Solved |
 | 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | Trees | Medium | [solution](./neetcode_150/1448-count-good-nodes-in-binary-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=7cp5imvDzl4) | ✅ Solved |
 | 1584 | [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/) | Advanced Graphs | Medium | [solution](./neetcode_150/1584-min-cost-to-connect-all-points-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=f7JOBJIC-NA) | ✅ Solved |
+| 1851 | [Minimum Interval to Include Each Query](https://leetcode.com/problems/minimum-interval-to-include-each-query/) | Intervals | Hard | [solution](./neetcode_150/1851-minimum-interval-to-include-each-query-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=5hQ5WWW5awQ) | ✅ Solved |
+| 1899 | [Merge Triplets to Form Target Triplet](https://leetcode.com/problems/merge-triplets-to-form-target-triplet/) | Greedy | Medium | [solution](./neetcode_150/1899-merge-triplets-to-form-target-triplet-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=kShkQLQZ9K4) | ✅ Solved |
+| 2013 | [Detect Squares](https://leetcode.com/problems/detect-squares/) | Math & Geometry | Medium | [solution](./neetcode_150/2013-detect-squares-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=bahebearrDc) | ✅ Solved |

@@ -1,0 +1,17 @@
+{
+  "intuition": "Choosing plus or minus signs is equivalent to choosing a subset with a derived target sum.",
+  "brute_force": {
+    "approach": "Recursively assign either sign to every number and count assignments reaching the target.",
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Convert to subset sum (total + target) / 2 and count subsets with a one-dimensional DP updated downward.",
+    "time": "O(n * total)",
+    "space": "O(total)"
+  },
+  "edge_cases": [
+    "A target outside the absolute total or with incompatible parity has zero assignments.",
+    "A zero-valued element doubles every existing assignment count."
+  ]
+}

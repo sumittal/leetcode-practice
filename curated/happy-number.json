@@ -1,0 +1,17 @@
+{
+  "intuition": "Repeated digit-square sums either reach one or enter a cycle that excludes one.",
+  "brute_force": {
+    "approach": "Continue computing digit-square sums without recording previously seen values.",
+    "time": "Unbounded without cycle detection",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Track values already seen and stop when the sequence reaches one or repeats.",
+    "time": "O(log n) per distinct sequence value",
+    "space": "O(log n) distinct values"
+  },
+  "edge_cases": [
+    "One is happy immediately.",
+    "A repeated non-one value proves the sequence is in a cycle."
+  ]
+}

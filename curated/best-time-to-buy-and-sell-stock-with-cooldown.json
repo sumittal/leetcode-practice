@@ -1,0 +1,17 @@
+{
+  "intuition": "The best future choice depends on whether the previous day ended holding, sold, or resting.",
+  "brute_force": {
+    "approach": "Recursively choose to buy, sell, or wait while tracking whether a cooldown day is required.",
+    "time": "O(3^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track hold, sold, and rest profits with constant-size rolling state; only rest may transition to buying.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "One price provides no completed transaction.",
+    "After selling, the next day must pass before another purchase."
+  ]
+}

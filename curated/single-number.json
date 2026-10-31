@@ -1,0 +1,17 @@
+{
+  "intuition": "XOR cancels equal pairs and leaves the one value that occurs once.",
+  "brute_force": {
+    "approach": "Count occurrences and return the value with frequency one.",
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "XOR every value into one accumulator; duplicate pairs contribute zero.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-element array returns that element.",
+    "Negative values are handled by the same XOR cancellation property."
+  ]
+}

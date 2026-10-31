@@ -1,0 +1,17 @@
+{
+  "intuition": "Two equal-sum groups exist exactly when some subset totals half of the array sum.",
+  "brute_force": {
+    "approach": "Enumerate all subsets and test whether any reaches half the total.",
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a one-dimensional subset-sum table and scan sums downward so each number is used at most once.",
+    "time": "O(n * target)",
+    "space": "O(target)"
+  },
+  "edge_cases": [
+    "An odd total cannot be divided into equal integer sums.",
+    "A value larger than half the total cannot be part of a target-sum subset."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "To land on a step, pay its cost after reaching one of the previous two steps; the top itself is free.",
+  "brute_force": {
+    "approach": "Recursively try one-step and two-step moves from each starting position.",
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep the minimum costs to reach the two previous indices and roll them forward.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Either of the first two steps may be chosen without paying for the other.",
+    "The destination is beyond the last indexed stair, so its cost is not charged."
+  ]
+}

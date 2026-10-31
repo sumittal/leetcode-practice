@@ -1,0 +1,17 @@
+{
+  "intuition": "Treat every index reachable in the current jump count as one layer and find the next layer's farthest boundary.",
+  "brute_force": {
+    "approach": "Use DP to try every reachable next index from each position.",
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Scan each greedy reachability layer once, extending its farthest endpoint and counting a jump at each boundary.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A one-element array needs zero jumps.",
+    "The problem guarantees the last index is reachable."
+  ]
+}

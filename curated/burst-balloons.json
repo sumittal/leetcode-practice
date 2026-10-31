@@ -1,0 +1,17 @@
+{
+  "intuition": "For an interval, choose which balloon is popped last; its neighbors are then fixed interval boundaries.",
+  "brute_force": {
+    "approach": "Try every possible next balloon to pop and recursively solve the remaining array.",
+    "time": "O(n!)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Pad the array with boundary ones and use interval DP, selecting the last balloon popped between each pair of boundaries.",
+    "time": "O(n^3)",
+    "space": "O(n^2)"
+  },
+  "edge_cases": [
+    "No balloons yields zero coins.",
+    "The padded boundary balloons are never burst."
+  ]
+}

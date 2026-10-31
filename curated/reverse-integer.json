@@ -1,0 +1,17 @@
+{
+  "intuition": "Build the reversed magnitude digit by digit, then apply the original sign and check the required 32-bit range.",
+  "brute_force": {
+    "approach": "Reverse the decimal string representation and parse it as a signed integer.",
+    "time": "O(log |x|)",
+    "space": "O(log |x|)"
+  },
+  "optimal": {
+    "approach": "Extract digits arithmetically and return zero if the signed result lies outside the 32-bit range.",
+    "time": "O(log |x|)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Trailing zeroes become leading zeroes and disappear from the result.",
+    "Either positive or negative overflow returns zero."
+  ]
+}

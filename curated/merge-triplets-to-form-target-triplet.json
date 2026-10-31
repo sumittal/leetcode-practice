@@ -1,0 +1,17 @@
+{
+  "intuition": "A triplet with any coordinate above the target can never be used in a coordinate-wise maximum.",
+  "brute_force": {
+    "approach": "Try every subset of triplets and compute its coordinate-wise maximum.",
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Ignore overshooting triplets and record which target coordinates are matched by the remaining candidates.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "One target coordinate may be supplied by a different triplet than the others.",
+    "A candidate exceeding even one target coordinate must be ignored."
+  ]
+}

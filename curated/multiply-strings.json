@@ -1,0 +1,17 @@
+{
+  "intuition": "Each digit product contributes to two neighboring positions in the decimal result array.",
+  "brute_force": {
+    "approach": "Convert both strings to arbitrary-precision integers, multiply, and stringify.",
+    "time": "O(mn) arithmetic for digit-length multiplication",
+    "space": "O(m+n)"
+  },
+  "optimal": {
+    "approach": "Multiply digit pairs into a result array and propagate carries without converting either full input.",
+    "time": "O(mn)",
+    "space": "O(m+n)"
+  },
+  "edge_cases": [
+    "If either input is zero, the product is the string zero.",
+    "Leading zero positions in the result array must not appear in the returned string."
+  ]
+}

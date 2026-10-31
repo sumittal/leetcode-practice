@@ -1,0 +1,17 @@
+{
+  "intuition": "The strictly increasing rule makes the matrix a directed acyclic graph of moves toward larger neighbors.",
+  "brute_force": {
+    "approach": "Start a fresh DFS from every cell without caching repeated suffix paths.",
+    "time": "Exponential in the number of cells",
+    "space": "O(mn) recursion in the worst case"
+  },
+  "optimal": {
+    "approach": "Memoize the longest increasing path starting at each cell and recurse only to larger four-directional neighbors.",
+    "time": "O(mn)",
+    "space": "O(mn)"
+  },
+  "edge_cases": [
+    "A single-cell matrix has path length one.",
+    "A constant-valued matrix has no increasing move."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "A star can be left as empty, treated as an opening parenthesis, or treated as a closing one.",
+  "brute_force": {
+    "approach": "Recursively try all three interpretations of every star and check balance.",
+    "time": "O(3^n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track the minimum and maximum possible open-parenthesis counts after each prefix.",
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A prefix with no possible nonnegative balance is invalid.",
+    "An empty string is balanced."
+  ]
+}
