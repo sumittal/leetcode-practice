@@ -1,0 +1,17 @@
+{
+  "intuition": "A match differs at exactly one position, so equal-length words can be compared position by position.",
+  "brute_force": {
+    "approach": "Compare the query against every stored word and count character mismatches.",
+    "time": "search O(number of words * L)",
+    "space": "O(total dictionary characters)"
+  },
+  "optimal": {
+    "approach": "Index words by a wildcard pattern at each character position, retaining the character removed at that position.",
+    "time": "buildDict O(total characters), search O(L) expected",
+    "space": "O(total characters)"
+  },
+  "edge_cases": [
+    "A candidate must have the same length as the query.",
+    "An exact word match is not sufficient unless another character differs."
+  ]
+}

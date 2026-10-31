@@ -1,0 +1,17 @@
+{
+  "intuition": "Lock ownership is local, while an upgrade only needs to inspect the target's ancestors and descendants.",
+  "brute_force": {
+    "approach": "For every operation, scan all tree nodes to discover parent and descendant locks.",
+    "time": "lock/unlock O(1), upgrade O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store child adjacency and lock owners; walk ancestors upward and traverse only the target subtree for upgrades.",
+    "time": "lock/unlock O(1), upgrade O(subtree size + height)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Upgrade fails if the target is already locked or an ancestor is locked.",
+    "Upgrade requires at least one locked descendant and clears all such locks."
+  ]
+}

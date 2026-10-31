@@ -1,0 +1,17 @@
+{
+  "intuition": "Each booking changes overlap only at its start and end boundaries.",
+  "brute_force": {
+    "approach": "Compare the new booking against all earlier bookings and count every active overlap.",
+    "time": "book O(n^2)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store a difference count at each boundary and scan sorted boundaries to obtain the current maximum.",
+    "time": "book O(n log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Bookings use half-open intervals, so touching endpoints do not overlap.",
+    "The returned maximum never decreases."
+  ]
+}

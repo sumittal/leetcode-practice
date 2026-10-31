@@ -49,7 +49,7 @@ if __name__ == "__main__":
         [[], [1], [2], [3], [4], [300], [300], [301]],
     ) == [None, None, None, None, 3, None, 4, 3]
     assert replay(
-        ["HitCounter", "hit", "hit", "getHits", "getHits"],
-        [[], [1], [1], [301], [300]],
-    ) == [None, None, None, 0, 0]
+        ["HitCounter", "hit", "hit", "hit", "getHits", "getHits"],
+        [[], [1], [1], [2], [300], [301]],
+    ) == [None, None, None, None, 3, 1]
     print("All tests passed")

@@ -1,0 +1,17 @@
+{
+  "intuition": "The leading candidate after each vote remains the leader until another candidate passes or ties its count.",
+  "brute_force": {
+    "approach": "For every query, count all votes up to its time and find the most recent leader.",
+    "time": "construction O(n), q O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Precompute the leader at each vote time and binary-search the last vote not later than the query.",
+    "time": "construction O(n), q O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A vote tied for the maximum makes that voter the current leader.",
+    "Queries occur at or after the first vote time."
+  ]
+}

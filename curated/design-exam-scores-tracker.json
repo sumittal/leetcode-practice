@@ -1,0 +1,17 @@
+{
+  "intuition": "Chronological records allow prefix sums and binary search to isolate any inclusive time range.",
+  "brute_force": {
+    "approach": "Scan every recorded exam and sum scores whose times fall in the requested interval.",
+    "time": "record O(1), totalScore O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store exam times and cumulative scores; use lower and upper bounds to subtract the prefix before the range.",
+    "time": "record O(1), totalScore O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "No exam in the inclusive interval yields zero.",
+    "The first exam may be the only record in the queried interval."
+  ]
+}

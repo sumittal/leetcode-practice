@@ -1,0 +1,18 @@
+{
+  "description": "Store a matrix that supports changing one cell and querying an inclusive rectangular sum. Example 1: for [[3,0,1],[5,6,3]], the sum of rows 0–1 and columns 0–2 is 18. Example 2: after changing cell (0,1) to 2, a query over row 0 and columns 1–2 returns 3. Constraints: the matrix is nonempty and updates and queries stay within its bounds.",
+  "intuition": "A two-dimensional Fenwick tree supports point deltas and prefix sums without rebuilding a full prefix matrix.",
+  "brute_force": {
+    "approach": "Store the matrix and scan every cell in each requested rectangle.",
+    "time": "update O(1), sumRegion O(rows * columns)",
+    "space": "O(rows * columns)"
+  },
+  "optimal": {
+    "approach": "Maintain current values and a 2D Fenwick tree; combine four prefix sums for a rectangle.",
+    "time": "update O(log rows * log columns), sumRegion O(log rows * log columns)",
+    "space": "O(rows * columns)"
+  },
+  "edge_cases": [
+    "Updating a cell to its existing value has zero delta.",
+    "A one-cell query returns the current value at that cell."
+  ]
+}

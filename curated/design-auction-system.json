@@ -1,0 +1,17 @@
+{
+  "intuition": "A per-item max-heap can expose the highest bid, while a current-state map identifies obsolete heap records.",
+  "brute_force": {
+    "approach": "Store each item's bids and scan all active bidders for the maximum on every query.",
+    "time": "add/update/remove O(1), getHighestBidder O(bidders)",
+    "space": "O(bids)"
+  },
+  "optimal": {
+    "approach": "Keep current bid versions by item and user, and push versioned negative-priority records into item heaps.",
+    "time": "add/update/remove O(log n), getHighestBidder O(log n) amortized",
+    "space": "O(bids + updates)"
+  },
+  "edge_cases": [
+    "Equal bid amounts choose the greatest user ID.",
+    "An item with no active bids returns -1."
+  ]
+}

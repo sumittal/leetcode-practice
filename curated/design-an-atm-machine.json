@@ -1,0 +1,17 @@
+{
+  "intuition": "For an exact withdrawal, try available banknotes from largest denomination downward.",
+  "brute_force": {
+    "approach": "Enumerate combinations of all five note counts until one sums to the amount.",
+    "time": "Exponential in the available note counts",
+    "space": "O(1) auxiliary"
+  },
+  "optimal": {
+    "approach": "Greedily take as many notes as possible from each denomination, then commit only if the remainder reaches zero.",
+    "time": "deposit O(1), withdraw O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "An impossible amount returns [-1] and leaves inventory unchanged.",
+    "A valid withdrawal consumes exactly the selected note counts."
+  ]
+}

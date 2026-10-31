@@ -1,0 +1,18 @@
+{
+  "description": "Manage a fixed range of phone numbers and always assign the smallest unused number. Example 1: with capacity two, successive get calls return 0 and 1, and the next returns -1. Example 2: after releasing 0, the next get returns 0 again. Constraints: allocated numbers are in [0, maxNumbers), and release may be repeated.",
+  "intuition": "A pointer covers numbers never issued, while a min-heap orders explicitly released numbers.",
+  "brute_force": {
+    "approach": "Scan the whole number range for the smallest free number on each get.",
+    "time": "get O(n), check/release O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track the next never-used number, a min-heap of released numbers, and a set preventing duplicate releases.",
+    "time": "get/release O(log n), check O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "get returns -1 when every number is assigned.",
+    "Releasing an already free number does not create duplicate availability."
+  ]
+}

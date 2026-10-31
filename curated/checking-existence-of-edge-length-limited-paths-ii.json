@@ -1,0 +1,18 @@
+{
+  "description": "Preprocess a weighted undirected graph so queries can test whether two vertices are connected using only edges strictly below a limit. Example 1: with edges 0-1 of weight 2 and 1-2 of weight 5, query(0,2,6) is true. Example 2: query(0,2,5) is false because the weight-5 edge is not strictly below the limit. Constraints: the graph has up to 10^5 vertices and edges, and paths are undirected.",
+  "intuition": "A minimum spanning forest preserves the minimum possible bottleneck between every connected pair.",
+  "brute_force": {
+    "approach": "Run a limited-edge graph search for every query.",
+    "time": "query O(n + m)",
+    "space": "O(n + m)"
+  },
+  "optimal": {
+    "approach": "Build a minimum spanning forest, preprocess binary-lifting ancestors with maximum edge weights, and test the path bottleneck.",
+    "time": "construction O(m log m + n log n), query O(log n)",
+    "space": "O(n log n + m)"
+  },
+  "edge_cases": [
+    "A vertex is connected to itself by an empty path.",
+    "An edge equal to the limit is not allowed in the path."
+  ]
+}

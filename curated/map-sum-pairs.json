@@ -1,0 +1,17 @@
+{
+  "intuition": "Every prefix node can cache the total value of keys passing through it.",
+  "brute_force": {
+    "approach": "Store key values and scan all keys that start with the requested prefix.",
+    "time": "insert O(1), sum O(n * L)",
+    "space": "O(total key characters)"
+  },
+  "optimal": {
+    "approach": "Use a trie with prefix sums and apply only the value delta when a key is overwritten.",
+    "time": "insert O(L), sum O(L)",
+    "space": "O(total key characters)"
+  },
+  "edge_cases": [
+    "Inserting an existing key replaces its previous contribution.",
+    "An absent prefix has sum zero."
+  ]
+}

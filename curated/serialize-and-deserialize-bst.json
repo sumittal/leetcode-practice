@@ -1,0 +1,17 @@
+{
+  "intuition": "BST ordering allows a preorder traversal to encode the tree without explicit null markers.",
+  "brute_force": {
+    "approach": "Serialize every child pointer with null markers, then rebuild the exact shape using generic binary-tree traversal.",
+    "time": "serialize O(n), deserialize O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store preorder values and reconstruct by attaching each value to the most recent smaller ancestor; unique BST values preserve the original shape.",
+    "time": "serialize O(n), deserialize O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An empty tree serializes to an empty string.",
+    "A one-sided BST must retain the same shape after decoding."
+  ]
+}

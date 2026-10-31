@@ -1,0 +1,17 @@
+{
+  "intuition": "The next insertion point is the earliest level-order node missing a child.",
+  "brute_force": {
+    "approach": "Search the tree from the root for the first incomplete node on every insertion.",
+    "time": "insert O(n), initialization O(1)",
+    "space": "O(1) extra"
+  },
+  "optimal": {
+    "approach": "Maintain a queue of nodes with fewer than two children and fill them from the front.",
+    "time": "insert O(1), initialization O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The parent returned by insert is the node that receives the new child.",
+    "The root object remains the same throughout insertions."
+  ]
+}

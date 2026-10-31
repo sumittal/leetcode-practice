@@ -1,0 +1,17 @@
+{
+  "intuition": "A booking is valid exactly when it overlaps no already double-booked time.",
+  "brute_force": {
+    "approach": "Recompute the overlap count over every event boundary for each tentative booking.",
+    "time": "book O(n^2)",
+    "space": "O(n^2)"
+  },
+  "optimal": {
+    "approach": "Store accepted bookings and their pairwise overlap intervals; reject any request intersecting an existing overlap.",
+    "time": "book O(n) per booking",
+    "space": "O(n^2) overlap intervals in the worst case"
+  },
+  "edge_cases": [
+    "Touching half-open intervals do not overlap.",
+    "A rejected booking must not modify either stored list."
+  ]
+}

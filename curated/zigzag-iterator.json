@@ -1,0 +1,18 @@
+{
+  "description": "Iterate over two lists by alternating available values while preserving each list's order. Example 1: [1, 2] and [3, 4, 5, 6] produce 1, 3, 2, 4, 5, 6. Example 2: [1] and an empty list produce only 1. Constraints: each input list contains integers and the total number of calls is finite.",
+  "intuition": "A queue of active iterators naturally cycles across lists and drops exhausted ones.",
+  "brute_force": {
+    "approach": "Materialize the complete alternating output before returning any value.",
+    "time": "construction O(n + m), next O(1), hasNext O(1)",
+    "space": "O(n + m)"
+  },
+  "optimal": {
+    "approach": "Queue iterators with remaining elements; pop one, consume a value, then append it again if it is still active.",
+    "time": "next O(1), hasNext O(1)",
+    "space": "O(k) iterators"
+  },
+  "edge_cases": [
+    "Either input list may be empty.",
+    "Once one iterator is exhausted, the other continues alone."
+  ]
+}

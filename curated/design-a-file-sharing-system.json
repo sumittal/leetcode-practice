@@ -1,0 +1,18 @@
+{
+  "description": "Track users who own numbered chunks on a shared server. Example 1: users join owning [1, 2] and [2, 3]; a request for chunk 2 returns both owners in ascending user-ID order. Example 2: after the first user leaves, its chunks have no owners until another user uploads or requests them. Constraints: chunk IDs lie in the server's fixed range, users receive reusable positive IDs, and request results are sorted.",
+  "intuition": "Both directions of the ownership relation are needed: a user must release all its chunks, and a chunk request must list all owners.",
+  "brute_force": {
+    "approach": "Store each user's chunks and scan all users whenever a chunk owner list is requested.",
+    "time": "join O(chunks), leave O(chunks + users), request O(users)",
+    "space": "O(total ownership pairs)"
+  },
+  "optimal": {
+    "approach": "Maintain user-to-chunk and chunk-to-user sets, plus a min-heap of reusable user IDs.",
+    "time": "join O(chunks + log users), leave O(chunks + log users), request O(owners log owners)",
+    "space": "O(total ownership pairs + users)"
+  },
+  "edge_cases": [
+    "A user requesting an already-owned chunk does not duplicate ownership.",
+    "A request returns current owners before adding the requester."
+  ]
+}

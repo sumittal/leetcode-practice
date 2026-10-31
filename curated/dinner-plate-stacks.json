@@ -1,0 +1,17 @@
+{
+  "intuition": "Push targets the leftmost non-full stack, while pop targets the rightmost non-empty stack.",
+  "brute_force": {
+    "approach": "Scan all stacks from the appropriate end for each push or pop.",
+    "time": "push/pop O(number of stacks)",
+    "space": "O(total values)"
+  },
+  "optimal": {
+    "approach": "Use min- and max-heaps of candidate stack indices with lazy removal of stale candidates.",
+    "time": "push/pop/popAtStack O(log n) amortized",
+    "space": "O(total values + stacks)"
+  },
+  "edge_cases": [
+    "Empty trailing stacks do not affect the rightmost pop.",
+    "Popping from an empty stack index returns -1."
+  ]
+}

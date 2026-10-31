@@ -1,0 +1,17 @@
+{
+  "intuition": "Matching always consumes the oldest active rider and oldest available driver.",
+  "brute_force": {
+    "approach": "Store riders and drivers in lists and remove matched or canceled entries by search.",
+    "time": "add O(1), match/cancel O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use FIFO deques and an active-rider set; skip canceled riders lazily when they reach the front.",
+    "time": "add/cancel O(1), match O(1) amortized",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A match is unavailable unless both queues contain an active entry.",
+    "Canceling a rider already matched has no effect."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "Each cuisine needs its best current food, with food name as the tie breaker.",
+  "brute_force": {
+    "approach": "Scan every food in a cuisine whenever its highest-rated item is requested.",
+    "time": "changeRating O(1), highestRated O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep current ratings in maps and use a heap per cuisine; discard heap entries whose rating is stale.",
+    "time": "changeRating O(log n), highestRated O(log n) amortized",
+    "space": "O(n + updates)"
+  },
+  "edge_cases": [
+    "Equal ratings choose the lexicographically smaller food name.",
+    "Changing a rating updates only the food's cuisine heap."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Keep timestamped log identifiers and return those in a requested inclusive time span at one of six granularities. Example 1: after recording two logs in January and one in February, a January-month query returns the first two IDs in time order. Example 2: a query restricted to one second returns only logs whose timestamp has that exact second. Constraints: timestamps use the fixed YYYY:MM:DD:HH:MM:SS layout, IDs are unique, and granularity is Year, Month, Day, Hour, Minute, or Second.",
+  "intuition": "A fixed timestamp format makes prefix comparison sufficient to truncate the requested granularity.",
+  "brute_force": {
+    "approach": "Store every log and scan all records on each retrieval.",
+    "time": "put O(1), retrieve O(n log n) to return chronological IDs",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep records ordered by timestamp, compare the relevant timestamp prefixes, and emit matching IDs in order.",
+    "time": "put O(n), retrieve O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Both endpoints are inclusive at the selected granularity.",
+    "Several logs may share one timestamp."
+  ]
+}

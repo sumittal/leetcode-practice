@@ -1,0 +1,17 @@
+{
+  "intuition": "The structure only needs the number of covered points, not the history of every interval insertion.",
+  "brute_force": {
+    "approach": "Store all inserted intervals and merge or enumerate them whenever a count is requested.",
+    "time": "add O(n log n), count O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a dynamic segment tree over the bounded integer domain; each node stores covered length and skips fully covered segments.",
+    "time": "add O(log U) for the fixed coordinate domain in typical tree updates, count O(1)",
+    "space": "O(q log U)"
+  },
+  "edge_cases": [
+    "Adding a fully covered range does not change the total.",
+    "Inclusive interval endpoints contribute right - left + 1 points."
+  ]
+}

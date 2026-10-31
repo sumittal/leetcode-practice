@@ -1,0 +1,17 @@
+{
+  "intuition": "All range-wide operations form one affine transform modulo the prime, so old values can be normalized against it.",
+  "brute_force": {
+    "approach": "Apply every add and multiply operation to every stored element.",
+    "time": "append O(1), addAll/multAll O(n), getIndex O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store values in the inverse of the current multiplier and keep lazy multiplier/addition terms; reset the active epoch on multiplication by zero.",
+    "time": "append O(log MOD), addAll O(1), multAll O(1), getIndex O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Multiplication by zero resets every earlier element to the current affine offset.",
+    "Indices beyond the sequence length return -1."
+  ]
+}

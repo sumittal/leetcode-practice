@@ -1,0 +1,17 @@
+{
+  "intuition": "Inheritance order is preorder over birth-ordered children, skipping people who have died but not their descendants.",
+  "brute_force": {
+    "approach": "Reconstruct the family order from all birth and death events for every query.",
+    "time": "getInheritanceOrder O(events + people)",
+    "space": "O(events)"
+  },
+  "optimal": {
+    "approach": "Store each person's children in birth order and a set of deceased names, then run preorder traversal.",
+    "time": "birth/death O(1), getInheritanceOrder O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A deceased ancestor's living descendants remain in the order.",
+    "A person appears at most once even if they have multiple descendants."
+  ]
+}

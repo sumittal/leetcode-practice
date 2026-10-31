@@ -1,0 +1,17 @@
+{
+  "intuition": "The next available seat is always the smallest available number.",
+  "brute_force": {
+    "approach": "Scan every seat from one to n for each reservation.",
+    "time": "reserve O(n), unreserve O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a min-heap for returned seats and a pointer for seats never reserved before.",
+    "time": "reserve O(log n), unreserve O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Returned seats must be chosen before untouched higher seat numbers.",
+    "The manager never reserves a seat twice concurrently."
+  ]
+}

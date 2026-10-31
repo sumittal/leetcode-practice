@@ -1,0 +1,17 @@
+{
+  "intuition": "A cursor marks the first ID not yet emitted from the stream.",
+  "brute_force": {
+    "approach": "After each insertion, scan the entire buffer from the beginning to find the next contiguous chunk.",
+    "time": "insert O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store values by ID and advance one cursor while the next ID has arrived.",
+    "time": "insert O(k) for the newly released chunk",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An insertion after a gap returns an empty list.",
+    "Several buffered values may be emitted when a gap is filled."
+  ]
+}

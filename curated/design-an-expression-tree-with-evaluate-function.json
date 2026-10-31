@@ -1,0 +1,18 @@
+{
+  "description": "Build an expression tree from postfix tokens and evaluate its arithmetic operators. Example 1: postfix [3, 4, +, 2, *] builds a tree evaluating to 14. Example 2: [5, 2, -] evaluates to 3. Constraints: tokens form a valid expression, operators are +, -, *, or /, and division truncates toward zero.",
+  "intuition": "Postfix operands are ready before their operator, so a stack can assemble each operator node.",
+  "brute_force": {
+    "approach": "Parse and evaluate postfix tokens directly whenever the expression is requested.",
+    "time": "build/evaluate O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Build the tree in one stack pass and evaluate recursively from its root.",
+    "time": "buildTree O(n), evaluate O(n)",
+    "space": "O(n) tree plus O(h) evaluation stack"
+  },
+  "edge_cases": [
+    "A one-token expression is a leaf node.",
+    "Subtraction and division preserve left/right operand order."
+  ]
+}

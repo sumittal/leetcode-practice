@@ -1,0 +1,17 @@
+{
+  "intuition": "A query can be answered directly when every prefix/suffix pair maps to its latest word index.",
+  "brute_force": {
+    "approach": "Scan words backward until one matches both the requested prefix and suffix.",
+    "time": "f O(n * L)",
+    "space": "O(total characters)"
+  },
+  "optimal": {
+    "approach": "Precompute every word prefix/suffix combination and overwrite its map entry as indices increase.",
+    "time": "construction O(n * L^2), f O(1)",
+    "space": "O(n * L^2)"
+  },
+  "edge_cases": [
+    "Empty prefix and suffix match every word.",
+    "If several words match, return the greatest input index."
+  ]
+}

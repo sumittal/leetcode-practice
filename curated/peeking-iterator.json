@@ -1,0 +1,17 @@
+{
+  "intuition": "Buffering one upcoming value lets peek inspect it without advancing the underlying iterator.",
+  "brute_force": {
+    "approach": "Copy all values from the iterator into a list before supporting lookahead.",
+    "time": "construction O(n), peek/next/hasNext O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a single cached value and refill it from the wrapped iterator only when needed.",
+    "time": "peek O(1), next O(1), hasNext O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "Repeated peek calls return the same cached item.",
+    "next is called only when hasNext is true."
+  ]
+}

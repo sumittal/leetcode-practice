@@ -1,0 +1,17 @@
+{
+  "intuition": "Each table needs a monotonically increasing row ID and a sparse mapping of currently stored rows.",
+  "brute_force": {
+    "approach": "Store rows in arrays and scan each table to locate requested IDs or export rows.",
+    "time": "ins O(1), rmv/sel O(n), exp O(n)",
+    "space": "O(all inserted rows)"
+  },
+  "optimal": {
+    "approach": "Map table names to column counts, row-ID dictionaries, and next IDs; sort live row IDs only for export.",
+    "time": "ins/rmv/sel O(1) expected, exp O(r log r)",
+    "space": "O(live rows + table metadata)"
+  },
+  "edge_cases": [
+    "Removing a row does not reuse its ID.",
+    "Invalid tables, row lengths, and cells follow the specified false or <null> results."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "For one value, its sorted occurrence indices let us count appearances inside a range with two binary searches.",
+  "brute_force": {
+    "approach": "Inspect every array position from left through right for each query.",
+    "time": "construction O(n), query O(range length)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Index each value's positions and subtract lower-bound indices for the inclusive query endpoints.",
+    "time": "construction O(n), query O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A value absent from the range returns zero.",
+    "Both left and right positions are included."
+  ]
+}

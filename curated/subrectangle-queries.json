@@ -1,0 +1,17 @@
+{
+  "intuition": "A value lookup needs only the most recent update covering its cell.",
+  "brute_force": {
+    "approach": "Apply each rectangle update to every covered cell immediately.",
+    "time": "update O(area), getValue O(1)",
+    "space": "O(rows * columns)"
+  },
+  "optimal": {
+    "approach": "Keep the original matrix and append rectangle updates; inspect updates newest-first for a lookup.",
+    "time": "update O(1), getValue O(number of updates)",
+    "space": "O(rows * columns + updates)"
+  },
+  "edge_cases": [
+    "Rectangle endpoints are inclusive.",
+    "A cell untouched by all updates retains its original value."
+  ]
+}

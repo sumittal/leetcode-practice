@@ -1,0 +1,17 @@
+{
+  "intuition": "Search and report each need only the cheapest five current records, while updates are easiest to validate lazily.",
+  "brute_force": {
+    "approach": "Scan every shop copy for a movie and every rented copy for each query, then sort.",
+    "time": "search/report O(n log n), rent/drop O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep availability heaps per movie and one rented heap, with a current rented-state map to discard stale heap entries.",
+    "time": "rent/drop O(log n), search/report O(k log n) amortized for k returned items",
+    "space": "O(n + updates)"
+  },
+  "edge_cases": [
+    "Search returns at most five unrented shops.",
+    "Price ties sort by shop, then rented reports also by movie ID."
+  ]
+}

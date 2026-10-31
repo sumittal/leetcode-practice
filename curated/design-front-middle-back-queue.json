@@ -1,0 +1,17 @@
+{
+  "intuition": "Two balanced deques make the logical middle adjacent to one of their ends.",
+  "brute_force": {
+    "approach": "Use one list and shift values for middle insertions and removals.",
+    "time": "middle operations O(n), end operations O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a left half and right half with the left side equal in size or one element larger.",
+    "time": "all operations O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "For an even number of values, the middle is the left-middle element.",
+    "Popping from an empty queue returns -1."
+  ]
+}

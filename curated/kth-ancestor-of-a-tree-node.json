@@ -1,0 +1,17 @@
+{
+  "intuition": "Repeated parent jumps can be composed into powers of two.",
+  "brute_force": {
+    "approach": "Follow the parent pointer once for every requested ancestor step.",
+    "time": "construction O(n), getKthAncestor O(k)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Precompute binary-lifting ancestors and combine entries for the set bits of k.",
+    "time": "construction O(n log n), getKthAncestor O(log n)",
+    "space": "O(n log n)"
+  },
+  "edge_cases": [
+    "A missing parent remains -1 through all higher jumps.",
+    "k equal to zero returns the queried node."
+  ]
+}

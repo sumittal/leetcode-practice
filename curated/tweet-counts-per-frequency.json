@@ -1,0 +1,17 @@
+{
+  "intuition": "Each query partitions an inclusive time range into fixed-width buckets and counts timestamps in each bucket.",
+  "brute_force": {
+    "approach": "Store every tweet timestamp and scan all records for each requested bucket.",
+    "time": "recordTweet O(1), getTweetCountsPerFrequency O(n + buckets)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep sorted timestamps per tweet and use binary-search boundaries to count each bucket.",
+    "time": "recordTweet O(n), query O(buckets log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The final bucket may be shorter than the selected frequency.",
+    "Buckets with no tweets still appear with count zero."
+  ]
+}

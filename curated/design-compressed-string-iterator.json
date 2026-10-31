@@ -1,0 +1,18 @@
+{
+  "description": "Iterate lazily through a string encoded as repeated character/count pairs. Example 1: the encoding A2B1 yields A, A, B, then a space after exhaustion. Example 2: a run count of zero contributes no output, and an exhausted iterator still returns a space. Constraints: characters are letters, counts are nonnegative decimal integers, and the encoding is valid.",
+  "intuition": "Only the current run and its remaining count are needed to produce the next character.",
+  "brute_force": {
+    "approach": "Expand every run into a complete string before serving iterator calls.",
+    "time": "construction O(expanded length), next O(1)",
+    "space": "O(expanded length)"
+  },
+  "optimal": {
+    "approach": "Parse run pairs once and advance through them only when the current count is exhausted.",
+    "time": "construction O(encoded length), next O(1) amortized, hasNext O(1)",
+    "space": "O(number of runs)"
+  },
+  "edge_cases": [
+    "A run count may contain multiple digits.",
+    "next returns a single space when no characters remain."
+  ]
+}

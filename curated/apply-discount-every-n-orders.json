@@ -1,0 +1,17 @@
+{
+  "intuition": "The discount depends only on the number of completed bills, not on earlier cart contents.",
+  "brute_force": {
+    "approach": "Store all past bills and recount qualifying orders before pricing each new one.",
+    "time": "getBill O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map product IDs to prices, sum the requested quantities, and apply the discount on every nth call.",
+    "time": "getBill O(cart size)",
+    "space": "O(products)"
+  },
+  "edge_cases": [
+    "Only every nth order receives the percentage discount.",
+    "A cart can contain multiple different products."
+  ]
+}

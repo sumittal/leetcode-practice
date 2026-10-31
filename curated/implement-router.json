@@ -1,0 +1,18 @@
+{
+  "intuition": "Packets arrive in timestamp order and leave in FIFO order, so each destination's active timestamps are also ordered.",
+  "brute_force": {
+    "approach": "Keep active packets in a list and scan it to count packets for each destination/time range.",
+    "time": "addPacket O(n), forwardPacket O(n), getCount O(n)",
+    "space": "O(memoryLimit)"
+  },
+  "optimal": {
+    "approach": "Use a FIFO queue and duplicate set, plus per-destination sorted timestamp histories with a head offset for active packets.",
+    "time": "addPacket O(1) amortized, forwardPacket O(1) amortized, getCount O(log n)",
+    "space": "O(memoryLimit) active packets plus amortized compact histories"
+  },
+  "edge_cases": [
+    "A duplicate is rejected before any capacity eviction.",
+    "A full router evicts its oldest packet before appending a valid new one.",
+    "getCount includes both time-range endpoints."
+  ]
+}

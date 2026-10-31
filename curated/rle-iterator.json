@@ -1,0 +1,17 @@
+{
+  "intuition": "Each run stores a remaining count and one repeated value, so skips can consume whole runs.",
+  "brute_force": {
+    "approach": "Expand the entire run-length encoding into an array and index into it.",
+    "time": "construction O(total expanded length), next O(1)",
+    "space": "O(total expanded length)"
+  },
+  "optimal": {
+    "approach": "Track the current run and subtract requested consumption until the final consumed value is found.",
+    "time": "next O(number of runs crossed), construction O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A request that consumes beyond the stream returns -1.",
+    "A request may end exactly at a run boundary."
+  ]
+}

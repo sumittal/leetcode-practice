@@ -1,0 +1,17 @@
+{
+  "intuition": "A new value can only create or join an interval next to its insertion point.",
+  "brute_force": {
+    "approach": "Store every value and sort and regroup the entire set for each interval request.",
+    "time": "addNum O(1), getIntervals O(n log n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep sorted, disjoint intervals and merge the predecessor and successor when adjacent.",
+    "time": "addNum O(n) due to list insertion, getIntervals O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Adding an existing value leaves intervals unchanged.",
+    "A value may bridge two adjacent intervals into one."
+  ]
+}

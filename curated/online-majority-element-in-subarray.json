@@ -1,0 +1,17 @@
+{
+  "intuition": "A majority candidate can be composed from segment summaries and then verified using its sorted occurrence positions.",
+  "brute_force": {
+    "approach": "Count every value in the requested subarray and return one meeting the threshold.",
+    "time": "query O(range length)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Build a segment tree of Boyer-Moore candidate/balance pairs and verify the candidate with binary-searched positions.",
+    "time": "construction O(n), query O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A candidate is returned only if its actual frequency reaches threshold.",
+    "If no candidate qualifies, return -1."
+  ]
+}

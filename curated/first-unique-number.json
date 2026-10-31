@@ -1,0 +1,18 @@
+{
+  "description": "Maintain a stream of numbers and report its earliest value that has appeared exactly once. Example 1: initialize with [2, 3, 5]; the first unique is 2, then after adding 2 it becomes 3. Example 2: after adding 3 and then 5, the remaining first unique values progress to 5 and then -1. Constraints: stream values are positive integers and operations are interleaved.",
+  "intuition": "Counts identify duplicates, while a queue preserves arrival order among possible unique values.",
+  "brute_force": {
+    "approach": "After every insertion, recount the entire stream in order.",
+    "time": "add O(n), showFirstUnique O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track frequencies and lazily discard non-unique values from the front of an arrival deque.",
+    "time": "add O(1), showFirstUnique O(1) amortized",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The stream may contain no unique value, in which case return -1.",
+    "A value that becomes duplicated stays out of the unique queue."
+  ]
+}

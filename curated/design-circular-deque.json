@@ -1,0 +1,17 @@
+{
+  "intuition": "A fixed array with a head index and size can expose both ends without shifting values.",
+  "brute_force": {
+    "approach": "Use a list and insert or remove at either end, shifting elements when needed.",
+    "time": "front insertion/deletion O(n), other operations O(1)",
+    "space": "O(k)"
+  },
+  "optimal": {
+    "approach": "Use a circular array and compute the rear index from head and size.",
+    "time": "all operations O(1)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "A zero-size deque is not allowed by the constraints.",
+    "Deleting the last value makes both front and rear report empty."
+  ]
+}

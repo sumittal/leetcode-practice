@@ -1,0 +1,17 @@
+{
+  "intuition": "A query asks whether any stored word is a suffix of the stream, so reading both words and stream backward shares useful prefixes.",
+  "brute_force": {
+    "approach": "Append each letter and compare the accumulated suffix against every word.",
+    "time": "query O(number of words times maximum word length)",
+    "space": "O(stream length)"
+  },
+  "optimal": {
+    "approach": "Store reversed words in a trie and traverse at most the longest word length from a bounded history deque.",
+    "time": "query O(maximum word length), construction O(total word characters)",
+    "space": "O(total word characters + maximum word length)"
+  },
+  "edge_cases": [
+    "A word may match immediately after one query.",
+    "The retained history never needs to exceed the longest dictionary word."
+  ]
+}

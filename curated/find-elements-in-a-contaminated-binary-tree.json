@@ -1,0 +1,17 @@
+{
+  "intuition": "Recovered values follow a deterministic rule from each node's parent value.",
+  "brute_force": {
+    "approach": "Recover the whole tree and search it from the root for every target.",
+    "time": "construction O(n), find O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Recover all values once into a set and use constant-time membership checks.",
+    "time": "construction O(n), find O(1) expected",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The root is recovered as value zero.",
+    "A target absent from the tree returns false."
+  ]
+}
