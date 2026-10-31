@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Greedy  
+**Companies:** Nike, Nielsen, HashedIn, Navi, Mastercard, Adobe, Shopee, Amazon, Zoho, Bloomberg, Infosys, Microsoft, Google, Turing, Morgan Stanley (+16 more)  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/jump-game/](https://leetcode.com/problems/jump-game/)
 

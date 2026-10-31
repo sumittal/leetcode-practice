@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Divide and Conquer, Bit Manipulation  
+**Companies:** Qualcomm, Nvidia, Airbnb, Apple, Anduril, Amazon, Google, Bloomberg, Meta, Microsoft  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/reverse-bits/](https://leetcode.com/problems/reverse-bits/)
 

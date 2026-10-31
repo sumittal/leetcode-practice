@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Hash Table  
+**Companies:** Google, Amazon, Microsoft, Bloomberg, tcs, Infosys, Adobe, Accenture, EPAM Systems, SAP, Capgemini, Yahoo, Wipro, HCL, Intel (+98 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
 

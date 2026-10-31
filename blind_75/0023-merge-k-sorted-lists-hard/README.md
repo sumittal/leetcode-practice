@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Linked List, Divide and Conquer, Heap (Priority Queue), Merge Sort, Tournament Sort  
+**Companies:** Deloitte, Netskope, Cohesity, X, FreshWorks, IXL, Disney, oyo, Nvidia, Rivian, Moloco, Oracle, Meta, Rippling, Cloudflare (+31 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/merge-k-sorted-lists/](https://leetcode.com/problems/merge-k-sorted-lists/)
 

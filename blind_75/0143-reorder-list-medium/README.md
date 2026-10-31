@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Linked List, Two Pointers, Stack, Recursion  
+**Companies:** Arista Networks, Bloomberg, Snap, Amazon, Morgan Stanley, TikTok, Microsoft, Meta, tcs, Google, Apple, Infosys, LinkedIn  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/reorder-list/](https://leetcode.com/problems/reorder-list/)
 

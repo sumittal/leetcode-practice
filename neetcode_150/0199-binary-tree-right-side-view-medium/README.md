@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Tree, Depth-First Search, Breadth-First Search, Binary Tree  
+**Companies:** Wix, Meta, Oracle, TikTok, Yandex, Amazon, ServiceNow, Uber, ByteDance, Accenture, Bloomberg, Microsoft, Google, Apple  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/binary-tree-right-side-view/](https://leetcode.com/problems/binary-tree-right-side-view/)
 

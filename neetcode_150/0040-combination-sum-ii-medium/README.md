@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Backtracking  
+**Companies:** Rakuten, Snap, Morgan Stanley, Adobe, Walmart Labs, Zoho, Meta, Microsoft, Bloomberg, LinkedIn, Oracle, TikTok, Google, Amazon, Salesforce  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/combination-sum-ii/](https://leetcode.com/problems/combination-sum-ii/)
 

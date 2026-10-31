@@ -4,6 +4,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Union-Find, Graph Theory  
+**Companies:** Zenefits, Snowflake, LinkedIn, Google, Meta, Uber, Microsoft  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/graph-valid-tree/](https://leetcode.com/problems/graph-valid-tree/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, String, Sorting  
+**Companies:** Avito, blinkit, Smartsheet, Adobe, Yelp, Workday, Zoho, HashedIn, Okta, Nike, Wissen Technology, Disney, DP world, Sigmoid, Squarepoint Capital (+60 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
 

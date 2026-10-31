@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Backtracking, Knapsack Problem, 0-1 Knapsack  
+**Companies:** Myntra, Pinterest, Nuro, ServiceNow, Meta, Amazon, Google, Microsoft, Bloomberg  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/target-sum/](https://leetcode.com/problems/target-sum/)
 

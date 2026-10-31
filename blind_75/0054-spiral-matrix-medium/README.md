@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Matrix, Simulation  
+**Companies:** Wissen Technology, RBC, Zoho, Epic Systems, PornHub, eBay, Capital One, AMD, TikTok, josh technology, The Trade Desk, tcs, NetApp, Apple, Cisco (+27 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/spiral-matrix/](https://leetcode.com/problems/spiral-matrix/)
 

@@ -4,6 +4,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Two Pointers, Greedy, Sorting, Heap (Priority Queue), Prefix Sum  
+**Companies:** Snap, WorldQuant, FreshWorks, Disney, TikTok, Waymo, Wise, Netflix, Docusign, Compass, Atlassian, Oracle, Wells Fargo, Bloomberg, Apple (+25 more)  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/meeting-rooms-ii/](https://leetcode.com/problems/meeting-rooms-ii/)
 

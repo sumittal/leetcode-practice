@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Tree, Depth-First Search, Binary Search Tree, Binary Tree  
+**Companies:** Wix, Millennium, Bloomberg, Asana, Yahoo, Microsoft, Amazon, Expedia, Lyft, Meta, Citadel, Oracle, Google, Salesforce, IBM (+4 more)  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/validate-binary-search-tree/](https://leetcode.com/problems/validate-binary-search-tree/)
 

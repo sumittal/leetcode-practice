@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Knapsack Problem, Complete Knapsack  
+**Companies:** Mastercard, PornHub, Infosys, Google, DE Shaw, Amazon, TikTok, Microsoft, Salesforce, Bloomberg, Meta, Apple  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/coin-change-ii/](https://leetcode.com/problems/coin-change-ii/)
 

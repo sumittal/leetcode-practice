@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Union-Find, Graph Theory  
+**Companies:** Box, Google, Bloomberg, Amazon, Oracle, Meta, Microsoft  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/redundant-connection/](https://leetcode.com/problems/redundant-connection/)
 

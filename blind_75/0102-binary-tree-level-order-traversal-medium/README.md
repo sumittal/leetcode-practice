@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Tree, Breadth-First Search, Binary Tree  
+**Companies:** Palo Alto Networks, Bloomberg, Apple, Amazon, Microsoft, Meta, josh technology, LinkedIn, Oracle, Adobe, Google, Visa, Yandex, TikTok, Goldman Sachs  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/binary-tree-level-order-traversal/](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 

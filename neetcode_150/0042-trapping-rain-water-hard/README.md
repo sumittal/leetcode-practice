@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack  
+**Companies:** Goldman Sachs, Zenefits, Rakuten, ThousandEyes, X, Zoho, Walmart Labs, Samsung, Urban Company, ServiceNow, Amazon, Tekion, Wix, Hive, Sigmoid (+55 more)  
 **Pattern:** Two Pointers  
 **LeetCode:** [https://leetcode.com/problems/trapping-rain-water/](https://leetcode.com/problems/trapping-rain-water/)
 

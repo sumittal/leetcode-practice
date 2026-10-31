@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, Breadth-First Search, Binary Tree  
+**Companies:** Palo Alto Networks, josh technology, Amazon, Google, Microsoft, Meta, LinkedIn, Oracle, Bloomberg  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)
 

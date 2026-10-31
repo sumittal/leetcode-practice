@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming, Longest Common Subsequence  
+**Companies:** Optum, Arista Networks, ByteDance, ServiceNow, Salesforce, Morgan Stanley, Microsoft, Apple, DoorDash, Walmart Labs, Google, Visa, Cisco, Amazon, Meta (+4 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/longest-common-subsequence/](https://leetcode.com/problems/longest-common-subsequence/)
 

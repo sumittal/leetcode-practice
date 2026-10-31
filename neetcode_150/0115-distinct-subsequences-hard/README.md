@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** String, Dynamic Programming  
+**Companies:** Swiggy, Meesho, Salesforce, Coupang, Zoho, Amazon, Bloomberg, Microsoft, Google, Meta, tcs  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/distinct-subsequences/](https://leetcode.com/problems/distinct-subsequences/)
 

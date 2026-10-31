@@ -4,6 +4,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, String, Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Directed Acyclic Graph  
+**Companies:** Pocket Gems, Uber, X, Wix, Snap, Airbnb, Okta, Coupang, Waymo, Nuro, Meta, TikTok, eBay, Intuit, Amazon (+4 more)  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/alien-dictionary/](https://leetcode.com/problems/alien-dictionary/)
 

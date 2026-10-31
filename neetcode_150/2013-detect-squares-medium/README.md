@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Design, Counting, Data Stream  
+**Companies:** Pure Storage, Google, Amazon, Meta, Bloomberg  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/detect-squares/](https://leetcode.com/problems/detect-squares/)
 

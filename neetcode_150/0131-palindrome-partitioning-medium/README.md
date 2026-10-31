@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming, Backtracking  
+**Companies:** Coupang, Bloomberg, Amazon, Infosys, Visa, Meta, Google, Microsoft, DE Shaw, Salesforce  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/palindrome-partitioning/](https://leetcode.com/problems/palindrome-partitioning/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** String, Tree, Depth-First Search, Breadth-First Search, Design, Binary Tree  
+**Companies:** Yahoo, Hive, Quora, Nutanix, LinkedIn, Uber, Microsoft, Citadel, Amazon, TikTok, PhonePe, General Motors, Apple, Meta, DoorDash (+8 more)  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/serialize-and-deserialize-binary-tree/](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, String, Sliding Window  
+**Companies:** Zoho, Walmart Labs, Turing, DP world, Wissen Technology, FreshWorks, Splunk, Netskope, Freecharge, Adobe, Visa, Yelp, EPAM Systems, Infosys, ServiceNow (+80 more)  
 **Pattern:** Sliding Window  
 **LeetCode:** [https://leetcode.com/problems/longest-substring-without-repeating-characters/](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 

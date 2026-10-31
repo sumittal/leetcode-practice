@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming  
+**Companies:** Databricks, MakeMyTrip, Docusign, Datadog, Nutanix, ServiceNow, Infosys, Microsoft, Amazon, Bloomberg, TikTok, DE Shaw, Google, Meta, Salesforce (+1 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/house-robber-ii/](https://leetcode.com/problems/house-robber-ii/)
 

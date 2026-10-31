@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Backtracking  
+**Companies:** HPE, Juniper Networks, Snap, Confluent, Yahoo, NetApp, ByteDance, Zomato, Walmart Labs, Airbnb, ServiceNow, Bloomberg, Amazon, Uber, TikTok (+11 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/combination-sum/](https://leetcode.com/problems/combination-sum/)
 

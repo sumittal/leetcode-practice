@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix  
+**Companies:** Grubhub, Roku, Intuit, Snowflake, TikTok, Expedia, Zoho, Meta, Oracle, DoorDash, Adobe, LinkedIn, Amazon, Goldman Sachs, Google (+3 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/max-area-of-island/](https://leetcode.com/problems/max-area-of-island/)
 

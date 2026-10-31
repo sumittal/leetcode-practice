@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Hash Table, Math, Binary Search, Bit Manipulation, Sorting  
+**Companies:** Arista Networks, Revolut, HCL, Nvidia, Bloomberg, Amazon, tcs, Microsoft, Google, Meta, Zoho, Salesforce, Infosys, Apple, IBM (+1 more)  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/missing-number/](https://leetcode.com/problems/missing-number/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Design, Binary Search Tree, Heap (Priority Queue), Binary Tree, Data Stream  
+**Companies:** Tinder, Adobe, Wells Fargo, Amazon, Meta, Google, Goldman Sachs, Microsoft, Bloomberg  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
 

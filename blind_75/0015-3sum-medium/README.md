@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Two Pointers, Sorting  
+**Companies:** Wissen Technology, Works Applications, Visa, Wix, Roku, Adobe, Bloomberg, Cloudflare, Amazon, Walmart Labs, Qualcomm, Microsoft, tcs, Google, Meta (+33 more)  
 **Pattern:** Two Pointers  
 **LeetCode:** [https://leetcode.com/problems/3sum/](https://leetcode.com/problems/3sum/)
 

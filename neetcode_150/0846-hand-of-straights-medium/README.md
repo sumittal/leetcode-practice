@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Greedy, Sorting  
+**Companies:** Visa, Bloomberg, Google, Meta, Amazon, Microsoft  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/hand-of-straights/](https://leetcode.com/problems/hand-of-straights/)
 

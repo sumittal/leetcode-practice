@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Linked List  
+**Companies:** CVENT, oyo, Wix, Arista Networks, Meta, Morgan Stanley, Intel, Amazon, Nvidia, Snowflake, Microsoft, Bloomberg, Walmart Labs, Uber, Oracle (+4 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/copy-list-with-random-pointer/](https://leetcode.com/problems/copy-list-with-random-pointer/)
 

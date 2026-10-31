@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Hash Table, Linked List, Two Pointers, Floyd's Cycle Finding Algorithm  
+**Companies:** Yahoo, Qualcomm, Nagarro, Huawei, Intel, SAP, Autodesk, Palo Alto Networks, Infosys, Cisco, Microsoft, Nvidia, Amazon, Bloomberg, Cognizant (+8 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/linked-list-cycle/](https://leetcode.com/problems/linked-list-cycle/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Depth-First Search, Design, Trie  
+**Companies:** Datadog, Snowflake, TikTok, Snap, Apple, Amazon, Atlassian, Microsoft, Oracle, Meta, Google, Bloomberg  
 **Pattern:** Tries  
 **LeetCode:** [https://leetcode.com/problems/design-add-and-search-words-data-structure/](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
 

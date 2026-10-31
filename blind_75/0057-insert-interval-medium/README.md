@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array  
+**Companies:** Tesco, PhonePe, LinkedIn, Google, Walmart Labs, PayPal, Uber, Microsoft, Apple, Amazon, Meta, Bloomberg, tcs, Oracle, TikTok  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/insert-interval/](https://leetcode.com/problems/insert-interval/)
 

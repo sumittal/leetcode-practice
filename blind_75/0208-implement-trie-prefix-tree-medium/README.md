@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, String, Design, Trie  
+**Companies:** MongoDB, X, Docusign, General Motors, Grammarly, Nutanix, Apple, Oracle, Roblox, Uber, Citadel, Microsoft, Bloomberg, Lyft, Snowflake (+5 more)  
 **Pattern:** Tries  
 **LeetCode:** [https://leetcode.com/problems/implement-trie-prefix-tree/](https://leetcode.com/problems/implement-trie-prefix-tree/)
 

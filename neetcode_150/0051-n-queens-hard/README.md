@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Backtracking, Algorithm X  
+**Companies:** Mastercard, TikTok, Huawei, Zoho, Amazon, Microsoft, Google, Bloomberg, Adobe, Meta, Accenture, Oracle, Infosys, Goldman Sachs, tcs (+1 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/n-queens/](https://leetcode.com/problems/n-queens/)
 

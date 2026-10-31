@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Linked List, Two Pointers  
+**Companies:** Tinkoff, Qualcomm, Meta, Morgan Stanley, Accenture, Amazon, Microsoft, Bloomberg, Google, josh technology, tcs, Apple, Flipkart, Yandex, Oracle (+1 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/remove-nth-node-from-end-of-list/](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 

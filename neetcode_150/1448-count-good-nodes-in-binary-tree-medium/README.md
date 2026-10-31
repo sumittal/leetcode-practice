@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Tree, Depth-First Search, Breadth-First Search, Binary Tree  
+**Companies:** josh technology, Microsoft, Meta, Amazon, Google  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/count-good-nodes-in-binary-tree/](https://leetcode.com/problems/count-good-nodes-in-binary-tree/)
 

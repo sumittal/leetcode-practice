@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, String, Depth-First Search, Graph Theory, Sorting, Heap (Priority Queue), Eulerian Circuit, Eulerian Path, Semi-Eulerian Graph  
+**Companies:** Pinterest, Netflix, Compass, Booking.com, PhonePe, Citadel, eBay, Yandex, Flipkart, Palo Alto Networks, Adobe, Uber, Walmart Labs, Visa, Apple (+7 more)  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/reconstruct-itinerary/](https://leetcode.com/problems/reconstruct-itinerary/)
 

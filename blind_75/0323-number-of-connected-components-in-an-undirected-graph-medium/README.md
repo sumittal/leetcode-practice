@@ -4,6 +4,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Union-Find, Graph Theory  
+**Companies:** General Motors, X, LinkedIn, Amazon, TikTok, Google, Meta  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 

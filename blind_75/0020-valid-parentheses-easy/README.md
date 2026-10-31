@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** String, Stack, Bracket Sequences  
+**Companies:** Intuit, Zenefits, FreshWorks, Chewy, Tripadvisor, Odoo, Walmart Labs, X, Bank of America, Zoho, HP, BlackRock, USAA, Intel, Siemens (+75 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/valid-parentheses/](https://leetcode.com/problems/valid-parentheses/)
 

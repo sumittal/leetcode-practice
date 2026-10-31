@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming  
+**Companies:** EPAM Systems, Snap, Lyft, Walmart Labs, PhonePe, Uber, Zoho, Goldman Sachs, Infosys, Adobe, Microsoft, Flipkart, Meta, Anduril, DE Shaw (+5 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/decode-ways/](https://leetcode.com/problems/decode-ways/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Dynamic Programming  
+**Companies:** Morgan Stanley, Sigmoid, Millennium, Zoox, Trexquant, RBC, Tech Mahindra, Akamai, Mastercard, Tesla, Bank of America, Citigroup, Agoda, Tiger Analytics, HCL (+66 more)  
 **Pattern:** Sliding Window  
 **LeetCode:** [https://leetcode.com/problems/best-time-to-buy-and-sell-stock/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Binary Search, Dynamic Programming, Longest Increasing Subsequence  
+**Companies:** Samsung, PayPal, TikTok, Revolut, Squarepoint Capital, Huawei, ByteDance, Infosys, Microsoft, Morgan Stanley, Walmart Labs, Google, Amazon, Intuit, Bloomberg (+10 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/longest-increasing-subsequence/](https://leetcode.com/problems/longest-increasing-subsequence/)
 

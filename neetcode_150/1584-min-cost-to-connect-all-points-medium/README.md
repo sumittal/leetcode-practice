@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Union-Find, Graph Theory, Minimum Spanning Tree, Prim's Algorithm, Kruskal's Algorithm, Borůvka's Algorithm  
+**Companies:** Directi, PayPay, Nutanix, TikTok, Uber, IBM, Amazon, Google, Microsoft, Meta  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/min-cost-to-connect-all-points/](https://leetcode.com/problems/min-cost-to-connect-all-points/)
 

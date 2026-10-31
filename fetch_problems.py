@@ -3,25 +3,34 @@
 
 import argparse
 import ast
+import csv
 import html
 from html.parser import HTMLParser
+import io
 import json
 import re
 import subprocess
 import sys
+import tarfile
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parent
-PROBLEM_GROUPS = ("blind_75", "neetcode_150", "others")
+PROBLEM_GROUPS = (
+    "blind_75",
+    "neetcode_150",
+    "top_interview_150",
+    "others",
+)
 GROUP_TITLES = {
     "blind_75": "Blind 75",
     "neetcode_150": "NeetCode 150 (beyond Blind 75)",
+    "top_interview_150": "Top Interview 150 beyond NeetCode 150",
     "others": "Others",
 }
 GRAPHQL_URL = "https://leetcode.com/graphql"
@@ -29,6 +38,20 @@ NEETCODE_URL = (
     "https://raw.githubusercontent.com/neetcode-gh/leetcode/main/"
     ".problemSiteData.json"
 )
+COMPANY_DATA_URL = (
+    "https://codeload.github.com/liquidslr/"
+    "leetcode-company-wise-problems/tar.gz/main"
+)
+STUDY_PLAN_QUERY = """
+query($s:String!){
+  studyPlanV2Detail(planSlug:$s){
+    planSubGroups{
+      name
+      questions{titleSlug questionFrontendId difficulty paidOnly}
+    }
+  }
+}
+"""
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -246,6 +269,26 @@ class LeetCodeClient:
             time.sleep(2 ** attempt)
         raise RuntimeError("Request retries exhausted for " + url)
 
+    def _network_bytes(self, url: str) -> bytes:
+        headers = {"User-Agent": USER_AGENT}
+        for attempt in range(4):
+            if self.network_calls and self.delay:
+                time.sleep(self.delay)
+            self.network_calls += 1
+            request = Request(url, headers=headers)
+            try:
+                with urlopen(request, timeout=30) as response:
+                    return response.read()
+            except HTTPError as error:
+                should_retry = error.code == 429 or 500 <= error.code <= 599
+                if not should_retry or attempt == 3:
+                    raise
+            except URLError:
+                if attempt == 3:
+                    raise
+            time.sleep(2 ** attempt)
+        raise RuntimeError("Request retries exhausted for " + url)
+
     def fetch_json(
         self,
         url: str,
@@ -276,6 +319,117 @@ def load_neetcode(client: LeetCodeClient) -> List[Dict[str, Any]]:
     return data
 
 
+def load_study_plan(client: LeetCodeClient) -> List[Dict[str, Any]]:
+    cache_path = (
+        ROOT / ".cache" / "studyplan" / "top-interview-150.json"
+    )
+    response = client.fetch_json(
+        GRAPHQL_URL,
+        cache_path,
+        {
+            "query": STUDY_PLAN_QUERY,
+            "variables": {"s": "top-interview-150"},
+        },
+    )
+    try:
+        subgroups = response["data"]["studyPlanV2Detail"]["planSubGroups"]
+    except (KeyError, TypeError):
+        raise ValueError("Unexpected Top Interview 150 study plan response")
+    if not isinstance(subgroups, list):
+        raise ValueError("Unexpected Top Interview 150 study plan format")
+    questions = []
+    for subgroup in subgroups:
+        if not isinstance(subgroup, dict):
+            continue
+        for question in subgroup.get("questions") or []:
+            if isinstance(question, dict) and question.get("titleSlug"):
+                questions.append(question)
+    return questions
+
+
+def parse_company_tarball(contents: bytes) -> Dict[str, List[str]]:
+    ranked = {}  # type: Dict[str, List[Tuple[float, int, str]]]
+    with tarfile.open(fileobj=io.BytesIO(contents), mode="r:gz") as archive:
+        for member in archive.getmembers():
+            if not member.isfile() or not member.name.endswith("/5. All.csv"):
+                continue
+            parts = member.name.split("/")
+            if len(parts) < 2:
+                continue
+            company = parts[-2]
+            source = archive.extractfile(member)
+            if source is None:
+                continue
+            with io.TextIOWrapper(
+                source, encoding="utf-8-sig", newline=""
+            ) as csv_file:
+                rows = list(csv.DictReader(csv_file))
+            problem_count = len(rows)
+            for row in rows:
+                link = str(row.get("Link") or "").strip()
+                slug = urlsplit(link).path.rstrip("/").rsplit("/", 1)[-1]
+                if not slug:
+                    continue
+                try:
+                    frequency = float(row.get("Frequency") or 0)
+                except (TypeError, ValueError):
+                    frequency = 0.0
+                ranked.setdefault(slug, []).append(
+                    (frequency, problem_count, company)
+                )
+    return {
+        slug: [
+            company
+            for frequency, problem_count, company in sorted(
+                companies,
+                key=lambda item: (-item[0], -item[1], item[2]),
+            )
+        ]
+        for slug, companies in ranked.items()
+    }
+
+
+def load_company_data(
+    client: LeetCodeClient,
+) -> Optional[Dict[str, List[str]]]:
+    cache_path = ROOT / ".cache" / "companies.json"
+    if cache_path.exists() and not client.refresh:
+        try:
+            cached = json.loads(cache_path.read_text(encoding="utf-8"))
+            if isinstance(cached, dict):
+                return {
+                    str(slug): [str(name) for name in names]
+                    for slug, names in cached.items()
+                    if isinstance(names, list)
+                }
+        except (OSError, ValueError):
+            pass
+    try:
+        companies = parse_company_tarball(
+            client._network_bytes(COMPANY_DATA_URL)
+        )
+    except (
+        HTTPError,
+        URLError,
+        OSError,
+        EOFError,
+        ValueError,
+        tarfile.TarError,
+        csv.Error,
+    ) as error:
+        print("Warning: Unable to load company data: %s" % error)
+        return None
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        cache_path.write_text(
+            json.dumps(companies, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    except OSError as error:
+        print("Warning: Unable to cache company data: %s" % error)
+    return companies
+
+
 def neetcode_by_slug(entries: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     result = {}  # type: Dict[str, Dict[str, Any]]
     for entry in entries:
@@ -298,11 +452,17 @@ def problem_directory_name(problem_id: int, slug: str, difficulty: str) -> str:
     return "%04d-%s-%s" % (problem_id, slug, str(difficulty).lower())
 
 
-def problem_group(neetcode_entry: Optional[Dict[str, Any]]) -> str:
+def problem_group(
+    slug: str,
+    neetcode_entry: Optional[Dict[str, Any]],
+    topinterview_slugs: Set[str],
+) -> str:
     if neetcode_entry and neetcode_entry.get("blind75"):
         return "blind_75"
     if neetcode_entry and neetcode_entry.get("neetcode150"):
         return "neetcode_150"
+    if slug in topinterview_slugs:
+        return "top_interview_150"
     return "others"
 
 
@@ -311,10 +471,11 @@ def problem_directory_path(
     slug: str,
     difficulty: str,
     neetcode_entry: Optional[Dict[str, Any]],
+    topinterview_slugs: Set[str],
 ) -> Path:
     return (
         ROOT
-        / problem_group(neetcode_entry)
+        / problem_group(slug, neetcode_entry, topinterview_slugs)
         / problem_directory_name(problem_id, slug, difficulty)
     )
 
@@ -355,9 +516,10 @@ def migrate_problem_directory(
     slug: str,
     difficulty: str,
     neetcode_entry: Optional[Dict[str, Any]],
+    topinterview_slugs: Set[str],
 ) -> Path:
     destination = problem_directory_path(
-        problem_id, slug, difficulty, neetcode_entry
+        problem_id, slug, difficulty, neetcode_entry, topinterview_slugs
     )
     if destination.exists():
         return destination
@@ -425,6 +587,7 @@ def select_problems(
     args: argparse.Namespace,
     client: LeetCodeClient,
     neetcode_entries: List[Dict[str, Any]],
+    topinterview_entries: List[Dict[str, Any]],
 ) -> List[Tuple[str, Optional[int]]]:
     if args.slugs:
         return [(slug.strip(), None) for slug in args.slugs.split(",") if slug.strip()]
@@ -434,6 +597,21 @@ def select_problems(
             for item in list_all_problems(client, args.batch_size)
             if item.get("titleSlug")
         ]
+    elif args.list_name in ("topinterview150", "topinterview150-extra"):
+        neetcode = neetcode_by_slug(neetcode_entries)
+        items = []
+        for entry in topinterview_entries:
+            slug = str(entry.get("titleSlug") or "")
+            if (
+                args.list_name == "topinterview150-extra"
+                and (
+                    neetcode.get(slug, {}).get("neetcode150")
+                    or neetcode.get(slug, {}).get("blind75")
+                )
+            ):
+                continue
+            if slug:
+                items.append((slug, numeric_id(entry)))
     else:
         items = []
         for entry in neetcode_entries:
@@ -580,12 +758,22 @@ def render_problem_readme(
     is_specific_video: bool,
     notes: Optional[Dict[str, Any]],
     premium_description: Optional[str] = None,
+    companies: Optional[Dict[str, List[str]]] = None,
 ) -> str:
     problem_id = int(question["questionFrontendId"])
     title = str(question.get("title") or "")
     slug = str(question.get("titleSlug") or "")
     difficulty = str(question.get("difficulty") or "Unknown")
     topics = topic_names(question)
+    companies_line = ""
+    if companies is not None:
+        company_names = companies.get(slug, [])
+        displayed = company_names[:15]
+        remaining = len(company_names) - len(displayed)
+        company_text = ", ".join(displayed) if displayed else "None reported"
+        if remaining:
+            company_text += " (+%d more)" % remaining
+        companies_line = "**Companies:** %s  \n" % company_text
     problem_heading = "## Problem\n\n"
     if premium_description is not None:
         description = premium_description.strip()
@@ -604,6 +792,7 @@ def render_problem_readme(
         "%s"
         "**Difficulty:** %s  \n"
         "**Tags:** %s  \n"
+        "%s"
         "**Pattern:** %s  \n"
         "**LeetCode:** [https://leetcode.com/problems/%s/]"
         "(https://leetcode.com/problems/%s/)\n\n"
@@ -616,6 +805,7 @@ def render_problem_readme(
             premium_notice,
             difficulty,
             ", ".join(topics) if topics else "None",
+            companies_line,
             pattern,
             slug,
             slug,
@@ -785,6 +975,8 @@ def generate_problem(
     neetcode_entry: Optional[Dict[str, Any]],
     videos: Dict[str, Any],
     force: bool,
+    topinterview_slugs: Set[str],
+    companies: Optional[Dict[str, List[str]]],
 ) -> Optional[Path]:
     try:
         question = get_question(client, slug)
@@ -821,6 +1013,7 @@ def generate_problem(
         slug,
         str(question.get("difficulty") or "Unknown"),
         neetcode_entry,
+        topinterview_slugs,
     )
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "README.md").write_text(
@@ -832,6 +1025,7 @@ def generate_problem(
             has_video,
             notes,
             premium_description if is_premium else None,
+            companies,
         ),
         encoding="utf-8",
     )
@@ -870,6 +1064,7 @@ def warm_question_cache(client: LeetCodeClient) -> None:
 
 def migrate_existing_problem_directories(
     neetcode: Dict[str, Dict[str, Any]],
+    topinterview_slugs: Set[str],
 ) -> None:
     for path in iter_problem_directories(include_root=True):
         if not path.exists():
@@ -885,7 +1080,11 @@ def migrate_existing_problem_directories(
         if difficulty not in ("easy", "medium", "hard"):
             continue
         migrate_problem_directory(
-            problem_id, slug, difficulty, neetcode.get(slug)
+            problem_id,
+            slug,
+            difficulty,
+            neetcode.get(slug),
+            topinterview_slugs,
         )
 
 
@@ -941,6 +1140,7 @@ def row_metadata(
     directory: Path,
     neetcode: Dict[str, Dict[str, Any]],
     videos: Dict[str, Any],
+    topinterview_slugs: Set[str],
 ) -> Dict[str, Any]:
     parsed = parse_problem_directory(directory.name)
     if parsed is None:
@@ -981,7 +1181,7 @@ def row_metadata(
         "video_title": video_title,
         "video_kind": video_kind,
         "premium": bool(question.get("isPaidOnly")),
-        "group": problem_group(nc),
+        "group": problem_group(slug, nc, topinterview_slugs),
     }
 
 
@@ -1046,6 +1246,7 @@ def rebuild_root_readme(
     statuses: Dict[str, Tuple[str, str]],
     neetcode_entries: List[Dict[str, Any]],
     videos: Dict[str, Any],
+    topinterview_slugs: Set[str],
 ) -> None:
     nc_by_slug = neetcode_by_slug(neetcode_entries)
     directories = [
@@ -1055,7 +1256,9 @@ def rebuild_root_readme(
     ]
     rows = []
     for directory in directories:
-        metadata = row_metadata(directory, nc_by_slug, videos)
+        metadata = row_metadata(
+            directory, nc_by_slug, videos, topinterview_slugs
+        )
         status_name = directory.relative_to(ROOT).as_posix()
         status = statuses.get(status_name, ("⬜ Todo", ""))[0]
         rows.append((metadata, status))
@@ -1064,13 +1267,16 @@ def rebuild_root_readme(
         "# LeetCode Practice",
         "",
         "A locally generated study repo with problem statements, curated approaches, and runnable Python solutions.",
-        "Blind 75 + neetcode_150 = full NeetCode 150.",
+        "Blind 75 + neetcode_150 = the full NeetCode 150; "
+        "top_interview_150 adds Top Interview 150 problems not already covered.",
         "",
         "## Usage",
         "",
         "```sh",
         "python3 fetch_problems.py --list neetcode150",
         "python3 fetch_problems.py --list neetcode150-extra --start 0 --batch-size 25",
+        "python3 fetch_problems.py --list topinterview150",
+        "python3 fetch_problems.py --list topinterview150-extra --start 0 --batch-size 50",
         "python3 fetch_problems.py --list blind75 --start 0 --batch-size 20",
         "python3 fetch_problems.py --slugs two-sum,valid-anagram",
         "python3 fetch_problems.py --index-only",
@@ -1116,6 +1322,15 @@ def rebuild_root_readme(
         (group_path / "README.md").write_text(
             "\n".join(group_readme) + "\n", encoding="utf-8"
         )
+    lines.extend(
+        [
+            "",
+            "Company tags: community-reported data from "
+            "[liquidslr/leetcode-company-wise-problems]"
+            "(https://github.com/liquidslr/leetcode-company-wise-problems), "
+            "ranked by frequency.",
+        ]
+    )
     (ROOT / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -1124,7 +1339,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--list",
         dest="list_name",
-        choices=("blind75", "neetcode150", "neetcode150-extra", "all"),
+        choices=(
+            "blind75",
+            "neetcode150",
+            "neetcode150-extra",
+            "topinterview150",
+            "topinterview150-extra",
+            "all",
+        ),
         default="neetcode150",
     )
     parser.add_argument("--start", type=int, default=0)
@@ -1148,6 +1370,15 @@ def main() -> int:
     args = parse_args()
     client = LeetCodeClient(args.sleep, args.refresh)
     neetcode_entries = []  # type: List[Dict[str, Any]]
+    try:
+        topinterview_entries = load_study_plan(client)
+    except (HTTPError, URLError, ValueError, OSError) as error:
+        print("Unable to load Top Interview 150 data: %s" % error)
+        return 1
+    topinterview_slugs = {
+        str(entry["titleSlug"]) for entry in topinterview_entries
+    }
+    companies = load_company_data(client)
     videos = load_video_cache() if args.index_only or not args.refresh else {}
     if args.index_only:
         try:
@@ -1155,16 +1386,25 @@ def main() -> int:
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to load NeetCode data: %s" % error)
         warm_question_cache(client)
-        migrate_existing_problem_directories(neetcode_by_slug(neetcode_entries))
+        migrate_existing_problem_directories(
+            neetcode_by_slug(neetcode_entries), topinterview_slugs
+        )
     else:
         try:
             neetcode_entries = load_neetcode(client)
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to load NeetCode data: %s" % error)
             return 1
-        migrate_existing_problem_directories(neetcode_by_slug(neetcode_entries))
+        migrate_existing_problem_directories(
+            neetcode_by_slug(neetcode_entries), topinterview_slugs
+        )
         try:
-            selected = select_problems(args, client, neetcode_entries)
+            selected = select_problems(
+                args,
+                client,
+                neetcode_entries,
+                topinterview_entries,
+            )
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to enumerate problems: %s" % error)
             return 1
@@ -1177,11 +1417,19 @@ def main() -> int:
             else:
                 print("Fetching %s" % slug)
             generate_problem(
-                client, slug, nc_by_slug.get(slug), videos, args.force
+                client,
+                slug,
+                nc_by_slug.get(slug),
+                videos,
+                args.force,
+                topinterview_slugs,
+                companies,
             )
     save_video_cache(videos)
     statuses = run_solutions()
-    rebuild_root_readme(statuses, neetcode_entries, videos)
+    rebuild_root_readme(
+        statuses, neetcode_entries, videos, topinterview_slugs
+    )
     return 1 if any(status == "❌ Failing" for status, output in statuses.values()) else 0
 
 

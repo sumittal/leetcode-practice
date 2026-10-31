@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Binary Search, Divide and Conquer  
+**Companies:** Rippling, Zenefits, Yahoo, Dropbox, Adobe, Goldman Sachs, Bloomberg, Amazon, Microsoft, Google, Okta, GE Healthcare, Meta, Autodesk, Cognizant (+26 more)  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/median-of-two-sorted-arrays/](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 

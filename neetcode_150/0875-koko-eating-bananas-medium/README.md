@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Binary Search  
+**Companies:** oyo, Trexquant, Nokia, Ripple, Turing, DoorDash, Amazon, Adobe, Accenture, Okta, Swiggy, Expedia, Microsoft, Bloomberg, Oracle (+25 more)  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/koko-eating-bananas/](https://leetcode.com/problems/koko-eating-bananas/)
 

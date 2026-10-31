@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Graph Theory, Heap (Priority Queue), Shortest Path, Dijkstra's Algorithm  
+**Companies:** Akuna Capital, Netflix, Nvidia, Salesforce, Google, Cisco, Amazon, Bloomberg, Microsoft, Meta  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/network-delay-time/](https://leetcode.com/problems/network-delay-time/)
 

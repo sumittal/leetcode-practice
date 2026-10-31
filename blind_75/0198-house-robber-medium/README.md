@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming  
+**Companies:** CARS24, Freecharge, Cisco, Databricks, Grab, Datadog, Hotstar, Infosys, TikTok, Amazon, Walmart Labs, Airbnb, ByteDance, Expedia, MakeMyTrip (+20 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/house-robber/](https://leetcode.com/problems/house-robber/)
 

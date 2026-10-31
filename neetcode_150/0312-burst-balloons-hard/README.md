@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Dynamic Programming  
+**Companies:** Samsung, Snap, UiPath, PhonePe, Paytm, tcs, Uber, Google, Infosys, Amazon, Cisco, Microsoft, Salesforce, Bloomberg, Goldman Sachs (+1 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/burst-balloons/](https://leetcode.com/problems/burst-balloons/)
 

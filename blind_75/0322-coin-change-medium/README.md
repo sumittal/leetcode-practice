@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Breadth-First Search, Knapsack Problem, Complete Knapsack  
+**Companies:** Datadog, Geico, Mastercard, Pinterest, PayPal, Walmart Labs, Intuit, TikTok, carwale, Grab, ServiceNow, Accolite, Amazon, Deutsche Bank, HashedIn (+20 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/coin-change/](https://leetcode.com/problems/coin-change/)
 

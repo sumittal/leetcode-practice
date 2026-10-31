@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** String, Dynamic Programming, Recursion  
+**Companies:** Netskope, X, Rokt, Zoho, Waymo, Airbnb, ByteDance, Coupang, Two Sigma, Amazon, Sprinklr, Bloomberg, TikTok, PhonePe, Uber (+9 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/regular-expression-matching/](https://leetcode.com/problems/regular-expression-matching/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Linked List, Design, Doubly-Linked List  
+**Companies:** TikTok, Apple, Oracle, Snap, Nutanix, eBay, ServiceNow, ByteDance, Palo Alto Networks, Yahoo, Okta, Zenefits, Moloco, Aurora, Rivian (+88 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)
 

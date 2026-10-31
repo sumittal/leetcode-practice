@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Math  
+**Companies:** Intuit, Bloomberg, Google, Meta, Zoho, Capgemini, tcs, Amazon, Microsoft, Visa  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/plus-one/](https://leetcode.com/problems/plus-one/)
 

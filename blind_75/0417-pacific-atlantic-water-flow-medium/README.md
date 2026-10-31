@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Depth-First Search, Breadth-First Search, Matrix  
+**Companies:** Urban Company, Nutanix, ServiceNow, Flipkart, TikTok, Amazon, Adobe, Google, Microsoft, Meta, Apple, Bloomberg  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/pacific-atlantic-water-flow/](https://leetcode.com/problems/pacific-atlantic-water-flow/)
 

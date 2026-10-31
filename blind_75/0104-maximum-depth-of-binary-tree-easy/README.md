@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, Breadth-First Search, Binary Tree  
+**Companies:** Yahoo, Arista Networks, Avito, LinkedIn, Qualcomm, Microsoft, Spotify, Uber, Apple, Bloomberg, Amazon, Accenture, Zoho, Google, Infosys (+3 more)  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 

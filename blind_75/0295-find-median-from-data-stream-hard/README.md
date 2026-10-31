@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Two Pointers, Design, Sorting, Heap (Priority Queue), Data Stream  
+**Companies:** Splunk, Cohesity, Tinder, IXL, Citadel, Okta, StackAdapt, WorldQuant, SIG, Adobe, Spotify, KLA, Twitch, Coupang, PayPal (+26 more)  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/find-median-from-data-stream/](https://leetcode.com/problems/find-median-from-data-stream/)
 

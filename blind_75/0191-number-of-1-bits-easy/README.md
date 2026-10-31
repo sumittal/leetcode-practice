@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Divide and Conquer, Bit Manipulation  
+**Companies:** Box, Verkada, Qualcomm, Apple, Nvidia, Microsoft, IBM, Google, Amazon, Meta, Bloomberg  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/number-of-1-bits/](https://leetcode.com/problems/number-of-1-bits/)
 

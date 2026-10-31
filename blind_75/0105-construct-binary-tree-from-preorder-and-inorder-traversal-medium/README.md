@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Divide and Conquer, Tree, Binary Tree  
+**Companies:** TikTok, Adobe, Bloomberg, Media.net, Amazon, Microsoft, Snowflake, Google, Meta, Salesforce  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 

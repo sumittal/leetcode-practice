@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Hash Table, String, Breadth-First Search, Bidirectional Search  
+**Companies:** Navan, Yelp, Snap, Reddit, The Trade Desk, LinkedIn, Box, Okta, Amazon, ByteDance, Apple, Citadel, Docusign, eBay, Tekion (+19 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Binary Search  
+**Companies:** Goldman Sachs, Microsoft, Amazon, Walmart Labs, TikTok, Google, Bloomberg, Infosys, Meta, Yandex, tcs, Oracle, Uber, LinkedIn  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 

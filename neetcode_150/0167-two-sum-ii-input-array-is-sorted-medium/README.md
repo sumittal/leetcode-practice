@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Two Pointers, Binary Search  
+**Companies:** tcs, Amazon, EPAM Systems, Google, Microsoft, Bloomberg, Meta, Zoho, Apple, Snowflake, Oracle, Infosys, TikTok  
 **Pattern:** Two Pointers  
 **LeetCode:** [https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 

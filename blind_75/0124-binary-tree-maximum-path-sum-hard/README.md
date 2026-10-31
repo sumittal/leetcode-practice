@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Dynamic Programming, Tree, Depth-First Search, Binary Tree, DP on Trees  
+**Companies:** Baidu, DoorDash, Wix, Nutanix, Adobe, Citadel, Amazon, TikTok, Datadog, Salesforce, Meta, Yandex, Microsoft, Bloomberg, Google (+9 more)  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/binary-tree-maximum-path-sum/](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 

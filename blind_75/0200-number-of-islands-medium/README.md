@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix  
+**Companies:** Snap, Anduril, Wix, Zenefits, Moloco, Rivian, Splunk, Hive, OKX, CrowdStrike, Walmart Labs, Siemens, TikTok, Qualcomm, BitGo (+66 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/number-of-islands/](https://leetcode.com/problems/number-of-islands/)
 

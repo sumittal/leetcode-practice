@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, String, Backtracking, Trie, Matrix  
+**Companies:** Snowflake, Cisco, Two Sigma, Zoom, Uber, Airbnb, Aurora, TikTok, Snap, Wix, Amazon, Microsoft, DoorDash, Visa, Oracle (+4 more)  
 **Pattern:** Tries  
 **LeetCode:** [https://leetcode.com/problems/word-search-ii/](https://leetcode.com/problems/word-search-ii/)
 

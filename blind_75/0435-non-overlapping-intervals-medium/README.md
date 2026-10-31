@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Greedy, Sorting  
+**Companies:** Grammarly, Verkada, Zoho, IBM, Amazon, PayPal, Bloomberg, Visa, Roblox, tcs, TikTok, Google, Meta, Microsoft, Oracle (+2 more)  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/non-overlapping-intervals/](https://leetcode.com/problems/non-overlapping-intervals/)
 

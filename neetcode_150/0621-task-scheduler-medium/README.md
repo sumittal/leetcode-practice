@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Greedy, Sorting, Heap (Priority Queue), Counting  
+**Companies:** Roblox, Docusign, Zeta, Nutanix, Okta, MathWorks, Amazon, tcs, Snowflake, Coupang, Oracle, Rubrik, Apple, Microsoft, Walmart Labs (+8 more)  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/task-scheduler/](https://leetcode.com/problems/task-scheduler/)
 

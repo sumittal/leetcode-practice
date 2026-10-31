@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Two Pointers, String, Sliding Window  
+**Companies:** Yandex, VK, Walmart Labs, Databricks, Microsoft, Media.net, Amazon, Adobe, Bloomberg, tcs, Meta, Google, Cisco, Salesforce, Oracle (+1 more)  
 **Pattern:** Sliding Window  
 **LeetCode:** [https://leetcode.com/problems/permutation-in-string/](https://leetcode.com/problems/permutation-in-string/)
 

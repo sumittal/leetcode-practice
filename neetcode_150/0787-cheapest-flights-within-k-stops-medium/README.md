@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Dynamic Programming, Depth-First Search, Breadth-First Search, Graph Theory, Heap (Priority Queue), Shortest Path  
+**Companies:** Stripe, Airbnb, Flipkart, Expedia, TikTok, Snowflake, Snap, Amazon, Apple, Intuit, Cisco, Google, Oracle, Bloomberg, Microsoft (+2 more)  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/cheapest-flights-within-k-stops/](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 

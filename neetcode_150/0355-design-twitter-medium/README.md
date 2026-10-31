@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Linked List, Design, Heap (Priority Queue)  
+**Companies:** X, Meesho, Swiggy, Coupang, Palo Alto Networks, Adobe, Salesforce, Amazon, Google, Apple, Microsoft, Bloomberg  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/design-twitter/](https://leetcode.com/problems/design-twitter/)
 

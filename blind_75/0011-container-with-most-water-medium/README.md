@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Two Pointers, Greedy  
+**Companies:** PubMatic, Workday, Wix, SAP, PornHub, Flipkart, tcs, FreshWorks, Zoho, ServiceNow, Walmart Labs, Amazon, Bloomberg, Intel, Microsoft (+32 more)  
 **Pattern:** Two Pointers  
 **LeetCode:** [https://leetcode.com/problems/container-with-most-water/](https://leetcode.com/problems/container-with-most-water/)
 

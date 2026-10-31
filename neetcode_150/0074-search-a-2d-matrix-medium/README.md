@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Binary Search, Matrix  
+**Companies:** Wissen Technology, SAP, Nutanix, Adobe, Paytm, Amazon, Microsoft, Bloomberg, DE Shaw, Goldman Sachs, Google, Meta, Oracle, tcs, TikTok (+2 more)  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/search-a-2d-matrix/](https://leetcode.com/problems/search-a-2d-matrix/)
 

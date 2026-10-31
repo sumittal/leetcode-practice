@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Hash Table, String, Sliding Window  
+**Companies:** Wissen Technology, Lyft, Snowflake, Snap, Harness, DP world, SoFi, Moloco, Adobe, Zeta, Meta, TikTok, Qualtrics, LinkedIn, Amazon (+17 more)  
 **Pattern:** Sliding Window  
 **LeetCode:** [https://leetcode.com/problems/minimum-window-substring/](https://leetcode.com/problems/minimum-window-substring/)
 

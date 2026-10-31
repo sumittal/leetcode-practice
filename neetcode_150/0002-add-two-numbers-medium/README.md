@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Linked List, Math, Recursion  
+**Companies:** EarnIn, Adobe, Wix, Bloomberg, Microsoft, LTI, Amazon, Google, Meta, Jane Street, Airbnb, AQR Capital Management, Zoho, SAP, Arista Networks (+18 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/add-two-numbers/](https://leetcode.com/problems/add-two-numbers/)
 

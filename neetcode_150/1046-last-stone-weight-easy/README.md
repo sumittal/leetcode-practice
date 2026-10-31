@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Heap (Priority Queue)  
+**Companies:** Nvidia, PayPal, IBM, Visa, Salesforce, Amazon, Bloomberg, Microsoft, Apple, Uber, Google, Meta  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/last-stone-weight/](https://leetcode.com/problems/last-stone-weight/)
 

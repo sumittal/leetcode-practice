@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming, Backtracking, Bracket Sequences  
+**Companies:** Zenefits, Walmart Labs, Grammarly, Zoho, ServiceNow, Avito, Amazon, Bloomberg, Huawei, Microsoft, Myntra, Samsung, TikTok, Google, Meta (+20 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/generate-parentheses/](https://leetcode.com/problems/generate-parentheses/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Two Pointers, String, Greedy  
+**Companies:** Barclays, Amazon, Infosys, Microsoft, LinkedIn, Google, Meta, Bloomberg  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/partition-labels/](https://leetcode.com/problems/partition-labels/)
 

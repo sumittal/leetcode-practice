@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Dynamic Programming, Bit Manipulation  
+**Companies:** Qualcomm, Nvidia, Microsoft, Google, Bloomberg, Apple, Amazon, Meta  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/counting-bits/](https://leetcode.com/problems/counting-bits/)
 

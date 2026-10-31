@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Hash Table, Sorting  
+**Companies:** Yahoo, Netflix, Capgemini, Airbnb, tcs, ZScaler, SAP, Bloomberg, Amazon, Microsoft, Google, Accenture, Meta, IBM, Zoho (+4 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/contains-duplicate/](https://leetcode.com/problems/contains-duplicate/)
 

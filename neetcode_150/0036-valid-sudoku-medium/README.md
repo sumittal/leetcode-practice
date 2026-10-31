@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Matrix  
+**Companies:** Wissen Technology, Confluent, Samsara, EarnIn, Snap, Verkada, Apple, Riot Games, Upstart, Zoho, Uber, Amazon, Karat, PayPal, Walmart Labs (+8 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/valid-sudoku/](https://leetcode.com/problems/valid-sudoku/)
 

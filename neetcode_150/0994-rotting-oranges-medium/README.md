@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Breadth-First Search, Matrix  
+**Companies:** Lyft, Rakuten, Wix, Sigmoid, OpenAI, Moloco, Flipkart, Tekion, Amazon, Commvault, Zoho, Dream11, Zoox, eBay, Myntra (+32 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/rotting-oranges/](https://leetcode.com/problems/rotting-oranges/)
 

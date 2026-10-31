@@ -4,6 +4,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Breadth-First Search, Matrix  
+**Companies:** DoorDash, eBay, Visa, Meta, Amazon, TikTok, Google, Uber, Bloomberg, Microsoft  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/walls-and-gates/](https://leetcode.com/problems/walls-and-gates/)
 

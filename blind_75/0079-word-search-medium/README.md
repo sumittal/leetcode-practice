@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, String, Backtracking, Depth-First Search, Matrix  
+**Companies:** Faire, Karat, Uber, Bloomberg, Mastercard, PayPal, Netflix, Okta, TikTok, Shopee, Grammarly, Amazon, eBay, Atlassian, Snap (+17 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/word-search/](https://leetcode.com/problems/word-search/)
 

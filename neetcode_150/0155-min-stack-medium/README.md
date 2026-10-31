@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Stack, Design  
+**Companies:** Paytm, Zenefits, Odoo, Sigmoid, Snap, Tinkoff, Bloomberg, Vimeo, Ozon, Lucid, AMD, Intel, UiPath, Tripadvisor, Lyft (+21 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/min-stack/](https://leetcode.com/problems/min-stack/)
 

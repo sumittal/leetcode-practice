@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming, Stack, Greedy, Bracket Sequences  
+**Companies:** Alibaba, Roku, PornHub, HP, Pwc, TikTok, Salesforce, Meta, Amazon, LinkedIn, Bloomberg, Microsoft, Oracle, Google, Apple (+1 more)  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/valid-parenthesis-string/](https://leetcode.com/problems/valid-parenthesis-string/)
 

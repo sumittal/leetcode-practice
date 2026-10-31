@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Two Pointers, Binary Search, Bit Manipulation, Pigeonhole Principle, Floyd's Cycle Finding Algorithm  
+**Companies:** Nike, DP world, Citadel, Nvidia, Amazon, Walmart Labs, Bloomberg, Anduril, Microsoft, Google, Flipkart, Zoho, tcs, Meta, Cisco (+3 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/find-the-duplicate-number/](https://leetcode.com/problems/find-the-duplicate-number/)
 

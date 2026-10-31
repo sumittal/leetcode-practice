@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, String, Backtracking  
+**Companies:** Dropbox, Epic Systems, Flexport, LinkedIn, Tesla, DE Shaw, Accenture, Amazon, Zoho, Tekion, Uber, Microsoft, Google, Zopsmart, Meta (+17 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/letter-combinations-of-a-phone-number/](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 

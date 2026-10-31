@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Math, String, Simulation  
+**Companies:** Nielsen, X, Two Sigma, Roku, MakeMyTrip, Zoho, ByteDance, Pinterest, EPAM Systems, Palo Alto Networks, Meta, TikTok, Microsoft, Bloomberg, Amazon (+4 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/multiply-strings/](https://leetcode.com/problems/multiply-strings/)
 

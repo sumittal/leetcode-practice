@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, String, Dynamic Programming, Trie, Memoization, Brute-Force Search  
+**Companies:** Pocket Gems, Coupang, Yahoo, MongoDB, Walmart Labs, Millennium, Compass, Intuit, Grammarly, Zeta, Uber, Arista Networks, Nutanix, Autodesk, Amazon (+11 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/word-break/](https://leetcode.com/problems/word-break/)
 

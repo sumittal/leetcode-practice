@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Hash Table, Math, Two Pointers, Floyd's Cycle Finding Algorithm  
+**Companies:** Snowflake, BlackRock, Nike, Jump Trading, X, Swiggy, Audible, Airbnb, Autodesk, Google, Microsoft, Accenture, Amazon, Tesla, Cisco (+10 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/happy-number/](https://leetcode.com/problems/happy-number/)
 

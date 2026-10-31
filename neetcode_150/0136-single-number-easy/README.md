@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Bit Manipulation  
+**Companies:** Amdocs, tcs, Huawei, Airbnb, Bloomberg, Amazon, Google, Qualcomm, Cognizant, Adobe, Microsoft, Meta, Accenture, Infosys, Salesforce (+2 more)  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/single-number/](https://leetcode.com/problems/single-number/)
 

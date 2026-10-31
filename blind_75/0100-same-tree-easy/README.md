@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, Breadth-First Search, Binary Tree  
+**Companies:** Bloomberg, Amazon, Google, Microsoft, Meta, tcs, LinkedIn, Apple, Oracle  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/same-tree/](https://leetcode.com/problems/same-tree/)
 

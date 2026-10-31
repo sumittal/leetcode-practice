@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming  
+**Companies:** Axon, eBay, Zoho, Amazon, Microsoft, Bloomberg, Google, Meta  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/interleaving-string/](https://leetcode.com/problems/interleaving-string/)
 

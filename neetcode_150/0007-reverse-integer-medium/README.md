@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Math  
+**Companies:** Accenture, Bloomberg, tcs, Google, Apple, Amazon, Microsoft, EPAM Systems, Cognizant, Meta, Capgemini, Infosys, Oracle, LinkedIn  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/reverse-integer/](https://leetcode.com/problems/reverse-integer/)
 

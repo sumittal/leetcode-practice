@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Math, Bit Manipulation  
+**Companies:** Hulu, Swiggy, Google, IBM, Amazon, Bloomberg, Microsoft, Meta  
 **Pattern:** Bit Manipulation  
 **LeetCode:** [https://leetcode.com/problems/sum-of-two-integers/](https://leetcode.com/problems/sum-of-two-integers/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Linked List, Recursion  
+**Companies:** Qualcomm, Cadence, Sigmoid, Arista Networks, ZScaler, Microsoft, Autodesk, TikTok, josh technology, Zopsmart, MathWorks, Amazon, Salesforce, Palo Alto Networks, Bloomberg (+9 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/reverse-nodes-in-k-group/](https://leetcode.com/problems/reverse-nodes-in-k-group/)
 

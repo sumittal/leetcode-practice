@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, Binary Tree, DP on Trees  
+**Companies:** Meta, Wix, Nutanix, Roblox, Verkada, Oracle, Amazon, Palo Alto Networks, Google, Bloomberg, Microsoft, Walmart Labs, Flipkart, tcs, Nvidia (+4 more)  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/diameter-of-binary-tree/](https://leetcode.com/problems/diameter-of-binary-tree/)
 

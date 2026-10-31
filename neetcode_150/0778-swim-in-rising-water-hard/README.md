@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Binary Search, Depth-First Search, Breadth-First Search, Union-Find, Minimax, Heap (Priority Queue), Matrix, Dijkstra's Algorithm  
+**Companies:** WeRide, Google, Meta, DoorDash, Amazon, Salesforce, Microsoft, Bloomberg  
 **Pattern:** Advanced Graphs  
 **LeetCode:** [https://leetcode.com/problems/swim-in-rising-water/](https://leetcode.com/problems/swim-in-rising-water/)
 

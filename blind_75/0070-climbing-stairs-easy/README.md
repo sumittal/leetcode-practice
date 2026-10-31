@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Math, Dynamic Programming, Memoization  
+**Companies:** HPE, HSBC, Adobe, Rakuten, Grammarly, Zoho, Accenture, AMD, Qualcomm, Bloomberg, Infosys, Amazon, Microsoft, Accolite, Google (+18 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/climbing-stairs/](https://leetcode.com/problems/climbing-stairs/)
 

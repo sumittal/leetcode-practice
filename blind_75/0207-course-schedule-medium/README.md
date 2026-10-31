@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Directed Acyclic Graph  
+**Companies:** Zenefits, Nordstrom, Yelp, Coupang, TikTok, Swiggy, ByteDance, Amazon, Snowflake, Cruise, Apple, Anduril, BitGo, LiveRamp, Meta (+28 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/course-schedule/](https://leetcode.com/problems/course-schedule/)
 

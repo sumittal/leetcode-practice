@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, String Matching, Binary Tree, Hash Function  
+**Companies:** eBay, Meta, Bloomberg, tcs, Amazon, Microsoft, Google  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/subtree-of-another-tree/](https://leetcode.com/problems/subtree-of-another-tree/)
 

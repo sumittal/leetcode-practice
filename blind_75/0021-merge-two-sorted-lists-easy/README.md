@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Linked List, Recursion  
+**Companies:** Wix, Bloomberg, Qualcomm, Hubspot, Amazon, ServiceNow, Microsoft, Siemens, Docusign, Rippling, Squarespace, Yandex, Google, Capgemini, Apple (+17 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/merge-two-sorted-lists/](https://leetcode.com/problems/merge-two-sorted-lists/)
 

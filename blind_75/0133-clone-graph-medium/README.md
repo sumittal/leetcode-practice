@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, Depth-First Search, Breadth-First Search, Graph Theory  
+**Companies:** Pocket Gems, Flexport, Wix, Meta, Siemens, CrowdStrike, MongoDB, Nutanix, eBay, Uber, ByteDance, Amazon, Google, Nvidia, Oracle (+3 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/clone-graph/](https://leetcode.com/problems/clone-graph/)
 

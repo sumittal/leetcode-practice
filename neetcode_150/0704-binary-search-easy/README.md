@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Binary Search  
+**Companies:** SAP, Pure Storage, Bloomberg, Google, Microsoft, Amazon, Meta, Infosys, tcs, Oracle, Apple  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/binary-search/](https://leetcode.com/problems/binary-search/)
 

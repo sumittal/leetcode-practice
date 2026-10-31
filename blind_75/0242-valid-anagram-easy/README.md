@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Hash Table, String, Sorting  
+**Companies:** Nokia, Amadeus, Yelp, American Express, tcs, Bloomberg, Wipro, EPAM Systems, Ozon, Cognizant, IBM, Capgemini, Infosys, Nagarro, Amazon (+19 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
 

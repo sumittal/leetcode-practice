@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Stack, Monotonic Stack, Range Minimum/Maximum Query  
+**Companies:** thoughtspot, Coupang, Myntra, Visa, Flipkart, BitGo, Capital One, Amazon, Waymo, Microsoft, Google, tcs, Bloomberg, Accenture, Walmart Labs (+13 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/largest-rectangle-in-histogram/](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming  
+**Companies:** Delhivery, Adobe, LinkedIn, Siemens, Morgan Stanley, tcs, HashedIn, Swiggy, DE Shaw, Qualcomm, Amazon, Bloomberg, Google, Infosys, ByteDance (+7 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/maximum-product-subarray/](https://leetcode.com/problems/maximum-product-subarray/)
 

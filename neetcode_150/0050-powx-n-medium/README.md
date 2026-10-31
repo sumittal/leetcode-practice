@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Math, Recursion  
+**Companies:** Wix, Meta, eBay, LinkedIn, Bloomberg, tcs, Qualcomm, ServiceNow, Google, Microsoft, Amazon, EPAM Systems, Citadel, Adobe, Walmart Labs (+6 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/powx-n/](https://leetcode.com/problems/powx-n/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Tree, Depth-First Search, Binary Tree  
+**Companies:** Bloomberg, Amazon, Anduril, Visa, Microsoft, Meta, Google, tcs, Apple  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/balanced-binary-tree/](https://leetcode.com/problems/balanced-binary-tree/)
 

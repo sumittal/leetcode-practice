@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix  
+**Companies:** PornHub, Nutanix, Anduril, Amazon, Adobe, Bloomberg, Google, Microsoft, Oracle, Meta, TikTok, Uber  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/surrounded-regions/](https://leetcode.com/problems/surrounded-regions/)
 

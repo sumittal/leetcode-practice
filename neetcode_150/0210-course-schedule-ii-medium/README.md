@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort  
+**Companies:** Zenefits, instabase, Snowflake, Netflix, Anduril, Snap, Roblox, Moloco, Arista Networks, MongoDB, Aurora, Apple, Nutanix, TikTok, Remitly (+21 more)  
 **Pattern:** Graphs  
 **LeetCode:** [https://leetcode.com/problems/course-schedule-ii/](https://leetcode.com/problems/course-schedule-ii/)
 

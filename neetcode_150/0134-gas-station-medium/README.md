@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Greedy  
+**Companies:** CME Group, Scale AI, BitGo, Sprinklr, Infosys, Mastercard, Flipkart, Accolite, Dream11, PhonePe, Tekion, Adobe, Zoho, Visa, ServiceNow (+12 more)  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/gas-station/](https://leetcode.com/problems/gas-station/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Divide and Conquer, Dynamic Programming  
+**Companies:** Upstart, Squarepoint Capital, Target, Wix, tcs, Tekion, LinkedIn, Infosys, Mastercard, Microsoft, Accenture, Nvidia, Zomato, Amazon, Vimeo (+41 more)  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/maximum-subarray/](https://leetcode.com/problems/maximum-subarray/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, String, Sliding Window  
+**Companies:** Pocket Gems, CRED, ServiceNow, Publicis Sapient, UiPath, Bloomberg, InMobi, Amazon, DE Shaw, Microsoft, Infosys, Google, Zoho, ByteDance, Meta (+3 more)  
 **Pattern:** Sliding Window  
 **LeetCode:** [https://leetcode.com/problems/longest-repeating-character-replacement/](https://leetcode.com/problems/longest-repeating-character-replacement/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** String, Dynamic Programming  
+**Companies:** Swiggy, Zoho, HashedIn, Infosys, Cisco, Axon, Qualcomm, Sprinklr, Amazon, Samsung, Flipkart, Bloomberg, EPAM Systems, TikTok, LinkedIn (+7 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/edit-distance/](https://leetcode.com/problems/edit-distance/)
 

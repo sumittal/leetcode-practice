@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Linked List, Recursion  
+**Companies:** Yahoo, Zenefits, Zynga, Luxoft, Yelp, X, Qualcomm, Nokia, Adobe, Snap, Apple, SAP, Paytm, Microsoft, Oracle (+18 more)  
 **Pattern:** Linked List  
 **LeetCode:** [https://leetcode.com/problems/reverse-linked-list/](https://leetcode.com/problems/reverse-linked-list/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Backtracking  
+**Companies:** Workday, Arista Networks, Booking.com, Microstrategy, Zomato, Qualcomm, Amazon, LinkedIn, Microsoft, Infosys, American Express, Samsung, Epic Systems, Bloomberg, TikTok (+9 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/permutations/](https://leetcode.com/problems/permutations/)
 

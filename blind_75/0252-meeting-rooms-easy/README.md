@@ -4,6 +4,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Sorting, Quicksort  
+**Companies:** Palo Alto Networks, Apple, TikTok, Oracle, Meta, Amazon, Microsoft, Uber, Google  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/meeting-rooms/](https://leetcode.com/problems/meeting-rooms/)
 

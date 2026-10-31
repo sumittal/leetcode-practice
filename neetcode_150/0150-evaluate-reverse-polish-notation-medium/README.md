@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Math, Stack  
+**Companies:** Apollo.io, Citigroup, Canonical, Citadel, Grammarly, Anduril, Tesla, LinkedIn, Bloomberg, Amazon, tcs, Microsoft, Google, Yandex, Meta (+4 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/evaluate-reverse-polish-notation/](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Union-Find  
+**Companies:** Wissen Technology, Paytm, Okta, Walmart Labs, Amazon, Google, Bloomberg, BitGo, TikTok, Myntra, Microsoft, Arcesium, Swiggy, tcs, Meta (+23 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/longest-consecutive-sequence/](https://leetcode.com/problems/longest-consecutive-sequence/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Binary Search, Sweep Line, Sorting, Heap (Priority Queue)  
+**Companies:** Google, Bloomberg, Amazon  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/minimum-interval-to-include-each-query/](https://leetcode.com/problems/minimum-interval-to-include-each-query/)
 

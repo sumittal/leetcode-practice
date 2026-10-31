@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Two Pointers, String, Dynamic Programming, Manacher  
+**Companies:** Nielsen, Tinkoff, HSBC, tcs, Cisco, ZS Associates, Disney, DP world, Wix, SAP, PornHub, Cognizant, EarnIn, Adobe, Softwire (+50 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/longest-palindromic-substring/](https://leetcode.com/problems/longest-palindromic-substring/)
 

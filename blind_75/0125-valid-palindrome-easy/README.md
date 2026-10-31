@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Two Pointers, String  
+**Companies:** Zenefits, Cadence, Meta, Comcast, LTI, HCL, Pwc, Yandex, Apple, tcs, Altimetrik, VK, Fidelity, Axon, Cognizant (+24 more)  
 **Pattern:** Two Pointers  
 **LeetCode:** [https://leetcode.com/problems/valid-palindrome/](https://leetcode.com/problems/valid-palindrome/)
 

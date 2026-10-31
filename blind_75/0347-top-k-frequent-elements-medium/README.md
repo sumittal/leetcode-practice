@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Divide and Conquer, Sorting, Heap (Priority Queue), Bucket Sort, Counting, Quickselect  
+**Companies:** Roku, Pocket Gems, Disney, Yelp, SoFi, Chewy, Yahoo, Meta, eBay, Workday, Snap, Oracle, Apple, Robinhood, Walmart Labs (+34 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/top-k-frequent-elements/](https://leetcode.com/problems/top-k-frequent-elements/)
 

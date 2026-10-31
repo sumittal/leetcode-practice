@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Knapsack Problem, 0-1 Knapsack  
+**Companies:** eBay, Dream11, Amazon, TikTok, Bloomberg, Google, Microsoft, Visa, tcs, Meta, Infosys, Goldman Sachs, Salesforce, Apple  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/partition-equal-subset-sum/](https://leetcode.com/problems/partition-equal-subset-sum/)
 

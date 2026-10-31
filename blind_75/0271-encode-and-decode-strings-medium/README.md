@@ -4,6 +4,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, String, Design  
+**Companies:** CrowdStrike, OpenAI, Snowflake, Google, Oracle, TikTok, Amazon, Microsoft, Meta  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/encode-and-decode-strings/](https://leetcode.com/problems/encode-and-decode-strings/)
 

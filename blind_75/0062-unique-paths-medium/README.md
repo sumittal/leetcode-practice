@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Math, Dynamic Programming, Combinatorics  
+**Companies:** razorpay, Akamai, Amazon, Flipkart, Qualcomm, Bloomberg, Meta, Grammarly, EPAM Systems, Microsoft, ByteDance, Google, Nvidia, tcs, Zoho (+3 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/unique-paths/](https://leetcode.com/problems/unique-paths/)
 

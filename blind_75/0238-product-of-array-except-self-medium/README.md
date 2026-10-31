@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Prefix Sum  
+**Companies:** ZS Associates, ThousandEyes, Asana, FreshWorks, PayPal, Avito, Uber, Okta, Amazon, Apple, Zoho, Microsoft, Nvidia, Bloomberg, Yandex (+15 more)  
 **Pattern:** Arrays & Hashing  
 **LeetCode:** [https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
 

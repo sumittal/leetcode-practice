@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Dynamic Programming, Greedy  
+**Companies:** Groupon, HashedIn, Zoho, Grab, ServiceNow, PhonePe, eBay, Nutanix, Amazon, Meesho, Microsoft, Flipkart, TikTok, Google, Bloomberg (+13 more)  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/jump-game-ii/](https://leetcode.com/problems/jump-game-ii/)
 

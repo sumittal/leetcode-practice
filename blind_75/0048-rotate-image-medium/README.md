@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Math, Matrix  
+**Companies:** SIG, Rakuten, Citigroup, Qualcomm, Mastercard, Zoho, Nutanix, Cisco, Roblox, Capital One, Bloomberg, Microsoft, Apple, Amazon, Samsung (+17 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/rotate-image/](https://leetcode.com/problems/rotate-image/)
 

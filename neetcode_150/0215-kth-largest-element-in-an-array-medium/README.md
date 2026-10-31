@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Divide and Conquer, Sorting, Heap (Priority Queue), Quickselect  
+**Companies:** Pocket Gems, Avito, Meta, Texas Instruments, Spotify, Apple, Alibaba, BNY Mellon, Morgan Stanley, TikTok, Amazon, SAP, Microsoft, LinkedIn, Walmart Labs (+22 more)  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/kth-largest-element-in-an-array/](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 

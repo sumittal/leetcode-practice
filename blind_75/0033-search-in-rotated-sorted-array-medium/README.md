@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Binary Search  
+**Companies:** Cohesity, Delhivery, Tinkoff, Grammarly, Autodesk, Walmart Labs, FreshWorks, Arista Networks, Criteo, Nvidia, TikTok, Amazon, Paytm, Zoho, Oracle (+30 more)  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/search-in-rotated-sorted-array/](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 

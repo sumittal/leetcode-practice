@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Math, Divide and Conquer, Geometry, Sorting, Heap (Priority Queue), Quickselect, K-D Tree  
+**Companies:** Asana, Wix, Meta, Whatnot, Swiggy, Axon, Amazon, Airbnb, Salesforce, Apple, Google, LinkedIn, Oracle, Bloomberg, Microsoft (+1 more)  
 **Pattern:** Heap / Priority Queue  
 **LeetCode:** [https://leetcode.com/problems/k-closest-points-to-origin/](https://leetcode.com/problems/k-closest-points-to-origin/)
 

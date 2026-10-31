@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy  
 **Tags:** Array, Dynamic Programming  
+**Companies:** Squarepoint Capital, Amazon, Google, Meta, Bloomberg, tcs, Microsoft  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/min-cost-climbing-stairs/](https://leetcode.com/problems/min-cost-climbing-stairs/)
 

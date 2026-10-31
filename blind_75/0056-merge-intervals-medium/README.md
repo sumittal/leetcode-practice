@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Sorting, Quicksort  
+**Companies:** Tesla, Grammarly, Ripple, Darwinbox, Grubhub, Tesco, X, SAP, Ozon, Nutanix, Zoho, IBM, Yelp, Walmart Labs, Nextdoor (+85 more)  
 **Pattern:** Intervals  
 **LeetCode:** [https://leetcode.com/problems/merge-intervals/](https://leetcode.com/problems/merge-intervals/)
 

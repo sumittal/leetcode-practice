@@ -2,6 +2,7 @@
 
 **Difficulty:** Hard  
 **Tags:** Array, Dynamic Programming, Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Memoization, Matrix, Directed Acyclic Graph  
+**Companies:** DoorDash, WeRide, Duolingo, Nutanix, Adobe, PhonePe, EPAM Systems, Epic Systems, TikTok, Meta, Infosys, Visa, Google, Apple, Salesforce (+4 more)  
 **Pattern:** 2-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/longest-increasing-path-in-a-matrix/](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
 

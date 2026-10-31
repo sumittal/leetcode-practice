@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Hash Table, Matrix  
+**Companies:** Nykaa, eBay, ZScaler, Walmart Labs, Zoho, Nutanix, Autodesk, Bloomberg, Meta, Microsoft, Amazon, Google, Nvidia, Juspay, tcs (+4 more)  
 **Pattern:** Math & Geometry  
 **LeetCode:** [https://leetcode.com/problems/set-matrix-zeroes/](https://leetcode.com/problems/set-matrix-zeroes/)
 

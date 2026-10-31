@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Stack, Sorting, Monotonic Stack  
+**Companies:** Nutanix, Ripple, BNY Mellon, PhonePe, Waymo, Google, Amazon, Microsoft, Bloomberg, Goldman Sachs, Meta  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/car-fleet/](https://leetcode.com/problems/car-fleet/)
 

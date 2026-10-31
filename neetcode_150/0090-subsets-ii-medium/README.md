@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Backtracking, Bit Manipulation  
+**Companies:** UiPath, Walmart Labs, Bloomberg, Microsoft, Google, Amazon, Meta, tcs  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/subsets-ii/](https://leetcode.com/problems/subsets-ii/)
 

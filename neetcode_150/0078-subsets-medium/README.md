@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Backtracking, Bit Manipulation  
+**Companies:** Coupang, PornHub, Wix, Bloomberg, Amazon, Meta, Microsoft, Agoda, Uber, Google, PayPal, TikTok, Walmart Labs, Flipkart, tcs (+4 more)  
 **Pattern:** Backtracking  
 **LeetCode:** [https://leetcode.com/problems/subsets/](https://leetcode.com/problems/subsets/)
 

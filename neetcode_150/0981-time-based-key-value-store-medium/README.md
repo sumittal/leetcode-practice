@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Hash Table, String, Binary Search, Design  
+**Companies:** Axon, Compass, Confluent, Flexport, Coinbase, Netflix, Lyft, Citadel, Gusto, Verkada, OpenAI, Databricks, Instacart, eBay, MongoDB (+17 more)  
 **Pattern:** Binary Search  
 **LeetCode:** [https://leetcode.com/problems/time-based-key-value-store/](https://leetcode.com/problems/time-based-key-value-store/)
 

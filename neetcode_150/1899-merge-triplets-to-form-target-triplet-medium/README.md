@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Greedy  
+**Companies:** Google  
 **Pattern:** Greedy  
 **LeetCode:** [https://leetcode.com/problems/merge-triplets-to-form-target-triplet/](https://leetcode.com/problems/merge-triplets-to-form-target-triplet/)
 

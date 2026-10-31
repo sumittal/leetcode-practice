@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Two Pointers, String, Dynamic Programming  
+**Companies:** Netskope, Pure Storage, Citadel, BNY Mellon, Meta, Akamai, Walmart Labs, HCL, IBM, Salesforce, Intuit, PayPal, Epic Systems, Oracle, Anduril (+9 more)  
 **Pattern:** 1-D Dynamic Programming  
 **LeetCode:** [https://leetcode.com/problems/palindromic-substrings/](https://leetcode.com/problems/palindromic-substrings/)
 

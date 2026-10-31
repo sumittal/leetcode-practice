@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Tree, Depth-First Search, Binary Search Tree, Binary Tree  
+**Companies:** Uber, Expedia, tcs, Bloomberg, Oracle, Amazon, Microsoft, Google, Meta, TikTok  
 **Pattern:** Trees  
 **LeetCode:** [https://leetcode.com/problems/kth-smallest-element-in-a-bst/](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 

@@ -2,6 +2,7 @@
 
 **Difficulty:** Medium  
 **Tags:** Array, Stack, Monotonic Stack  
+**Companies:** Disney, Agoda, Zoho, Grab, Anduril, Chime, Swiggy, Morgan Stanley, Tekion, TikTok, josh technology, Amazon, Bloomberg, Microsoft, Intuit (+10 more)  
 **Pattern:** Stack  
 **LeetCode:** [https://leetcode.com/problems/daily-temperatures/](https://leetcode.com/problems/daily-temperatures/)
 
