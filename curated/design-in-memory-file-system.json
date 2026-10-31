@@ -1,0 +1,18 @@
+{
+  "description": "Implement a hierarchical file system with directory creation, sorted directory listings, file appends, and file reads. Example 1: create /a/b, add \"hello\" to /a/b/file, then read that file and receive \"hello\". Example 2: add \" world\" to the same file and read \"hello world\"; listing /a returns [\"b\"]. Constraints: paths are absolute, components are nonempty, and file operations target valid paths.",
+  "intuition": "A trie naturally represents path components and lets files and directories share their common prefixes.",
+  "brute_force": {
+    "approach": "Store full path strings and scan them to find each directory's immediate children.",
+    "time": "ls O(n), mkdir O(path length), addContentToFile O(path length + content length), readContentFromFile O(1)",
+    "space": "O(total path and file content)"
+  },
+  "optimal": {
+    "approach": "Store child nodes in a trie; each file node owns its content and each directory node owns named children.",
+    "time": "ls O(c log c), mkdir O(path length), addContentToFile O(path length + content length), readContentFromFile O(path length)",
+    "space": "O(total path and file content)"
+  },
+  "edge_cases": [
+    "Listing a file returns only its basename.",
+    "Appending to an existing file preserves its earlier contents."
+  ]
+}

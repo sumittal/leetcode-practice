@@ -1,7 +1,7 @@
 # LeetCode Practice
 
 A locally generated study repo with problem statements, curated approaches, and runnable Python solutions.
-Blind 75 + neetcode_150 = the full NeetCode 150; top_interview_150 adds Top Interview 150 problems not already covered.
+Blind 75 + neetcode_150 = the full NeetCode 150; top_interview_150 adds Top Interview 150 problems not already covered; design adds LeetCode Design-tagged problems not already covered.
 
 ## Usage
 
@@ -10,6 +10,8 @@ python3 fetch_problems.py --list neetcode150
 python3 fetch_problems.py --list neetcode150-extra --start 0 --batch-size 25
 python3 fetch_problems.py --list topinterview150
 python3 fetch_problems.py --list topinterview150-extra --start 0 --batch-size 50
+python3 fetch_problems.py --list design
+python3 fetch_problems.py --list design-extra --start 0 --batch-size 50
 python3 fetch_problems.py --list blind75 --start 0 --batch-size 20
 python3 fetch_problems.py --slugs two-sum,valid-anagram
 python3 fetch_problems.py --index-only
@@ -17,9 +19,9 @@ python3 fetch_problems.py --index-only
 
 ## Overall Progress
 
-- Easy: 51/51 solved
-- Hard: 30/30 solved
-- Medium: 142/142 solved
+- Easy: 60/60 solved
+- Hard: 41/41 solved
+- Medium: 172/172 solved
 
 ## Blind 75
 
@@ -282,5 +284,68 @@ python3 fetch_problems.py --index-only
 | 637 | [Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/) | Tree | Easy | [solution](./top_interview_150/0637-average-of-levels-in-binary-tree-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+637+Average+of+Levels+in+Binary+Tree+neetcode) | ✅ Solved |
 | 909 | [Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/) | Graphs | Medium | [solution](./top_interview_150/0909-snakes-and-ladders-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=6lH4nO3JfLk) | ✅ Solved |
 | 918 | [Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/) | Greedy | Medium | [solution](./top_interview_150/0918-maximum-sum-circular-subarray-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=fxT9KjakYPM) | ✅ Solved |
+
+## LeetCode Design problems
+
+### Progress
+
+- Easy: 9/9 solved
+- Hard: 11/11 solved
+- Medium: 30/30 solved
+
+### Problems
+
+| # | Title | Pattern | Difficulty | Solution | Video Guide | Status |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 225 | [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | Stack | Easy | [solution](./design/0225-implement-stack-using-queues-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=rW4vm0-DLYc) | ✅ Solved |
+| 232 | [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | Stack | Easy | [solution](./design/0232-implement-queue-using-stacks-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+232+Implement+Queue+using+Stacks+neetcode) | ✅ Solved |
+| 251 | [Flatten 2D Vector 🔒](https://leetcode.com/problems/flatten-2d-vector/) | Array | Medium | [solution](./design/0251-flatten-2d-vector-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+251+Flatten+2D+Vector+neetcode) | ✅ Solved |
+| 303 | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | Arrays & Hashing | Easy | [solution](./design/0303-range-sum-query-immutable-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=2pndAmo_sMA) | ✅ Solved |
+| 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Arrays & Hashing | Medium | [solution](./design/0304-range-sum-query-2d-immutable-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=KE8MQuwE2yA) | ✅ Solved |
+| 307 | [Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/) | Array | Medium | [solution](./design/0307-range-sum-query-mutable-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+307+Range+Sum+Query+-+Mutable+neetcode) | ✅ Solved |
+| 341 | [Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) | Stack | Medium | [solution](./design/0341-flatten-nested-list-iterator-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+341+Flatten+Nested+List+Iterator+neetcode) | ✅ Solved |
+| 346 | [Moving Average from Data Stream 🔒](https://leetcode.com/problems/moving-average-from-data-stream/) | Array | Easy | [solution](./design/0346-moving-average-from-data-stream-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+346+Moving+Average+from+Data+Stream+neetcode) | ✅ Solved |
+| 348 | [Design Tic-Tac-Toe 🔒](https://leetcode.com/problems/design-tic-tac-toe/) | Array | Medium | [solution](./design/0348-design-tic-tac-toe-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+348+Design+Tic-Tac-Toe+neetcode) | ✅ Solved |
+| 353 | [Design Snake Game 🔒](https://leetcode.com/problems/design-snake-game/) | Array | Medium | [solution](./design/0353-design-snake-game-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+353+Design+Snake+Game+neetcode) | ✅ Solved |
+| 359 | [Logger Rate Limiter 🔒](https://leetcode.com/problems/logger-rate-limiter/) | Hash Table | Easy | [solution](./design/0359-logger-rate-limiter-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+359+Logger+Rate+Limiter+neetcode) | ✅ Solved |
+| 362 | [Design Hit Counter 🔒](https://leetcode.com/problems/design-hit-counter/) | Array | Medium | [solution](./design/0362-design-hit-counter-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+362+Design+Hit+Counter+neetcode) | ✅ Solved |
+| 381 | [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/) | Array | Hard | [solution](./design/0381-insert-delete-getrandom-o1-duplicates-allowed-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+381+Insert+Delete+GetRandom+O%281%29+-+Duplicates+allowed+neetcode) | ✅ Solved |
+| 384 | [Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Array | Medium | [solution](./design/0384-shuffle-an-array-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+384+Shuffle+an+Array+neetcode) | ✅ Solved |
+| 432 | [All O`one Data Structure](https://leetcode.com/problems/all-oone-data-structure/) | Hash Table | Hard | [solution](./design/0432-all-oone-data-structure-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+432+All+O%60one+Data+Structure+neetcode) | ✅ Solved |
+| 460 | [LFU Cache](https://leetcode.com/problems/lfu-cache/) | Linked List | Hard | [solution](./design/0460-lfu-cache-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=bLEIHn-DgoA) | ✅ Solved |
+| 535 | [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/) | Arrays & Hashing | Medium | [solution](./design/0535-encode-and-decode-tinyurl-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=VyBOaboQLGc) | ✅ Solved |
+| 588 | [Design In-Memory File System 🔒](https://leetcode.com/problems/design-in-memory-file-system/) | Hash Table | Hard | [solution](./design/0588-design-in-memory-file-system-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+588+Design+In-Memory+File+System+neetcode) | ✅ Solved |
+| 622 | [Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) | Linked List | Medium | [solution](./design/0622-design-circular-queue-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=aBbsfn863oA) | ✅ Solved |
+| 631 | [Design Excel Sum Formula 🔒](https://leetcode.com/problems/design-excel-sum-formula/) | Array | Hard | [solution](./design/0631-design-excel-sum-formula-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+631+Design+Excel+Sum+Formula+neetcode) | ✅ Solved |
+| 642 | [Design Search Autocomplete System 🔒](https://leetcode.com/problems/design-search-autocomplete-system/) | String | Hard | [solution](./design/0642-design-search-autocomplete-system-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+642+Design+Search+Autocomplete+System+neetcode) | ✅ Solved |
+| 705 | [Design HashSet](https://leetcode.com/problems/design-hashset/) | Arrays & Hashing | Easy | [solution](./design/0705-design-hashset-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=VymjPQUXjL8) | ✅ Solved |
+| 706 | [Design HashMap](https://leetcode.com/problems/design-hashmap/) | Arrays & Hashing | Easy | [solution](./design/0706-design-hashmap-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=cNWsgbKwwoU) | ✅ Solved |
+| 707 | [Design Linked List](https://leetcode.com/problems/design-linked-list/) | Linked List | Medium | [solution](./design/0707-design-linked-list-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Wf4QhpdVFQo) | ✅ Solved |
+| 715 | [Range Module](https://leetcode.com/problems/range-module/) | Design | Hard | [solution](./design/0715-range-module-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+715+Range+Module+neetcode) | ✅ Solved |
+| 716 | [Max Stack 🔒](https://leetcode.com/problems/max-stack/) | Linked List | Hard | [solution](./design/0716-max-stack-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+716+Max+Stack+neetcode) | ✅ Solved |
+| 729 | [My Calendar I](https://leetcode.com/problems/my-calendar-i/) | Array | Medium | [solution](./design/0729-my-calendar-i-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+729+My+Calendar+I+neetcode) | ✅ Solved |
+| 855 | [Exam Room](https://leetcode.com/problems/exam-room/) | Design | Medium | [solution](./design/0855-exam-room-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+855+Exam+Room+neetcode) | ✅ Solved |
+| 895 | [Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) | Stack | Hard | [solution](./design/0895-maximum-frequency-stack-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Z6idIicFDOE) | ✅ Solved |
+| 901 | [Online Stock Span](https://leetcode.com/problems/online-stock-span/) | Stack | Medium | [solution](./design/0901-online-stock-span-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=slYh0ZNEqSw) | ✅ Solved |
+| 933 | [Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | Design | Easy | [solution](./design/0933-number-of-recent-calls-easy/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+933+Number+of+Recent+Calls+neetcode) | ✅ Solved |
+| 1146 | [Snapshot Array](https://leetcode.com/problems/snapshot-array/) | Array | Medium | [solution](./design/1146-snapshot-array-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1146+Snapshot+Array+neetcode) | ✅ Solved |
+| 1166 | [Design File System 🔒](https://leetcode.com/problems/design-file-system/) | Hash Table | Medium | [solution](./design/1166-design-file-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1166+Design+File+System+neetcode) | ✅ Solved |
+| 1206 | [Design Skiplist](https://leetcode.com/problems/design-skiplist/) | Linked List | Hard | [solution](./design/1206-design-skiplist-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1206+Design+Skiplist+neetcode) | ✅ Solved |
+| 1244 | [Design A Leaderboard 🔒](https://leetcode.com/problems/design-a-leaderboard/) | Hash Table | Medium | [solution](./design/1244-design-a-leaderboard-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1244+Design+A+Leaderboard+neetcode) | ✅ Solved |
+| 1352 | [Product of the Last K Numbers](https://leetcode.com/problems/product-of-the-last-k-numbers/) | Array | Medium | [solution](./design/1352-product-of-the-last-k-numbers-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1352+Product+of+the+Last+K+Numbers+neetcode) | ✅ Solved |
+| 1381 | [Design a Stack With Increment Operation](https://leetcode.com/problems/design-a-stack-with-increment-operation/) | Array | Medium | [solution](./design/1381-design-a-stack-with-increment-operation-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1381+Design+a+Stack+With+Increment+Operation+neetcode) | ✅ Solved |
+| 1396 | [Design Underground System](https://leetcode.com/problems/design-underground-system/) | Arrays & Hashing | Medium | [solution](./design/1396-design-underground-system-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=W5QOLqXskZM) | ✅ Solved |
+| 1472 | [Design Browser History](https://leetcode.com/problems/design-browser-history/) | Linked List | Medium | [solution](./design/1472-design-browser-history-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=i1G-kKnBu8k) | ✅ Solved |
+| 1570 | [Dot Product of Two Sparse Vectors 🔒](https://leetcode.com/problems/dot-product-of-two-sparse-vectors/) | Array | Medium | [solution](./design/1570-dot-product-of-two-sparse-vectors-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1570+Dot+Product+of+Two+Sparse+Vectors+neetcode) | ✅ Solved |
+| 1603 | [Design Parking System](https://leetcode.com/problems/design-parking-system/) | Arrays & Hashing | Easy | [solution](./design/1603-design-parking-system-easy/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=d5zCHesOrSk) | ✅ Solved |
+| 1797 | [Design Authentication Manager](https://leetcode.com/problems/design-authentication-manager/) | Hash Table | Medium | [solution](./design/1797-design-authentication-manager-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1797+Design+Authentication+Manager+neetcode) | ✅ Solved |
+| 1865 | [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) | Array | Medium | [solution](./design/1865-finding-pairs-with-a-certain-sum-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1865+Finding+Pairs+With+a+Certain+Sum+neetcode) | ✅ Solved |
+| 2034 | [Stock Price Fluctuation ](https://leetcode.com/problems/stock-price-fluctuation/) | Hash Table | Medium | [solution](./design/2034-stock-price-fluctuation-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2034+Stock+Price+Fluctuation++neetcode) | ✅ Solved |
+| 2043 | [Simple Bank System](https://leetcode.com/problems/simple-bank-system/) | Array | Medium | [solution](./design/2043-simple-bank-system-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2043+Simple+Bank+System+neetcode) | ✅ Solved |
+| 2296 | [Design a Text Editor](https://leetcode.com/problems/design-a-text-editor/) | Linked List | Hard | [solution](./design/2296-design-a-text-editor-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2296+Design+a+Text+Editor+neetcode) | ✅ Solved |
+| 2336 | [Smallest Number in Infinite Set](https://leetcode.com/problems/smallest-number-in-infinite-set/) | Hash Table | Medium | [solution](./design/2336-smallest-number-in-infinite-set-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2336+Smallest+Number+in+Infinite+Set+neetcode) | ✅ Solved |
+| 2502 | [Design Memory Allocator](https://leetcode.com/problems/design-memory-allocator/) | Array | Medium | [solution](./design/2502-design-memory-allocator-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2502+Design+Memory+Allocator+neetcode) | ✅ Solved |
+| 3408 | [Design Task Manager](https://leetcode.com/problems/design-task-manager/) | Hash Table | Medium | [solution](./design/3408-design-task-manager-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3408+Design+Task+Manager+neetcode) | ✅ Solved |
+| 3484 | [Design Spreadsheet](https://leetcode.com/problems/design-spreadsheet/) | Array | Medium | [solution](./design/3484-design-spreadsheet-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+3484+Design+Spreadsheet+neetcode) | ✅ Solved |
 
 Company tags: community-reported data from [liquidslr/leetcode-company-wise-problems](https://github.com/liquidslr/leetcode-company-wise-problems), ranked by frequency.

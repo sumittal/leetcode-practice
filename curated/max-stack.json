@@ -1,0 +1,18 @@
+{
+  "description": "Create a stack that supports ordinary push, pop, and top operations as well as reading or removing its maximum value. When several entries share the maximum, popMax removes the one nearest the stack top. Example 1: push 5, 1, 5; top and popMax both return 5; the remaining top is 1 and the maximum is still 5. Example 2: push -2, -2, then popMax removes one -2 while the other remains. Constraints: the stack is nonempty whenever a removal or read is requested.",
+  "intuition": "A list preserves stack order and lets a scan find the most recent occurrence of the maximum.",
+  "brute_force": {
+    "approach": "Store values in a list, scanning it for the maximum and deleting that occurrence when requested.",
+    "time": "push O(1), pop O(1), top O(1), peekMax O(n), popMax O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain a doubly linked list for stack order and an ordered structure for maximum values.",
+    "time": "push O(log n), pop O(log n), top O(1), peekMax O(1), popMax O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "When maximum values tie, remove the newest such entry.",
+    "Negative values are valid stack entries."
+  ]
+}

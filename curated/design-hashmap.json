@@ -1,0 +1,17 @@
+{
+  "intuition": "Hash each key to a bucket and keep colliding key-value pairs together.",
+  "brute_force": {
+    "approach": "Store key-value pairs in one list and linearly search it for each operation.",
+    "time": "put O(n), get O(n), remove O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use separate chaining with a fixed array of buckets, updating or removing a matching key within its bucket.",
+    "time": "put O(1) average, get O(1) average, remove O(1) average",
+    "space": "O(n + bucket count)"
+  },
+  "edge_cases": [
+    "Putting an existing key replaces its value.",
+    "A missing key returns -1 and removing it changes nothing."
+  ]
+}

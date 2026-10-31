@@ -1,0 +1,17 @@
+{
+  "intuition": "A two-dimensional prefix table lets any rectangle be assembled from four prefix sums.",
+  "brute_force": {
+    "approach": "Visit every cell in the requested rectangle and add its value.",
+    "time": "initialization O(1), sumRegion O(area)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Precompute inclusive rectangle sums from the origin with a leading zero row and column.",
+    "time": "initialization O(rows * columns), sumRegion O(1)",
+    "space": "O(rows * columns)"
+  },
+  "edge_cases": [
+    "A single-cell rectangle returns that cell's value.",
+    "The zero border avoids separate handling when a query touches the first row or column."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "Store each token's expiry time and renew it only while it is still live.",
+  "brute_force": {
+    "approach": "Keep all token creation and renewal records, then scan them to determine the latest valid expiry.",
+    "time": "generate O(1), renew O(n), countUnexpiredTokens O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map tokens to expiry times and use a min-heap of expiry events to lazily remove expired current versions.",
+    "time": "generate O(log n), renew O(log n), countUnexpiredTokens O(x log n)",
+    "space": "O(n) live tokens plus stale expiry events"
+  },
+  "edge_cases": [
+    "A token expiring exactly at the current time is expired.",
+    "Renewing an absent or expired token has no effect."
+  ]
+}

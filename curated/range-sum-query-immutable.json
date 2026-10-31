@@ -1,0 +1,17 @@
+{
+  "intuition": "Prefix sums let a range total be found by subtracting the sum before its left endpoint.",
+  "brute_force": {
+    "approach": "Add every element from left through right for each query.",
+    "time": "sumRange O(n)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Precompute cumulative sums with a leading zero and subtract two prefix entries per query.",
+    "time": "initialization O(n), sumRange O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A one-element interval returns that element.",
+    "Negative numbers are handled by the same prefix subtraction."
+  ]
+}

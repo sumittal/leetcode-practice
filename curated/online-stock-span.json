@@ -1,0 +1,17 @@
+{
+  "intuition": "A new price absorbs every earlier price no greater than itself when determining its span.",
+  "brute_force": {
+    "approach": "Store all prices and scan backward until a strictly greater price is found for each request.",
+    "time": "next O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Maintain a decreasing stack of price and accumulated-span pairs, popping dominated entries.",
+    "time": "next O(1) amortized",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Equal earlier prices are included in the current span.",
+    "A new all-time high absorbs every prior stack entry."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "A pointer represents the untouched infinite suffix, while a min-heap stores smaller numbers that were added back.",
+  "brute_force": {
+    "approach": "Maintain an explicit set of all currently available positive integers and scan for its minimum.",
+    "time": "popSmallest O(n), addBack O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Return the next pointer value unless a min-heap contains a smaller restored number; use a set to avoid duplicate heap entries.",
+    "time": "popSmallest O(log n), addBack O(log n)",
+    "space": "O(number of restored values)"
+  },
+  "edge_cases": [
+    "Adding back a number already available makes no change.",
+    "Numbers at or beyond the pointer cannot have been removed from the infinite suffix."
+  ]
+}

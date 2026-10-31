@@ -1,0 +1,17 @@
+{
+  "intuition": "At checkout, compute one trip duration and add it to totals keyed by the route.",
+  "brute_force": {
+    "approach": "Store every completed trip and scan route-matching trips to calculate each average.",
+    "time": "checkIn O(1), checkOut O(1), getAverageTime O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Map active riders to check-in details and maintain a duration sum and trip count per station pair.",
+    "time": "checkIn O(1), checkOut O(1), getAverageTime O(1)",
+    "space": "O(active riders + distinct routes)"
+  },
+  "edge_cases": [
+    "A route average uses all completed trips in both directions separately.",
+    "Repeated trips on one route update its running total and count."
+  ]
+}

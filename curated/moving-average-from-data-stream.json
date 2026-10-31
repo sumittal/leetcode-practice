@@ -1,0 +1,18 @@
+{
+  "description": "Create a running average over the most recent window of at most size readings. Example 1: with window size 3, readings 1, 10, 3, and 5 produce averages 1, 5.5, 14/3, and 6. Example 2: with window size 1, readings 4 and 8 produce 4 and 8. Constraints: the window size is positive and readings arrive one at a time.",
+  "intuition": "Maintain the current window's sum so each new average does not require rescanning its values.",
+  "brute_force": {
+    "approach": "Keep all readings and sum the latest window on each request.",
+    "time": "next O(size)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a queue of at most size readings and a running sum, removing the oldest reading when the window fills.",
+    "time": "next O(1)",
+    "space": "O(size)"
+  },
+  "edge_cases": [
+    "Before the window fills, average all readings received so far.",
+    "A size-one window always returns the latest reading."
+  ]
+}

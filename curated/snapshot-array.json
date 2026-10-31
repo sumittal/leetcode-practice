@@ -1,0 +1,17 @@
+{
+  "intuition": "Each index changes independently, so store only its value changes and the snapshot ID when each change occurred.",
+  "brute_force": {
+    "approach": "Copy the whole array at every snapshot and read directly from the chosen copy.",
+    "time": "set O(1), snap O(n), get O(1)",
+    "space": "O(n * snapshots)"
+  },
+  "optimal": {
+    "approach": "Store sorted snapshot-ID/value pairs per index and binary-search the latest pair at or before the requested snapshot.",
+    "time": "set O(1), snap O(1), get O(log changes at index)",
+    "space": "O(number of set calls)"
+  },
+  "edge_cases": [
+    "An index with no prior writes has value zero.",
+    "Several writes before one snap retain only the last value for that snapshot."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "Keep tracked half-open intervals disjoint and sorted so updates can merge, split, or preserve only affected segments.",
+  "brute_force": {
+    "approach": "Represent every integer point in a large bitmap and inspect each point in every operation.",
+    "time": "addRange O(U), queryRange O(U), removeRange O(U)",
+    "space": "O(U)"
+  },
+  "optimal": {
+    "approach": "Maintain sorted disjoint intervals; merge overlaps on addition, check coverage on query, and split overlaps on removal.",
+    "time": "addRange O(n), queryRange O(n), removeRange O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "All ranges are half-open, so the right endpoint is excluded.",
+    "Removing a middle section can leave two tracked pieces."
+  ]
+}

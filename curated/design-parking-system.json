@@ -1,0 +1,17 @@
+{
+  "intuition": "Track the remaining capacity independently for each vehicle category.",
+  "brute_force": {
+    "approach": "Store all parked car types and count matching types whenever a new car arrives.",
+    "time": "addCar O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a small count array indexed by the car type and decrement its slot on acceptance.",
+    "time": "addCar O(1)",
+    "space": "O(1)"
+  },
+  "edge_cases": [
+    "A category with zero spaces rejects every car of that type.",
+    "Capacity is consumed only after accepting a car."
+  ]
+}

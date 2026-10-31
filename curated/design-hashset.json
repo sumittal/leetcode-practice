@@ -1,0 +1,17 @@
+{
+  "intuition": "Hash each integer into a bucket and keep each key at most once within that bucket.",
+  "brute_force": {
+    "approach": "Store all keys in one list and scan it for membership, insertion, and removal.",
+    "time": "add O(n), remove O(n), contains O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use separate chaining across a fixed bucket array and search only the selected bucket.",
+    "time": "add O(1) average, remove O(1) average, contains O(1) average",
+    "space": "O(n + bucket count)"
+  },
+  "edge_cases": [
+    "Adding an existing key leaves the set unchanged.",
+    "Removing a missing key is a no-op."
+  ]
+}

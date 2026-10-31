@@ -1,0 +1,18 @@
+{
+  "description": "Create a counter for events arriving at integer timestamps. It must support recording an event and reporting how many events occurred during the most recent five minutes, including the query timestamp. Example 1: record events at times 1, 2, and 3; asking at time 4 returns 3. Example 2: record at 1, 300, and 301; asking at 301 returns 2 because time 1 has left the 300-second window. Constraints: timestamps are nondecreasing, and the structure receives many hit and count requests.",
+  "intuition": "Only timestamps in the current 300-second window can affect a query.",
+  "brute_force": {
+    "approach": "Store every hit and scan all timestamps to count those still in range.",
+    "time": "hit O(1), getHits O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Aggregate consecutive hits with the same timestamp in a deque and discard expired timestamp groups from the front.",
+    "time": "hit O(1), getHits O(1) amortized",
+    "space": "O(300)"
+  },
+  "edge_cases": [
+    "Several hits may share one timestamp.",
+    "A hit exactly 300 seconds before the query is expired."
+  ]
+}

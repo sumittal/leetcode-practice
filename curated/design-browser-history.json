@@ -1,0 +1,17 @@
+{
+  "intuition": "Keep the visited URLs in order and a cursor marking the current page; visiting after going back discards the forward branch.",
+  "brute_force": {
+    "approach": "Store separate back and forward stacks and move URLs between them on every navigation.",
+    "time": "visit O(1), back O(min(steps,n)), forward O(min(steps,n))",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use one list and a current index, truncating entries beyond the cursor on a new visit.",
+    "time": "visit O(1) amortized, back O(1), forward O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Back and forward stop at the earliest and latest visited pages.",
+    "A new visit after going back deletes all forward history."
+  ]
+}

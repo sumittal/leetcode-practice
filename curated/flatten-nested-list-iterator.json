@@ -1,0 +1,17 @@
+{
+  "intuition": "Keep iterators for the current nesting levels and descend only when the next item is a list.",
+  "brute_force": {
+    "approach": "Recursively flatten the entire input into a second list before iteration.",
+    "time": "construction O(n), next O(1), hasNext O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a stack of list iterators and expand nested lists lazily until an integer is ready.",
+    "time": "next O(1) amortized, hasNext O(depth) amortized",
+    "space": "O(depth)"
+  },
+  "edge_cases": [
+    "Nested lists may contain other lists several levels deep.",
+    "An empty nested list contributes no values."
+  ]
+}

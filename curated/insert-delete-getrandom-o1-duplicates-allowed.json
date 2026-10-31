@@ -1,0 +1,17 @@
+{
+  "intuition": "A dense value list gives constant-time random indexing, while per-value index sets locate a removable occurrence.",
+  "brute_force": {
+    "approach": "Store values in a list, scan for a value to remove, and choose a random position.",
+    "time": "insert O(1), remove O(n), getRandom O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store every occurrence in a list and swap a removed occurrence with the last element while updating both index sets.",
+    "time": "insert O(1) average, remove O(1) average, getRandom O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Inserting a duplicate returns false but still adds one occurrence.",
+    "Removing one occurrence leaves other equal values available."
+  ]
+}

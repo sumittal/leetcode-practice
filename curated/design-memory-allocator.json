@@ -1,0 +1,17 @@
+{
+  "intuition": "Represent each memory cell by its owner so first-fit allocation and freeing by owner are straightforward.",
+  "brute_force": {
+    "approach": "For each allocation, scan for the first free contiguous block; freeing also scans the full array.",
+    "time": "allocate O(n * size), freeMemory O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Scan once for the first free run, fill it with the requested ID, and scan once to free matching cells.",
+    "time": "allocate O(n), freeMemory O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An allocation larger than every free run returns -1.",
+    "Freeing an ID that owns no cells returns zero."
+  ]
+}

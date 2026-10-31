@@ -1,0 +1,18 @@
+{
+  "description": "Represent integer vectors whose length may be large but whose nonzero entries are few, then compute their dot product. Example 1: [1,0,0,2,3] dotted with [0,3,0,4,0] is 8. Example 2: [-1,0,0,0,0] dotted with [0,0,0,0,2] is 0. Constraints: both vectors have equal length, and most entries may be zero.",
+  "intuition": "Only positions nonzero in both vectors can contribute to the sum.",
+  "brute_force": {
+    "approach": "Store both full vectors and multiply corresponding entries across the entire length.",
+    "time": "initialization O(n), dotProduct O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store only nonzero index-value pairs and iterate the smaller sparse map while looking up matching indices in the other.",
+    "time": "initialization O(n), dotProduct O(min(a,b)) average",
+    "space": "O(nonzero entries)"
+  },
+  "edge_cases": [
+    "A vector with no nonzero values always yields a zero dot product.",
+    "Negative values contribute with their signed product."
+  ]
+}

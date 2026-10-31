@@ -1,0 +1,17 @@
+{
+  "intuition": "A queue exposes its oldest item, so rotating all older items behind a newly pushed value makes that value the front.",
+  "brute_force": {
+    "approach": "Keep a list and remove its final element for each pop.",
+    "time": "push O(1), pop O(1), top O(1), empty O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use one queue and rotate the existing elements after each push so the newest value is at the front.",
+    "time": "push O(n), pop O(1), top O(1), empty O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The latest pushed value is always the next value removed.",
+    "A one-element stack needs no rotation."
+  ]
+}

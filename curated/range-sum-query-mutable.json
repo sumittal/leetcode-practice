@@ -1,0 +1,17 @@
+{
+  "intuition": "A Fenwick tree stores partial sums so a point change and a prefix query both touch logarithmically many nodes.",
+  "brute_force": {
+    "approach": "Update the array directly and add every value in each requested range.",
+    "time": "update O(1), sumRange O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a one-indexed binary indexed tree for point deltas and obtain a range sum as the difference of two prefixes.",
+    "time": "update O(log n), sumRange O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Updating an index to its existing value contributes a zero delta.",
+    "A one-element range is the value at that index."
+  ]
+}

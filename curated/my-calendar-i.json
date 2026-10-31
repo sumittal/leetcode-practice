@@ -1,0 +1,17 @@
+{
+  "intuition": "Two half-open bookings conflict exactly when their intervals overlap with positive length.",
+  "brute_force": {
+    "approach": "Check every existing booking for overlap before appending a new one.",
+    "time": "book O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep bookings sorted by start and inspect only the predecessor and successor around the insertion point.",
+    "time": "book O(log n) search plus O(n) insertion",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "An event ending exactly when another begins is allowed.",
+    "A rejected booking must not change the stored intervals."
+  ]
+}

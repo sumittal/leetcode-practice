@@ -1,0 +1,17 @@
+{
+  "intuition": "Because ping times increase, expired requests leave from the front of a queue.",
+  "brute_force": {
+    "approach": "Store every request and scan all timestamps for each call.",
+    "time": "ping O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Append each timestamp and remove requests older than the inclusive 3000-millisecond window.",
+    "time": "ping O(1) amortized",
+    "space": "O(3000)"
+  },
+  "edge_cases": [
+    "A request exactly 3000 time units old remains in the window.",
+    "Multiple requests at the same timestamp each count separately."
+  ]
+}

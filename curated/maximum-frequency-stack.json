@@ -1,0 +1,17 @@
+{
+  "intuition": "The most frequent value wins, with the most recently pushed value breaking ties.",
+  "brute_force": {
+    "approach": "Count all values and scan the complete push history to find the most frequent latest value on every pop.",
+    "time": "push O(1), pop O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Track each value's frequency and keep a stack of values for each frequency level.",
+    "time": "push O(1), pop O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "When frequencies tie, the latest value in that frequency stack is removed.",
+    "The maximum frequency decreases when its final value is popped."
+  ]
+}

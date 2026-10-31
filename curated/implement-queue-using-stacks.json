@@ -1,0 +1,17 @@
+{
+  "intuition": "A stack reverses order, so transferring entries between two stacks exposes the oldest queued item.",
+  "brute_force": {
+    "approach": "Keep a list and shift every remaining item when removing the front.",
+    "time": "push O(1), pop O(n), peek O(1), empty O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Push new elements to an input stack and lazily reverse it into an output stack when the output stack is empty.",
+    "time": "push O(1), pop O(1) amortized, peek O(1) amortized, empty O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Repeated pops and peeks reuse the output stack without moving items again.",
+    "An empty queue reports true from empty."
+  ]
+}

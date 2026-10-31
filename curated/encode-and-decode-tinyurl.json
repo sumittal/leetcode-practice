@@ -1,0 +1,17 @@
+{
+  "intuition": "Assign each long URL a compact identifier and keep a reversible mapping between identifiers and original URLs.",
+  "brute_force": {
+    "approach": "Return the original URL unchanged for both operations.",
+    "time": "encode O(1), decode O(1)",
+    "space": "O(1)"
+  },
+  "optimal": {
+    "approach": "Store URLs by an incrementing base-62 identifier and use matching forward and reverse maps.",
+    "time": "encode O(1), decode O(1)",
+    "space": "O(number of encoded URLs)"
+  },
+  "edge_cases": [
+    "Different input URLs receive distinct short keys.",
+    "Decoding a generated key reproduces the exact original string."
+  ]
+}

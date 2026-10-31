@@ -1,0 +1,17 @@
+{
+  "intuition": "Use a fixed-size array with a front index and item count; modular arithmetic wraps both ends.",
+  "brute_force": {
+    "approach": "Shift every remaining item after each dequeue to keep the front at index zero.",
+    "time": "enQueue O(1), deQueue O(k), Front O(1), Rear O(1)",
+    "space": "O(k)"
+  },
+  "optimal": {
+    "approach": "Keep the front and size, and calculate the rear index modulo the capacity.",
+    "time": "enQueue O(1), deQueue O(1), Front O(1), Rear O(1), isEmpty O(1), isFull O(1)",
+    "space": "O(k)"
+  },
+  "edge_cases": [
+    "An empty queue reports -1 at both ends.",
+    "A full queue rejects insertion until an item is removed."
+  ]
+}

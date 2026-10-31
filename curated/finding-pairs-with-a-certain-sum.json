@@ -1,0 +1,17 @@
+{
+  "intuition": "For each value in the first array, count its complement in the mutable second array.",
+  "brute_force": {
+    "approach": "Try every pair of elements when answering a target sum query.",
+    "time": "add O(1), count O(n*m)",
+    "space": "O(n + m)"
+  },
+  "optimal": {
+    "approach": "Maintain frequencies for the second array and scan the first array, looking up each complement.",
+    "time": "add O(1), count O(n)",
+    "space": "O(n + distinct values in second array)"
+  },
+  "edge_cases": [
+    "Duplicate values contribute once per occurrence.",
+    "Adding to an index updates both the array and its frequency count."
+  ]
+}

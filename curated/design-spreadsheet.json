@@ -1,0 +1,17 @@
+{
+  "intuition": "A formula contains two operands, each of which is either a number or a reference to a stored cell value.",
+  "brute_force": {
+    "approach": "Store a full grid and parse each expression while evaluating its two terms.",
+    "time": "setCell O(1), resetCell O(1), getValue O(1)",
+    "space": "O(rows * 26)"
+  },
+  "optimal": {
+    "approach": "Store only nonzero cell values and parse the two formula operands on demand.",
+    "time": "setCell O(1), resetCell O(1), getValue O(1)",
+    "space": "O(nonzero cells)"
+  },
+  "edge_cases": [
+    "An unset cell contributes zero.",
+    "A formula can add two cell values or a cell and a literal."
+  ]
+}

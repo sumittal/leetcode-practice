@@ -1,0 +1,17 @@
+{
+  "intuition": "Validate account numbers and balances before changing either side of a transaction.",
+  "brute_force": {
+    "approach": "Search all accounts by their one-based number for every operation.",
+    "time": "transfer O(1), deposit O(1), withdraw O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use the account number as a direct list index after checking its valid range.",
+    "time": "transfer O(1), deposit O(1), withdraw O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Invalid account numbers leave every balance unchanged.",
+    "A withdrawal or transfer exceeding the source balance fails."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "A max-heap returns the task with highest priority and largest task ID, while a map stores current task state.",
+  "brute_force": {
+    "approach": "Scan every task for execution and linearly search tasks for edits or removals.",
+    "time": "add O(1), edit O(n), rmv O(n), execTop O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a task map and a heap of priority records; lazy validation skips heap entries invalidated by edits or removals.",
+    "time": "add O(log n), edit O(log n), rmv O(1), execTop O(log n) amortized",
+    "space": "O(number of heap records)"
+  },
+  "edge_cases": [
+    "Equal priorities are ordered by descending task ID.",
+    "Removed and edited heap records are ignored when they reach the top."
+  ]
+}

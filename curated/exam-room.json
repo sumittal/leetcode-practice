@@ -1,0 +1,17 @@
+{
+  "intuition": "The best seat is found by checking the distance to the first student, gaps between neighbors, and the final seat.",
+  "brute_force": {
+    "approach": "For every seat, compute its distance to every occupied seat and choose the farthest minimum distance.",
+    "time": "seat O(n * students), leave O(students)",
+    "space": "O(students)"
+  },
+  "optimal": {
+    "approach": "Keep occupied seats sorted and inspect only boundary gaps and gaps between adjacent students.",
+    "time": "seat O(students), leave O(students)",
+    "space": "O(students)"
+  },
+  "edge_cases": [
+    "The first student always takes seat zero.",
+    "Ties choose the lowest-numbered seat."
+  ]
+}

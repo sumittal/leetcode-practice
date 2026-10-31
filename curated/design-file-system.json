@@ -1,0 +1,18 @@
+{
+  "description": "Create paths with integer values and retrieve values only for paths that have been created. A new path is valid only when its immediate parent already exists. Example 1: create /a with value 1, then /a/b with value 2; both values can be read. Example 2: attempting /c/d before /c exists fails, then creating /c allows it to be read. Constraints: paths begin with /, contain lowercase components, and are not the root path.",
+  "intuition": "A path trie lets each creation verify that its parent node exists before inserting the final component.",
+  "brute_force": {
+    "approach": "Store full path strings and check for a parent path in a set before each insertion.",
+    "time": "createPath O(path length), get O(1) average",
+    "space": "O(number of paths)"
+  },
+  "optimal": {
+    "approach": "Store each path component in a trie, locating the parent and final node in one traversal.",
+    "time": "createPath O(path length), get O(path length)",
+    "space": "O(total path components)"
+  },
+  "edge_cases": [
+    "A path cannot be created twice.",
+    "A child cannot be created before its direct parent."
+  ]
+}

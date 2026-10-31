@@ -1,0 +1,17 @@
+{
+  "intuition": "Products are easy to divide using prefix products until a zero resets the valid prefix.",
+  "brute_force": {
+    "approach": "Keep all values and multiply the last k values for each query.",
+    "time": "add O(1), getProduct O(k)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store prefix products since the most recent zero; a query crossing that zero returns zero.",
+    "time": "add O(1), getProduct O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "A query window containing a zero has product zero.",
+    "After a zero, products use a fresh prefix starting at one."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "intuition": "A uniformly random permutation is produced by choosing the next element from the remaining suffix.",
+  "brute_force": {
+    "approach": "Generate all permutations and select one uniformly at random.",
+    "time": "reset O(n), shuffle O(n!)",
+    "space": "O(n!)"
+  },
+  "optimal": {
+    "approach": "Copy the original array and perform an in-place Fisher-Yates shuffle on the copy.",
+    "time": "reset O(n), shuffle O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Reset always returns the original ordering.",
+    "A shuffled result contains every original element exactly once."
+  ]
+}

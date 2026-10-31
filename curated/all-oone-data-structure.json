@@ -1,0 +1,17 @@
+{
+  "intuition": "Keep keys grouped by count in increasing order so the first and last buckets expose the minimum and maximum.",
+  "brute_force": {
+    "approach": "Maintain key counts in a map and scan all keys whenever a minimum or maximum key is requested.",
+    "time": "inc O(1), dec O(1), getMinKey O(n), getMaxKey O(n)",
+    "space": "O(unique keys)"
+  },
+  "optimal": {
+    "approach": "Maintain a doubly linked list of count buckets, with a set of keys at each count and a key-to-bucket map.",
+    "time": "inc O(1), dec O(1), getMinKey O(1), getMaxKey O(1)",
+    "space": "O(unique keys)"
+  },
+  "edge_cases": [
+    "Decrementing a key from count one removes it.",
+    "An empty structure returns an empty string for either key query."
+  ]
+}

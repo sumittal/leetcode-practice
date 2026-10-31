@@ -1,0 +1,17 @@
+{
+  "intuition": "Multiple forward levels let searches skip over many sorted values before descending to the next level.",
+  "brute_force": {
+    "approach": "Keep values in a linked list and traverse from the head for each search, insertion, or removal.",
+    "time": "search O(n), add O(n), erase O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use randomized skip-list levels so expected searches and pointer updates visit logarithmically many nodes.",
+    "time": "search O(log n) expected, add O(log n) expected, erase O(log n) expected",
+    "space": "O(n) expected"
+  },
+  "edge_cases": [
+    "Duplicate values may be stored and erased one occurrence at a time.",
+    "Searching or erasing an absent value does not modify the structure."
+  ]
+}

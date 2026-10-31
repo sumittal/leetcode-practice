@@ -1,0 +1,17 @@
+{
+  "intuition": "Keep the latest price by timestamp and use lazy heaps to expose the current minimum and maximum.",
+  "brute_force": {
+    "approach": "Store prices by timestamp and scan all values for each minimum or maximum query.",
+    "time": "update O(1), current O(1), maximum O(n), minimum O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store the timestamp map, a min-heap, and a max-heap; discard heap records that no longer match the map.",
+    "time": "update O(log n), current O(1), maximum O(log n) amortized, minimum O(log n) amortized",
+    "space": "O(number of updates)"
+  },
+  "edge_cases": [
+    "Updating an existing timestamp invalidates its previous heap entries.",
+    "Current price is the price at the greatest timestamp, not the most recent update."
+  ]
+}

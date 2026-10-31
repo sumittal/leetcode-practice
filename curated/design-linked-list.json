@@ -1,0 +1,17 @@
+{
+  "intuition": "A dummy head makes insertion and deletion at index zero follow the same predecessor logic as other positions.",
+  "brute_force": {
+    "approach": "Store values in a dynamic array and shift elements after indexed insertions and deletions.",
+    "time": "get O(1), addAtHead O(n), addAtTail O(1), addAtIndex O(n), deleteAtIndex O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use a singly linked list and walk to the predecessor for indexed operations.",
+    "time": "get O(n), addAtHead O(1), addAtTail O(n), addAtIndex O(n), deleteAtIndex O(n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Invalid get indices return -1.",
+    "An insertion at the current length appends, while larger indices are ignored."
+  ]
+}

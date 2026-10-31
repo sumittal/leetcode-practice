@@ -1,0 +1,17 @@
+{
+  "intuition": "Track keys by frequency, with recency order inside each frequency, so both eviction rules are available directly.",
+  "brute_force": {
+    "approach": "Scan every cached key to find the smallest frequency and oldest key before evicting.",
+    "time": "get O(n), put O(n)",
+    "space": "O(capacity)"
+  },
+  "optimal": {
+    "approach": "Map keys to values and frequencies, and map each frequency to an ordered collection of its keys; keep the smallest active frequency.",
+    "time": "get O(1), put O(1) average",
+    "space": "O(capacity)"
+  },
+  "edge_cases": [
+    "A zero-capacity cache stores no entries.",
+    "Updating an existing key also raises its frequency and recency."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Maintain player scores as they change, return the sum of the highest k scores, and remove a player's score on reset. Example 1: scores 73, 56, 39, 51, and 4 yield a top-one sum of 73. Example 2: after resetting the 73- and 56-point players and adding 51 points for one of them, the top three sum to 141. Constraints: player IDs are unique while active and requested top counts do not exceed the number of active players.",
+  "intuition": "A score map supports updates and resets, while sorting active scores answers top-k queries.",
+  "brute_force": {
+    "approach": "Store scores in a map and sort every score whenever top(k) is requested.",
+    "time": "addScore O(1), top O(n log n), reset O(1)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Keep a score map and use a balanced ordered multiset to retrieve the largest k values.",
+    "time": "addScore O(log n), top O(k), reset O(log n)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Adding points to an existing player changes rather than replaces the score.",
+    "Resetting a player removes that player's complete score."
+  ]
+}

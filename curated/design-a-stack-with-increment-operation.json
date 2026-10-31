@@ -1,0 +1,17 @@
+{
+  "intuition": "An increment applied to the bottom k entries can be recorded lazily at the highest affected stack index.",
+  "brute_force": {
+    "approach": "Add the increment directly to every one of the bottom k stored values.",
+    "time": "push O(1), pop O(1), increment O(min(k,n))",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Store a deferred increment per entry and propagate it downward only when the corresponding top entry is popped.",
+    "time": "push O(1), pop O(1), increment O(1)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "Pushes beyond maxSize are ignored.",
+    "Incrementing an empty stack changes nothing, and popping it returns -1."
+  ]
+}

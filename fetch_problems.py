@@ -25,12 +25,14 @@ PROBLEM_GROUPS = (
     "blind_75",
     "neetcode_150",
     "top_interview_150",
+    "design",
     "others",
 )
 GROUP_TITLES = {
     "blind_75": "Blind 75",
     "neetcode_150": "NeetCode 150 (beyond Blind 75)",
     "top_interview_150": "Top Interview 150 beyond NeetCode 150",
+    "design": "LeetCode Design problems",
     "others": "Others",
 }
 GRAPHQL_URL = "https://leetcode.com/graphql"
@@ -73,20 +75,20 @@ query questionData($titleSlug: String!) {
 }
 """
 PROBLEMSET_QUERY = """
-query problemsetQuestionList(
+query problemsetQuestionListV2(
   $categorySlug: String,
   $limit: Int,
   $skip: Int,
-  $filters: QuestionListFilterInput
+  $filters: QuestionFilterInput
 ) {
-  problemsetQuestionList(
+  problemsetQuestionList: problemsetQuestionListV2(
     categorySlug: $categorySlug,
     limit: $limit,
     skip: $skip,
     filters: $filters
   ) {
     questions {
-      frontendQuestionId
+      questionFrontendId
       title
       titleSlug
       difficulty
@@ -347,6 +349,67 @@ def load_study_plan(client: LeetCodeClient) -> List[Dict[str, Any]]:
     return questions
 
 
+def load_design_list(client: LeetCodeClient) -> List[Dict[str, Any]]:
+    page_size = 100
+    questions = []  # type: List[Dict[str, Any]]
+    skip = 0
+    while True:
+        payload = {
+            "query": PROBLEMSET_QUERY,
+            "variables": {
+                "categorySlug": "",
+                "limit": page_size,
+                "skip": skip,
+                "filters": {
+                    "filterCombineType": "ALL",
+                    "topicFilter": {
+                        "topicSlugs": ["design"],
+                        "operator": "IS",
+                    },
+                },
+            },
+        }
+        cache_path = (
+            ROOT
+            / ".cache"
+            / "designlist"
+            / ("page-%d-%d.json" % (skip, page_size))
+        )
+        response = client.fetch_json(GRAPHQL_URL, cache_path, payload)
+        try:
+            page = response["data"]["problemsetQuestionList"]["questions"]
+        except (KeyError, TypeError):
+            raise ValueError("Unexpected Design list response: " + repr(response))
+        if not isinstance(page, list):
+            raise ValueError("Unexpected Design list page format")
+        questions.extend(
+            question for question in page if isinstance(question, dict)
+        )
+        if len(page) < page_size:
+            break
+        skip += page_size
+    return questions
+
+
+def sort_design_entries(
+    entries: List[Dict[str, Any]],
+    companies: Optional[Dict[str, List[str]]],
+) -> List[Dict[str, Any]]:
+    if companies is None:
+        print("Warning: Company data unavailable; sorting Design problems by ID.")
+        return sorted(
+            entries,
+            key=lambda item: (numeric_id(item), str(item.get("titleSlug") or "")),
+        )
+    return sorted(
+        entries,
+        key=lambda item: (
+            -len(companies.get(str(item.get("titleSlug") or ""), [])),
+            numeric_id(item),
+        ),
+    )
+
+
 def parse_company_tarball(contents: bytes) -> Dict[str, List[str]]:
     ranked = {}  # type: Dict[str, List[Tuple[float, int, str]]]
     with tarfile.open(fileobj=io.BytesIO(contents), mode="r:gz") as archive:
@@ -456,6 +519,7 @@ def problem_group(
     slug: str,
     neetcode_entry: Optional[Dict[str, Any]],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> str:
     if neetcode_entry and neetcode_entry.get("blind75"):
         return "blind_75"
@@ -463,6 +527,8 @@ def problem_group(
         return "neetcode_150"
     if slug in topinterview_slugs:
         return "top_interview_150"
+    if slug in design_slugs:
+        return "design"
     return "others"
 
 
@@ -472,10 +538,11 @@ def problem_directory_path(
     difficulty: str,
     neetcode_entry: Optional[Dict[str, Any]],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> Path:
     return (
         ROOT
-        / problem_group(slug, neetcode_entry, topinterview_slugs)
+        / problem_group(slug, neetcode_entry, topinterview_slugs, design_slugs)
         / problem_directory_name(problem_id, slug, difficulty)
     )
 
@@ -517,9 +584,15 @@ def migrate_problem_directory(
     difficulty: str,
     neetcode_entry: Optional[Dict[str, Any]],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> Path:
     destination = problem_directory_path(
-        problem_id, slug, difficulty, neetcode_entry, topinterview_slugs
+        problem_id,
+        slug,
+        difficulty,
+        neetcode_entry,
+        topinterview_slugs,
+        design_slugs,
     )
     if destination.exists():
         return destination
@@ -562,7 +635,13 @@ def list_all_problems(
                 "categorySlug": "",
                 "limit": page_size,
                 "skip": skip,
-                "filters": {},
+                "filters": {
+                    "filterCombineType": "ALL",
+                    "topicFilter": {
+                        "topicSlugs": [],
+                        "operator": "IS",
+                    },
+                },
             },
         }
         cache_path = (
@@ -588,6 +667,7 @@ def select_problems(
     client: LeetCodeClient,
     neetcode_entries: List[Dict[str, Any]],
     topinterview_entries: List[Dict[str, Any]],
+    design_entries: List[Dict[str, Any]],
 ) -> List[Tuple[str, Optional[int]]]:
     if args.slugs:
         return [(slug.strip(), None) for slug in args.slugs.split(",") if slug.strip()]
@@ -612,6 +692,25 @@ def select_problems(
                 continue
             if slug:
                 items.append((slug, numeric_id(entry)))
+    elif args.list_name in ("design", "design-extra"):
+        neetcode = neetcode_by_slug(neetcode_entries)
+        topinterview_slugs = {
+            str(entry.get("titleSlug") or "")
+            for entry in topinterview_entries
+            if entry.get("titleSlug")
+        }
+        items = []
+        for entry in design_entries:
+            slug = str(entry.get("titleSlug") or "")
+            if not slug:
+                continue
+            if args.list_name == "design-extra" and (
+                neetcode.get(slug, {}).get("blind75")
+                or neetcode.get(slug, {}).get("neetcode150")
+                or slug in topinterview_slugs
+            ):
+                continue
+            items.append((slug, numeric_id(entry)))
     else:
         items = []
         for entry in neetcode_entries:
@@ -976,6 +1075,7 @@ def generate_problem(
     videos: Dict[str, Any],
     force: bool,
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
     companies: Optional[Dict[str, List[str]]],
 ) -> Optional[Path]:
     try:
@@ -1014,6 +1114,7 @@ def generate_problem(
         str(question.get("difficulty") or "Unknown"),
         neetcode_entry,
         topinterview_slugs,
+        design_slugs,
     )
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "README.md").write_text(
@@ -1065,6 +1166,7 @@ def warm_question_cache(client: LeetCodeClient) -> None:
 def migrate_existing_problem_directories(
     neetcode: Dict[str, Dict[str, Any]],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> None:
     for path in iter_problem_directories(include_root=True):
         if not path.exists():
@@ -1085,6 +1187,7 @@ def migrate_existing_problem_directories(
             difficulty,
             neetcode.get(slug),
             topinterview_slugs,
+            design_slugs,
         )
 
 
@@ -1141,6 +1244,7 @@ def row_metadata(
     neetcode: Dict[str, Dict[str, Any]],
     videos: Dict[str, Any],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> Dict[str, Any]:
     parsed = parse_problem_directory(directory.name)
     if parsed is None:
@@ -1181,7 +1285,7 @@ def row_metadata(
         "video_title": video_title,
         "video_kind": video_kind,
         "premium": bool(question.get("isPaidOnly")),
-        "group": problem_group(slug, nc, topinterview_slugs),
+        "group": problem_group(slug, nc, topinterview_slugs, design_slugs),
     }
 
 
@@ -1247,6 +1351,7 @@ def rebuild_root_readme(
     neetcode_entries: List[Dict[str, Any]],
     videos: Dict[str, Any],
     topinterview_slugs: Set[str],
+    design_slugs: Set[str],
 ) -> None:
     nc_by_slug = neetcode_by_slug(neetcode_entries)
     directories = [
@@ -1257,7 +1362,7 @@ def rebuild_root_readme(
     rows = []
     for directory in directories:
         metadata = row_metadata(
-            directory, nc_by_slug, videos, topinterview_slugs
+            directory, nc_by_slug, videos, topinterview_slugs, design_slugs
         )
         status_name = directory.relative_to(ROOT).as_posix()
         status = statuses.get(status_name, ("⬜ Todo", ""))[0]
@@ -1268,7 +1373,8 @@ def rebuild_root_readme(
         "",
         "A locally generated study repo with problem statements, curated approaches, and runnable Python solutions.",
         "Blind 75 + neetcode_150 = the full NeetCode 150; "
-        "top_interview_150 adds Top Interview 150 problems not already covered.",
+        "top_interview_150 adds Top Interview 150 problems not already covered; "
+        "design adds LeetCode Design-tagged problems not already covered.",
         "",
         "## Usage",
         "",
@@ -1277,6 +1383,8 @@ def rebuild_root_readme(
         "python3 fetch_problems.py --list neetcode150-extra --start 0 --batch-size 25",
         "python3 fetch_problems.py --list topinterview150",
         "python3 fetch_problems.py --list topinterview150-extra --start 0 --batch-size 50",
+        "python3 fetch_problems.py --list design",
+        "python3 fetch_problems.py --list design-extra --start 0 --batch-size 50",
         "python3 fetch_problems.py --list blind75 --start 0 --batch-size 20",
         "python3 fetch_problems.py --slugs two-sum,valid-anagram",
         "python3 fetch_problems.py --index-only",
@@ -1345,6 +1453,8 @@ def parse_args() -> argparse.Namespace:
             "neetcode150-extra",
             "topinterview150",
             "topinterview150-extra",
+            "design",
+            "design-extra",
             "all",
         ),
         default="neetcode150",
@@ -1379,6 +1489,18 @@ def main() -> int:
         str(entry["titleSlug"]) for entry in topinterview_entries
     }
     companies = load_company_data(client)
+    try:
+        design_entries = sort_design_entries(
+            load_design_list(client), companies
+        )
+    except (HTTPError, URLError, ValueError, OSError) as error:
+        print("Unable to load Design problem list: %s" % error)
+        return 1
+    design_slugs = {
+        str(entry["titleSlug"])
+        for entry in design_entries
+        if entry.get("titleSlug")
+    }
     videos = load_video_cache() if args.index_only or not args.refresh else {}
     if args.index_only:
         try:
@@ -1387,7 +1509,7 @@ def main() -> int:
             print("Unable to load NeetCode data: %s" % error)
         warm_question_cache(client)
         migrate_existing_problem_directories(
-            neetcode_by_slug(neetcode_entries), topinterview_slugs
+            neetcode_by_slug(neetcode_entries), topinterview_slugs, design_slugs
         )
     else:
         try:
@@ -1396,7 +1518,7 @@ def main() -> int:
             print("Unable to load NeetCode data: %s" % error)
             return 1
         migrate_existing_problem_directories(
-            neetcode_by_slug(neetcode_entries), topinterview_slugs
+            neetcode_by_slug(neetcode_entries), topinterview_slugs, design_slugs
         )
         try:
             selected = select_problems(
@@ -1404,6 +1526,7 @@ def main() -> int:
                 client,
                 neetcode_entries,
                 topinterview_entries,
+                design_entries,
             )
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to enumerate problems: %s" % error)
@@ -1423,12 +1546,13 @@ def main() -> int:
                 videos,
                 args.force,
                 topinterview_slugs,
+                design_slugs,
                 companies,
             )
     save_video_cache(videos)
     statuses = run_solutions()
     rebuild_root_readme(
-        statuses, neetcode_entries, videos, topinterview_slugs
+        statuses, neetcode_entries, videos, topinterview_slugs, design_slugs
     )
     return 1 if any(status == "❌ Failing" for status, output in statuses.values()) else 0
 

@@ -1,0 +1,17 @@
+{
+  "intuition": "Represent the text on either side of the cursor separately so cursor moves transfer only the characters requested.",
+  "brute_force": {
+    "approach": "Keep one string and rebuild slices around the cursor for every insertion, deletion, and move.",
+    "time": "addText O(n), deleteText O(n), cursorLeft O(n), cursorRight O(n)",
+    "space": "O(n)"
+  },
+  "optimal": {
+    "approach": "Use stacks for text before and after the cursor; move characters between stacks and read only the last ten on the left.",
+    "time": "addText O(k), deleteText O(k), cursorLeft O(k), cursorRight O(k)",
+    "space": "O(n)"
+  },
+  "edge_cases": [
+    "The cursor cannot move beyond either end of the text.",
+    "Delete and cursor methods process fewer than k characters when the side is shorter."
+  ]
+}
