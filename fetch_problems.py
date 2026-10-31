@@ -18,6 +18,12 @@ from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parent
+PROBLEM_GROUPS = ("blind_75", "neetcode_150", "others")
+GROUP_TITLES = {
+    "blind_75": "Blind 75",
+    "neetcode_150": "NeetCode 150 (beyond Blind 75)",
+    "others": "Others",
+}
 GRAPHQL_URL = "https://leetcode.com/graphql"
 NEETCODE_URL = (
     "https://raw.githubusercontent.com/neetcode-gh/leetcode/main/"
@@ -292,6 +298,46 @@ def problem_directory_name(problem_id: int, slug: str, difficulty: str) -> str:
     return "%04d-%s-%s" % (problem_id, slug, str(difficulty).lower())
 
 
+def problem_group(neetcode_entry: Optional[Dict[str, Any]]) -> str:
+    if neetcode_entry and neetcode_entry.get("blind75"):
+        return "blind_75"
+    if neetcode_entry and neetcode_entry.get("neetcode150"):
+        return "neetcode_150"
+    return "others"
+
+
+def problem_directory_path(
+    problem_id: int,
+    slug: str,
+    difficulty: str,
+    neetcode_entry: Optional[Dict[str, Any]],
+) -> Path:
+    return (
+        ROOT
+        / problem_group(neetcode_entry)
+        / problem_directory_name(problem_id, slug, difficulty)
+    )
+
+
+def iter_problem_directories(include_root: bool = False) -> List[Path]:
+    directories = []  # type: List[Path]
+    if include_root:
+        directories.extend(
+            path
+            for path in sorted(ROOT.iterdir())
+            if path.is_dir() and parse_problem_directory(path.name) is not None
+        )
+    for group in PROBLEM_GROUPS:
+        group_directory = ROOT / group
+        if group_directory.is_dir():
+            directories.extend(
+                path
+                for path in sorted(group_directory.iterdir())
+                if path.is_dir() and parse_problem_directory(path.name) is not None
+            )
+    return directories
+
+
 def parse_problem_directory(
     directory_name: str,
 ) -> Optional[Tuple[int, str, Optional[str]]]:
@@ -305,32 +351,39 @@ def parse_problem_directory(
 
 
 def migrate_problem_directory(
-    problem_id: int, slug: str, difficulty: str
+    problem_id: int,
+    slug: str,
+    difficulty: str,
+    neetcode_entry: Optional[Dict[str, Any]],
 ) -> Path:
-    destination = ROOT / problem_directory_name(problem_id, slug, difficulty)
+    destination = problem_directory_path(
+        problem_id, slug, difficulty, neetcode_entry
+    )
     if destination.exists():
         return destination
 
-    legacy_name = "%04d-%s" % (problem_id, slug)
-    legacy_path = ROOT / legacy_name
     candidates = []  # type: List[Path]
-    if legacy_path.is_dir():
-        candidates.append(legacy_path)
-    for path in ROOT.iterdir():
+    for path in iter_problem_directories(include_root=True):
         parsed = parse_problem_directory(path.name)
         if (
-            path.is_dir()
-            and parsed is not None
+            parsed is not None
             and parsed[0] == problem_id
             and parsed[1] == slug
-            and path.name != destination.name
+            and path != destination
             and path not in candidates
         ):
             candidates.append(path)
     if candidates:
         source = candidates[0]
+        destination.parent.mkdir(parents=True, exist_ok=True)
         source.rename(destination)
-        print("Migrated %s to %s" % (source.name, destination.name))
+        print(
+            "Migrated %s to %s"
+            % (
+                source.relative_to(ROOT).as_posix(),
+                destination.relative_to(ROOT).as_posix(),
+            )
+        )
     return destination
 
 
@@ -382,13 +435,19 @@ def select_problems(
             if item.get("titleSlug")
         ]
     else:
-        flag = "blind75" if args.list_name == "blind75" else "neetcode150"
         items = []
         for entry in neetcode_entries:
-            if entry.get(flag):
-                slug = str(entry.get("link") or "").strip("/")
-                if slug:
-                    items.append((slug.rsplit("/", 1)[-1], None))
+            if args.list_name == "blind75" and not entry.get("blind75"):
+                continue
+            if args.list_name == "neetcode150-extra" and (
+                not entry.get("neetcode150") or entry.get("blind75")
+            ):
+                continue
+            if args.list_name == "neetcode150" and not entry.get("neetcode150"):
+                continue
+            slug = str(entry.get("link") or "").strip("/")
+            if slug:
+                items.append((slug.rsplit("/", 1)[-1], None))
     start = args.start
     return items[start : start + args.batch_size]
 
@@ -758,7 +817,10 @@ def generate_problem(
         client, videos, neetcode_entry, problem_id, title
     )
     directory = migrate_problem_directory(
-        problem_id, slug, str(question.get("difficulty") or "Unknown")
+        problem_id,
+        slug,
+        str(question.get("difficulty") or "Unknown"),
+        neetcode_entry,
     )
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "README.md").write_text(
@@ -796,8 +858,8 @@ def load_question_cache(slug: str) -> Optional[Dict[str, Any]]:
 
 def warm_question_cache(client: LeetCodeClient) -> None:
     # A fresh clone has no .cache/, so fetch metadata the index needs.
-    for path in sorted(ROOT.iterdir()):
-        parsed = parse_problem_directory(path.name) if path.is_dir() else None
+    for path in iter_problem_directories():
+        parsed = parse_problem_directory(path.name)
         if parsed is None or load_question_cache(parsed[1]) is not None:
             continue
         try:
@@ -806,23 +868,25 @@ def warm_question_cache(client: LeetCodeClient) -> None:
             print("Failed to fetch %s: %s" % (parsed[1], error))
 
 
-def migrate_existing_problem_directories() -> None:
-    directories = [
-        path
-        for path in ROOT.iterdir()
-        if path.is_dir() and parse_problem_directory(path.name) is not None
-    ]
-    for path in directories:
+def migrate_existing_problem_directories(
+    neetcode: Dict[str, Dict[str, Any]],
+) -> None:
+    for path in iter_problem_directories(include_root=True):
+        if not path.exists():
+            continue
         parsed = parse_problem_directory(path.name)
         if parsed is None:
             continue
-        problem_id, slug, unused_suffix = parsed
-        del unused_suffix
+        problem_id, slug, directory_difficulty = parsed
         question = load_question_cache(slug)
-        difficulty = str((question or {}).get("difficulty") or "").lower()
+        difficulty = str(
+            (question or {}).get("difficulty") or directory_difficulty or ""
+        ).lower()
         if difficulty not in ("easy", "medium", "hard"):
             continue
-        migrate_problem_directory(problem_id, slug, difficulty)
+        migrate_problem_directory(
+            problem_id, slug, difficulty, neetcode.get(slug)
+        )
 
 
 def readme_title(path: Path) -> str:
@@ -836,14 +900,16 @@ def readme_title(path: Path) -> str:
 
 def run_solutions() -> Dict[str, Tuple[str, str]]:
     statuses = {}  # type: Dict[str, Tuple[str, str]]
-    for solution in sorted(ROOT.glob("*/solution.py")):
+    solutions = [
+        directory / "solution.py"
+        for directory in iter_problem_directories()
+        if (directory / "solution.py").is_file()
+    ]
+    for solution in sorted(solutions):
         parsed = parse_problem_directory(solution.parent.name)
         if parsed is None:
             continue
-        problem_id, slug, suffix = parsed
-        question = load_question_cache(slug)
-        difficulty = suffix or str((question or {}).get("difficulty") or "Unknown")
-        directory_name = problem_directory_name(problem_id, slug, difficulty)
+        status_name = solution.parent.relative_to(ROOT).as_posix()
         try:
             result = subprocess.run(
                 [sys.executable, str(solution)],
@@ -864,8 +930,8 @@ def run_solutions() -> Dict[str, Tuple[str, str]]:
         except OSError as error:
             output = str(error)
             status = "❌ Failing"
-        statuses[directory_name] = (status, output)
-        print("%s %s" % (status, solution.parent.name))
+        statuses[status_name] = (status, output)
+        print("%s %s" % (status, status_name))
         if status == "❌ Failing":
             print(output.rstrip() or "(no output)")
     return statuses
@@ -915,31 +981,13 @@ def row_metadata(
         "video_title": video_title,
         "video_kind": video_kind,
         "premium": bool(question.get("isPaidOnly")),
+        "group": problem_group(nc),
     }
 
 
-def rebuild_root_readme(
-    statuses: Dict[str, Tuple[str, str]],
-    neetcode_entries: List[Dict[str, Any]],
-    videos: Dict[str, Any],
-) -> None:
-    nc_by_slug = neetcode_by_slug(neetcode_entries)
-    directories = [
-        path
-        for path in ROOT.iterdir()
-        if path.is_dir()
-        and parse_problem_directory(path.name) is not None
-        and (path / "solution.py").exists()
-    ]
-    rows = []
-    for directory in directories:
-        metadata = row_metadata(directory, nc_by_slug, videos)
-        status_name = problem_directory_name(
-            metadata["id"], metadata["slug"], metadata["difficulty"]
-        )
-        status = statuses.get(status_name, ("⬜ Todo", ""))[0]
-        rows.append((metadata, status))
-    rows.sort(key=lambda item: item[0]["id"])
+def progress_summary(
+    rows: List[Tuple[Dict[str, Any], str]],
+) -> str:
     difficulties = {}
     for metadata, status in rows:
         count = difficulties.setdefault(
@@ -953,31 +1001,20 @@ def rebuild_root_readme(
         % (difficulty, counts["solved"], counts["total"])
         for difficulty, counts in sorted(difficulties.items())
     )
-    if not progress:
-        progress = "_No problems generated yet._"
-    lines = [
-        "# LeetCode Practice",
-        "",
-        "A locally generated study repo with problem statements, curated approaches, and runnable Python solutions.",
-        "",
-        "## Usage",
-        "",
-        "```sh",
-        "python3 fetch_problems.py --list neetcode150",
-        "python3 fetch_problems.py --list blind75 --start 0 --batch-size 20",
-        "python3 fetch_problems.py --slugs two-sum,valid-anagram",
-        "python3 fetch_problems.py --index-only",
-        "```",
-        "",
-        "## Progress",
-        "",
-        progress,
-        "",
-        "## Problems",
-        "",
-        "| # | Title | Pattern | Difficulty | Solution | Video Guide | Status |",
-        "| ---: | --- | --- | --- | --- | --- | --- |",
-    ]
+    return progress or "_No problems generated yet._"
+
+
+def append_problem_table(
+    lines: List[str],
+    rows: List[Tuple[Dict[str, Any], str]],
+    group_relative: bool,
+) -> None:
+    lines.extend(
+        [
+            "| # | Title | Pattern | Difficulty | Solution | Video Guide | Status |",
+            "| ---: | --- | --- | --- | --- | --- | --- |",
+        ]
+    )
     for metadata, status in rows:
         problem_dir = problem_directory_name(
             metadata["id"], metadata["slug"], metadata["difficulty"]
@@ -985,9 +1022,9 @@ def rebuild_root_readme(
         title_url = "https://leetcode.com/problems/%s/" % metadata["slug"]
         display_title = metadata["title"] + (" 🔒" if metadata["premium"] else "")
         video_icon = "▶" if metadata["video_kind"] == "NeetCode" else "🔎"
-        video_label = metadata["video_kind"]
+        link_prefix = "./" if group_relative else "./%s/" % metadata["group"]
         lines.append(
-            "| %d | [%s](%s) | %s | %s | [solution](./%s/solution.py) | "
+            "| %d | [%s](%s) | %s | %s | [solution](%s%s/solution.py) | "
             "[%s %s](%s) | %s |"
             % (
                 metadata["id"],
@@ -995,12 +1032,89 @@ def rebuild_root_readme(
                 title_url,
                 metadata["pattern"],
                 metadata["difficulty"],
+                link_prefix,
                 problem_dir,
                 video_icon,
-                video_label,
+                metadata["video_kind"],
                 metadata["video_url"],
                 status,
             )
+        )
+
+
+def rebuild_root_readme(
+    statuses: Dict[str, Tuple[str, str]],
+    neetcode_entries: List[Dict[str, Any]],
+    videos: Dict[str, Any],
+) -> None:
+    nc_by_slug = neetcode_by_slug(neetcode_entries)
+    directories = [
+        path
+        for path in iter_problem_directories()
+        if (path / "solution.py").exists()
+    ]
+    rows = []
+    for directory in directories:
+        metadata = row_metadata(directory, nc_by_slug, videos)
+        status_name = directory.relative_to(ROOT).as_posix()
+        status = statuses.get(status_name, ("⬜ Todo", ""))[0]
+        rows.append((metadata, status))
+    rows.sort(key=lambda item: item[0]["id"])
+    lines = [
+        "# LeetCode Practice",
+        "",
+        "A locally generated study repo with problem statements, curated approaches, and runnable Python solutions.",
+        "Blind 75 + neetcode_150 = full NeetCode 150.",
+        "",
+        "## Usage",
+        "",
+        "```sh",
+        "python3 fetch_problems.py --list neetcode150",
+        "python3 fetch_problems.py --list neetcode150-extra --start 0 --batch-size 25",
+        "python3 fetch_problems.py --list blind75 --start 0 --batch-size 20",
+        "python3 fetch_problems.py --slugs two-sum,valid-anagram",
+        "python3 fetch_problems.py --index-only",
+        "```",
+        "",
+        "## Overall Progress",
+        "",
+        progress_summary(rows),
+    ]
+    for group in PROBLEM_GROUPS:
+        group_rows = [
+            row for row in rows if row[0]["group"] == group
+        ]
+        if not group_rows:
+            continue
+        lines.extend(
+            [
+                "",
+                "## " + GROUP_TITLES[group],
+                "",
+                "### Progress",
+                "",
+                progress_summary(group_rows),
+                "",
+                "### Problems",
+                "",
+            ]
+        )
+        append_problem_table(lines, group_rows, group_relative=False)
+        group_readme = [
+            "# " + GROUP_TITLES[group],
+            "",
+            "## Progress",
+            "",
+            progress_summary(group_rows),
+            "",
+            "## Problems",
+            "",
+        ]
+        append_problem_table(group_readme, group_rows, group_relative=True)
+        group_path = ROOT / group
+        group_path.mkdir(parents=True, exist_ok=True)
+        (group_path / "README.md").write_text(
+            "\n".join(group_readme) + "\n", encoding="utf-8"
         )
     (ROOT / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -1010,7 +1124,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--list",
         dest="list_name",
-        choices=("blind75", "neetcode150", "all"),
+        choices=("blind75", "neetcode150", "neetcode150-extra", "all"),
         default="neetcode150",
     )
     parser.add_argument("--start", type=int, default=0)
@@ -1041,14 +1155,14 @@ def main() -> int:
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to load NeetCode data: %s" % error)
         warm_question_cache(client)
-        migrate_existing_problem_directories()
+        migrate_existing_problem_directories(neetcode_by_slug(neetcode_entries))
     else:
         try:
             neetcode_entries = load_neetcode(client)
         except (HTTPError, URLError, ValueError, OSError) as error:
             print("Unable to load NeetCode data: %s" % error)
             return 1
-        migrate_existing_problem_directories()
+        migrate_existing_problem_directories(neetcode_by_slug(neetcode_entries))
         try:
             selected = select_problems(args, client, neetcode_entries)
         except (HTTPError, URLError, ValueError, OSError) as error:
