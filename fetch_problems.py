@@ -23,6 +23,13 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent
 DIFFICULTIES = ("Easy", "Medium", "Hard")
+LEGACY_STUDY_LISTS = {
+    "blind_75": "Blind 75",
+    "neetcode_150": "NeetCode 150 extra",
+    "top_interview_150": "Top Interview 150 extra",
+    "design": "LeetCode Design extra",
+    "others": "Other",
+}
 TOPIC_ALIASES = {
     "Array": "Arrays & Hashing",
     "Hash Table": "Arrays & Hashing",
@@ -551,11 +558,14 @@ def problem_directory_path(
 
 
 def iter_problem_directories() -> List[Path]:
-    return sorted(
+    candidates = sorted((ROOT / "problems").glob("*/*"))
+    for group in LEGACY_STUDY_LISTS:
+        candidates.extend(sorted((ROOT / group).glob("*")))
+    return [
         path
-        for path in (ROOT / "problems").glob("*/*")
+        for path in candidates
         if path.is_dir() and parse_problem_directory(path.name) is not None
-    )
+    ]
 
 
 def parse_problem_directory(
@@ -1171,19 +1181,28 @@ def row_metadata(directory: Path) -> Dict[str, Any]:
     video = re.search(
         r"^## Video Explanation\n\n\[(.+)\]\((.+)\)$", readme, re.MULTILINE
     )
-    topic = problem_topic(pattern[1].strip()) if pattern else ""
-    if topic_slug(topic) != directory.parent.name:
-        topic = directory.parent.name.replace("-", " ").title()
+    topic = problem_topic(pattern[1].strip()) if pattern else "Not specified"
+    topic_dir = directory.parent
+    legacy_group = topic_dir.name if topic_dir.parent == ROOT else ""
+    if legacy_group:
+        if legacy_group == "design":
+            topic = "Design"
+        topic_dir = ROOT / "problems" / topic_slug(topic)
+    elif topic_slug(topic) != topic_dir.name:
+        topic = topic_dir.name.replace("-", " ").title()
     return {
         "id": problem_id,
         "directory": directory,
         "title": title[1].strip() if title else slug.replace("-", " ").title(),
         "difficulty": directory_difficulty.title(),
         "topic": topic,
+        "topic_dir": topic_dir,
         "video_url": video[2] if video else None,
         "video_is_search": bool(video and video[1].startswith("YouTube search:")),
         "premium": bool(re.match(r"[^\n]+\n\n> 🔒", readme)),
-        "study_list": source[1].strip() if source else "Other",
+        "study_list": (
+            source[1].strip() if source else LEGACY_STUDY_LISTS.get(legacy_group, "Other")
+        ),
     }
 
 
@@ -1232,7 +1251,7 @@ def append_problem_table(
             if (directory / "README.md").is_file() else display_title,
         ]
         if show_topic:
-            topic_index = os.path.relpath(directory.parent / "README.md", index_path.parent)
+            topic_index = os.path.relpath(metadata["topic_dir"] / "README.md", index_path.parent)
             cells.append("[%s](%s)" % (metadata["topic"], Path(topic_index).as_posix()))
         cells.extend([
             metadata["study_list"],
@@ -1259,7 +1278,7 @@ def rebuild_indexes(statuses: Dict[str, Tuple[str, str]]) -> None:
     by_difficulty = {difficulty: [] for difficulty in DIFFICULTIES}
     for row in rows:
         metadata, _ = row
-        by_topic.setdefault(metadata["directory"].parent, []).append(row)
+        by_topic.setdefault(metadata["topic_dir"], []).append(row)
         by_difficulty[metadata["difficulty"]].append(row)
 
     difficulty_dir = ROOT / "by_difficulty"
@@ -1305,6 +1324,7 @@ def rebuild_indexes(statuses: Dict[str, Tuple[str, str]]) -> None:
             if matching:
                 topic_lines.extend(["", "## " + difficulty, ""])
                 append_problem_table(topic_lines, matching, topic_index)
+        topic_dir.mkdir(parents=True, exist_ok=True)
         topic_index.write_text("\n".join(topic_lines) + "\n", encoding="utf-8")
         lines.append("| [%s](%s) | %d | %d | %d | %d |" % (
             topic, topic_index.relative_to(ROOT).as_posix(), *counts, len(topic_rows),

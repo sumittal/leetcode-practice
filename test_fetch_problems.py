@@ -95,3 +95,44 @@ class StudyIndexesTest(unittest.TestCase):
         )
         self.assertIn("Blind 75", self.index("easy"))
         self.assertFalse((self.root / ".cache").exists())
+
+    def test_legacy_solution_is_indexed_and_preserved_on_refetch(self):
+        name = "1234-study-example-easy"
+        legacy = self.root / "blind_75" / name
+        legacy.mkdir(parents=True)
+        (legacy / "README.md").write_text(
+            "# 1234. Study Example\n\n**Pattern:** Binary Search\n",
+            encoding="utf-8",
+        )
+        solution = b"print('local solution ran')\n"
+        (legacy / "solution.py").write_bytes(solution)
+        self.run_fetch("--index-only")
+
+        topic = self.root / "problems" / "binary-search"
+        self.assertIn(
+            f"../../blind_75/{name}/solution.py", (topic / "README.md").read_text()
+        )
+        self.assertIn(f"../blind_75/{name}/solution.py", self.index("easy"))
+        self.assertIn("Blind 75", self.index("easy"))
+        self.assertIn("✅ Solved", self.index("easy"))
+
+        question = {
+            "questionFrontendId": "1234",
+            "titleSlug": "study-example",
+            "title": "Study Example",
+            "difficulty": "Easy",
+            "content": "<p>Example problem.</p>",
+            "topicTags": [{"name": "Binary Search"}],
+        }
+        with (
+            patch.object(fetch, "load_study_plan", return_value=[]),
+            patch.object(fetch, "load_company_data", return_value={}),
+            patch.object(fetch, "load_design_list", return_value=[]),
+            patch.object(fetch, "load_neetcode", return_value=[]),
+            patch.object(fetch, "get_question", return_value=question),
+        ):
+            self.run_fetch("--slugs", "study-example")
+
+        self.assertFalse(legacy.exists())
+        self.assertEqual((topic / name / "solution.py").read_bytes(), solution)
+        self.assertIn(f"../problems/binary-search/{name}/solution.py", self.index("easy"))
