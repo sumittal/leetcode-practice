@@ -11,22 +11,20 @@ Choose a topic from the first column or a difficulty from the header.
 | [1-D Dynamic Programming](problems/1-d-dynamic-programming/README.md) | 2 | 11 | 0 | 13 |
 | [2-D Dynamic Programming](problems/2-d-dynamic-programming/README.md) | 0 | 10 | 4 | 14 |
 | [Advanced Graphs](problems/advanced-graphs/README.md) | 0 | 3 | 3 | 6 |
-| [Arrays & Hashing](problems/arrays-and-hashing/README.md) | 23 | 79 | 16 | 118 |
+| [Arrays & Hashing](problems/arrays-and-hashing/README.md) | 13 | 14 | 4 | 31 |
 | [Backtracking](problems/backtracking/README.md) | 0 | 9 | 2 | 11 |
-| [Binary Search](problems/binary-search/README.md) | 3 | 8 | 4 | 15 |
+| [Binary Search](problems/binary-search/README.md) | 3 | 8 | 1 | 12 |
 | [Bit Manipulation](problems/bit-manipulation/README.md) | 6 | 3 | 0 | 9 |
-| [Depth-First Search](problems/depth-first-search/README.md) | 0 | 0 | 1 | 1 |
-| [Design](problems/design/README.md) | 1 | 2 | 4 | 7 |
-| [Graphs](problems/graphs/README.md) | 0 | 14 | 2 | 16 |
+| [Design](problems/design/README.md) | 13 | 78 | 30 | 121 |
+| [Graphs](problems/graphs/README.md) | 0 | 14 | 1 | 15 |
 | [Greedy](problems/greedy/README.md) | 0 | 9 | 1 | 10 |
-| [Heap / Priority Queue](problems/heap-priority-queue/README.md) | 2 | 5 | 2 | 9 |
-| [Intervals](problems/intervals/README.md) | 1 | 4 | 2 | 7 |
-| [Linked List](problems/linked-list/README.md) | 3 | 16 | 6 | 25 |
-| [Math & Geometry](problems/math-and-geometry/README.md) | 4 | 9 | 3 | 16 |
+| [Heap / Priority Queue](problems/heap-priority-queue/README.md) | 2 | 4 | 2 | 8 |
+| [Intervals](problems/intervals/README.md) | 1 | 4 | 1 | 6 |
+| [Linked List](problems/linked-list/README.md) | 3 | 13 | 2 | 18 |
+| [Math & Geometry](problems/math-and-geometry/README.md) | 4 | 9 | 2 | 15 |
 | [Sliding Window](problems/sliding-window/README.md) | 2 | 4 | 2 | 8 |
-| [Stack](problems/stack/README.md) | 3 | 9 | 2 | 14 |
-| [String](problems/string/README.md) | 0 | 2 | 1 | 3 |
-| [Trees](problems/trees/README.md) | 11 | 15 | 3 | 29 |
+| [Stack](problems/stack/README.md) | 1 | 6 | 1 | 8 |
+| [Trees](problems/trees/README.md) | 11 | 13 | 2 | 26 |
 | [Tries](problems/tries/README.md) | 0 | 2 | 1 | 3 |
 | [Two Pointers](problems/two-pointers/README.md) | 3 | 6 | 1 | 10 |
 | **Total** | **64** | **220** | **60** | **344** |
@@ -39,9 +37,11 @@ Choose a topic from the first column or a difficulty from the header.
 
 ## Usage
 
-Problems live in `problems/<topic>/<id>-<slug>-<difficulty>/`. Placement uses the problem's
-`Pattern` (curated pattern, then NeetCode pattern, then the first LeetCode tag). Related
-patterns such as Array and Hash Table share a topic. Untagged problems use Not specified.
+Problems live in `problems/<topic>/<id>-<slug>-<difficulty>/`. LeetCode Design-list
+problems go under Design unless they have a specific Blind 75 or NeetCode 150 pattern.
+Other problems use their `Pattern` (curated pattern, then NeetCode pattern, then the
+first LeetCode tag). Related patterns such as Array and Hash Table share a topic.
+Untagged problems outside the Design list use Not specified.
 
 The **Study list** column keeps the original, non-overlapping list grouping:
 Blind 75, the remaining NeetCode 150 problems, then additional Top Interview 150 and

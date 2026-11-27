@@ -540,12 +540,12 @@ def problem_directory_path(
     problem_id: int,
     slug: str,
     difficulty: str,
-    pattern: str,
+    topic: str,
 ) -> Path:
     return (
         ROOT
         / "problems"
-        / topic_slug(problem_topic(pattern))
+        / topic_slug(topic)
         / problem_directory_name(problem_id, slug, difficulty)
     )
 
@@ -571,9 +571,9 @@ def migrate_problem_directory(
     problem_id: int,
     slug: str,
     difficulty: str,
-    pattern: str,
+    topic: str,
 ) -> Path:
-    destination = problem_directory_path(problem_id, slug, difficulty, pattern)
+    destination = problem_directory_path(problem_id, slug, difficulty, topic)
     if destination.exists():
         return destination
 
@@ -1083,12 +1083,20 @@ def generate_problem(
         return None
     topics = topic_names(question)
     pattern = problem_pattern(notes, neetcode_entry, topics)
+    nc = neetcode_entry or {}
+    nc_pattern = str(nc.get("pattern") or "").strip()
+    has_neetcode_pattern = (
+        (nc.get("blind75") or nc.get("neetcode150"))
+        and nc_pattern.lower() not in ("", "not specified")
+    )
+    topic = (
+        "Design" if slug in design_slugs and not has_neetcode_pattern
+        else problem_topic(pattern)
+    )
     video_title, video_url, has_video = build_video(
         client, videos, neetcode_entry, problem_id, title
     )
-    directory = migrate_problem_directory(
-        problem_id, slug, difficulty, pattern
-    )
+    directory = migrate_problem_directory(problem_id, slug, difficulty, topic)
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "README.md").write_text(
         render_problem_readme(
@@ -1163,13 +1171,15 @@ def row_metadata(directory: Path) -> Dict[str, Any]:
     video = re.search(
         r"^## Video Explanation\n\n\[(.+)\]\((.+)\)$", readme, re.MULTILINE
     )
-    fallback_topic = directory.parent.name.replace("-", " ").title()
+    topic = problem_topic(pattern[1].strip()) if pattern else ""
+    if topic_slug(topic) != directory.parent.name:
+        topic = directory.parent.name.replace("-", " ").title()
     return {
         "id": problem_id,
         "directory": directory,
         "title": title[1].strip() if title else slug.replace("-", " ").title(),
         "difficulty": directory_difficulty.title(),
-        "topic": problem_topic(pattern[1].strip()) if pattern else fallback_topic,
+        "topic": topic,
         "video_url": video[2] if video else None,
         "video_is_search": bool(video and video[1].startswith("YouTube search:")),
         "premium": bool(re.match(r"[^\n]+\n\n> 🔒", readme)),
@@ -1317,9 +1327,11 @@ def rebuild_indexes(statuses: Dict[str, Tuple[str, str]]) -> None:
         "",
         "## Usage",
         "",
-        "Problems live in `problems/<topic>/<id>-<slug>-<difficulty>/`. Placement uses the problem's",
-        "`Pattern` (curated pattern, then NeetCode pattern, then the first LeetCode tag). Related",
-        "patterns such as Array and Hash Table share a topic. Untagged problems use Not specified.",
+        "Problems live in `problems/<topic>/<id>-<slug>-<difficulty>/`. LeetCode Design-list",
+        "problems go under Design unless they have a specific Blind 75 or NeetCode 150 pattern.",
+        "Other problems use their `Pattern` (curated pattern, then NeetCode pattern, then the",
+        "first LeetCode tag). Related patterns such as Array and Hash Table share a topic.",
+        "Untagged problems outside the Design list use Not specified.",
         "",
         "The **Study list** column keeps the original, non-overlapping list grouping:",
         "Blind 75, the remaining NeetCode 150 problems, then additional Top Interview 150 and",

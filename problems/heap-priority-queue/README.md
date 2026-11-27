@@ -4,7 +4,7 @@
 [All problems](../../README.md)
 
 - Easy: 2/2 solved
-- Medium: 5/5 solved
+- Medium: 4/4 solved
 - Hard: 2/2 solved
 
 ## Easy
@@ -22,7 +22,6 @@
 | 355 | [Design Twitter](0355-design-twitter-medium/README.md) | NeetCode 150 extra | [solution](0355-design-twitter-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=pNichitDD2E) | ✅ Solved |
 | 621 | [Task Scheduler](0621-task-scheduler-medium/README.md) | NeetCode 150 extra | [solution](0621-task-scheduler-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=s8p8ukTyA2I) | ✅ Solved |
 | 973 | [K Closest Points to Origin](0973-k-closest-points-to-origin-medium/README.md) | NeetCode 150 extra | [solution](0973-k-closest-points-to-origin-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=rI2EBUEMfTk) | ✅ Solved |
-| 1845 | [Seat Reservation Manager](1845-seat-reservation-manager-medium/README.md) | LeetCode Design extra | [solution](1845-seat-reservation-manager-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=ahobllKXEEY) | ✅ Solved |
 
 ## Hard
 

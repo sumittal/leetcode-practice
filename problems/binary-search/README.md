@@ -5,7 +5,7 @@
 
 - Easy: 3/3 solved
 - Medium: 8/8 solved
-- Hard: 4/4 solved
+- Hard: 1/1 solved
 
 ## Easy
 
@@ -33,6 +33,3 @@
 | # | Problem | Study list | Solution | Video guide | Status |
 | ---: | --- | --- | --- | --- | --- |
 | 4 | [Median of Two Sorted Arrays](0004-median-of-two-sorted-arrays-hard/README.md) | NeetCode 150 extra | [solution](0004-median-of-two-sorted-arrays-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=q6IEA26hvXc) | ✅ Solved |
-| 732 | [My Calendar III](0732-my-calendar-iii-hard/README.md) | LeetCode Design extra | [solution](0732-my-calendar-iii-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+732+My+Calendar+III+neetcode) | ✅ Solved |
-| 1483 | [Kth Ancestor of a Tree Node](1483-kth-ancestor-of-a-tree-node-hard/README.md) | LeetCode Design extra | [solution](1483-kth-ancestor-of-a-tree-node-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1483+Kth+Ancestor+of+a+Tree+Node+neetcode) | ✅ Solved |
-| 2286 | [Booking Concert Tickets in Groups](2286-booking-concert-tickets-in-groups-hard/README.md) | LeetCode Design extra | [solution](2286-booking-concert-tickets-in-groups-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2286+Booking+Concert+Tickets+in+Groups+neetcode) | ✅ Solved |

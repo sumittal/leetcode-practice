@@ -4,8 +4,8 @@
 [All problems](../../README.md)
 
 - Easy: 11/11 solved
-- Medium: 15/15 solved
-- Hard: 3/3 solved
+- Medium: 13/13 solved
+- Hard: 2/2 solved
 
 ## Easy
 
@@ -39,9 +39,7 @@
 | 235 | [Lowest Common Ancestor of a Binary Search Tree](0235-lowest-common-ancestor-of-a-binary-search-tree-medium/README.md) | Blind 75 | [solution](0235-lowest-common-ancestor-of-a-binary-search-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=gs2LMfuOR9k) | ✅ Solved |
 | 236 | [Lowest Common Ancestor of a Binary Tree](0236-lowest-common-ancestor-of-a-binary-tree-medium/README.md) | Top Interview 150 extra | [solution](0236-lowest-common-ancestor-of-a-binary-tree-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+236+Lowest+Common+Ancestor+of+a+Binary+Tree+neetcode) | ✅ Solved |
 | 427 | [Construct Quad Tree](0427-construct-quad-tree-medium/README.md) | Top Interview 150 extra | [solution](0427-construct-quad-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=UQ-1sBMV0v4) | ✅ Solved |
-| 919 | [Complete Binary Tree Inserter](0919-complete-binary-tree-inserter-medium/README.md) | LeetCode Design extra | [solution](0919-complete-binary-tree-inserter-medium/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+919+Complete+Binary+Tree+Inserter+neetcode) | ✅ Solved |
 | 1448 | [Count Good Nodes in Binary Tree](1448-count-good-nodes-in-binary-tree-medium/README.md) | NeetCode 150 extra | [solution](1448-count-good-nodes-in-binary-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=7cp5imvDzl4) | ✅ Solved |
-| 1993 | [Operations on Tree](1993-operations-on-tree-medium/README.md) | LeetCode Design extra | [solution](1993-operations-on-tree-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=qK4PtjrVD0U) | ✅ Solved |
 
 ## Hard
 
@@ -49,4 +47,3 @@
 | ---: | --- | --- | --- | --- | --- |
 | 124 | [Binary Tree Maximum Path Sum](0124-binary-tree-maximum-path-sum-hard/README.md) | Blind 75 | [solution](0124-binary-tree-maximum-path-sum-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Hr5cWUld4vU) | ✅ Solved |
 | 297 | [Serialize and Deserialize Binary Tree](0297-serialize-and-deserialize-binary-tree-hard/README.md) | Blind 75 | [solution](0297-serialize-and-deserialize-binary-tree-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=u4JAi2JJhI8) | ✅ Solved |
-| 431 | [Encode N-ary Tree to Binary Tree 🔒](0431-encode-n-ary-tree-to-binary-tree-hard/README.md) | LeetCode Design extra | [solution](0431-encode-n-ary-tree-to-binary-tree-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+431+Encode+N-ary+Tree+to+Binary+Tree+neetcode) | ✅ Solved |

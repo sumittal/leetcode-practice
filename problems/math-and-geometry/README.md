@@ -5,7 +5,7 @@
 
 - Easy: 4/4 solved
 - Medium: 9/9 solved
-- Hard: 3/3 solved
+- Hard: 2/2 solved
 
 ## Easy
 
@@ -36,4 +36,3 @@
 | ---: | --- | --- | --- | --- | --- |
 | 149 | [Max Points on a Line](0149-max-points-on-a-line-hard/README.md) | Top Interview 150 extra | [solution](0149-max-points-on-a-line-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Bb9lOXUOnFw) | ✅ Solved |
 | 224 | [Basic Calculator](0224-basic-calculator-hard/README.md) | Top Interview 150 extra | [solution](0224-basic-calculator-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+224+Basic+Calculator+neetcode) | ✅ Solved |
-| 1622 | [Fancy Sequence](1622-fancy-sequence-hard/README.md) | LeetCode Design extra | [solution](1622-fancy-sequence-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1622+Fancy+Sequence+neetcode) | ✅ Solved |

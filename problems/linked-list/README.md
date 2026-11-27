@@ -4,8 +4,8 @@
 [All problems](../../README.md)
 
 - Easy: 3/3 solved
-- Medium: 16/16 solved
-- Hard: 6/6 solved
+- Medium: 13/13 solved
+- Hard: 2/2 solved
 
 ## Easy
 
@@ -32,9 +32,6 @@
 | 146 | [LRU Cache](0146-lru-cache-medium/README.md) | NeetCode 150 extra | [solution](0146-lru-cache-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=7ABFKPK2hD4) | ✅ Solved |
 | 148 | [Sort List](0148-sort-list-medium/README.md) | Top Interview 150 extra | [solution](0148-sort-list-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=TGveA1oFhrc) | ✅ Solved |
 | 287 | [Find the Duplicate Number](0287-find-the-duplicate-number-medium/README.md) | NeetCode 150 extra | [solution](0287-find-the-duplicate-number-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=wjYnzkAhcNk) | ✅ Solved |
-| 622 | [Design Circular Queue](0622-design-circular-queue-medium/README.md) | LeetCode Design extra | [solution](0622-design-circular-queue-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=aBbsfn863oA) | ✅ Solved |
-| 707 | [Design Linked List](0707-design-linked-list-medium/README.md) | LeetCode Design extra | [solution](0707-design-linked-list-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=Wf4QhpdVFQo) | ✅ Solved |
-| 1472 | [Design Browser History](1472-design-browser-history-medium/README.md) | LeetCode Design extra | [solution](1472-design-browser-history-medium/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=i1G-kKnBu8k) | ✅ Solved |
 
 ## Hard
 
@@ -42,7 +39,3 @@
 | ---: | --- | --- | --- | --- | --- |
 | 23 | [Merge k Sorted Lists](0023-merge-k-sorted-lists-hard/README.md) | Blind 75 | [solution](0023-merge-k-sorted-lists-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=q5a5OiGbT6Q) | ✅ Solved |
 | 25 | [Reverse Nodes in k-Group](0025-reverse-nodes-in-k-group-hard/README.md) | NeetCode 150 extra | [solution](0025-reverse-nodes-in-k-group-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=1UOPsfP85V4) | ✅ Solved |
-| 460 | [LFU Cache](0460-lfu-cache-hard/README.md) | LeetCode Design extra | [solution](0460-lfu-cache-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=bLEIHn-DgoA) | ✅ Solved |
-| 716 | [Max Stack 🔒](0716-max-stack-hard/README.md) | LeetCode Design extra | [solution](0716-max-stack-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+716+Max+Stack+neetcode) | ✅ Solved |
-| 1206 | [Design Skiplist](1206-design-skiplist-hard/README.md) | LeetCode Design extra | [solution](1206-design-skiplist-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+1206+Design+Skiplist+neetcode) | ✅ Solved |
-| 2296 | [Design a Text Editor](2296-design-a-text-editor-hard/README.md) | LeetCode Design extra | [solution](2296-design-a-text-editor-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2296+Design+a+Text+Editor+neetcode) | ✅ Solved |

@@ -4,7 +4,7 @@
 [All problems](../../README.md)
 
 - Medium: 14/14 solved
-- Hard: 2/2 solved
+- Hard: 1/1 solved
 
 ## Medium
 
@@ -30,4 +30,3 @@
 | # | Problem | Study list | Solution | Video guide | Status |
 | ---: | --- | --- | --- | --- | --- |
 | 127 | [Word Ladder](0127-word-ladder-hard/README.md) | NeetCode 150 extra | [solution](0127-word-ladder-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=h9iTnkgv05E) | ✅ Solved |
-| 2642 | [Design Graph With Shortest Path Calculator](2642-design-graph-with-shortest-path-calculator-hard/README.md) | LeetCode Design extra | [solution](2642-design-graph-with-shortest-path-calculator-hard/solution.py) | [🔎 Search](https://www.youtube.com/results?search_query=leetcode+2642+Design+Graph+With+Shortest+Path+Calculator+neetcode) | ✅ Solved |

@@ -5,7 +5,7 @@
 
 - Easy: 1/1 solved
 - Medium: 4/4 solved
-- Hard: 2/2 solved
+- Hard: 1/1 solved
 
 ## Easy
 
@@ -26,5 +26,4 @@
 
 | # | Problem | Study list | Solution | Video guide | Status |
 | ---: | --- | --- | --- | --- | --- |
-| 352 | [Data Stream as Disjoint Intervals](0352-data-stream-as-disjoint-intervals-hard/README.md) | LeetCode Design extra | [solution](0352-data-stream-as-disjoint-intervals-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=FavoZjPIWpo) | ✅ Solved |
 | 1851 | [Minimum Interval to Include Each Query](1851-minimum-interval-to-include-each-query-hard/README.md) | NeetCode 150 extra | [solution](1851-minimum-interval-to-include-each-query-hard/solution.py) | [▶ NeetCode](https://www.youtube.com/watch?v=5hQ5WWW5awQ) | ✅ Solved |

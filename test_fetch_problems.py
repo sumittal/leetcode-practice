@@ -38,18 +38,22 @@ class StudyIndexesTest(unittest.TestCase):
             patch.object(fetch, "load_study_plan", return_value=[]),
             patch.object(fetch, "load_company_data", return_value={}),
             patch.object(fetch, "load_design_list", return_value=[question]),
-            patch.object(fetch, "load_neetcode", return_value=[]),
+            patch.object(fetch, "load_neetcode", return_value=[]) as load_neetcode,
             patch.object(fetch, "get_question", return_value=question),
         ):
             self.run_fetch("--slugs", "study-example")
-            old_topic = self.root / "problems" / "arrays-and-hashing"
+            old_topic = self.root / "problems" / "design"
             original = old_topic / "1234-study-example-medium"
             solution = b"class Solution:\n    pass\n"
             (original / "solution.py").write_bytes(solution)
             self.assertIn("## Medium", (old_topic / "README.md").read_text())
+            self.assertIn("# Design", (old_topic / "README.md").read_text())
             self.assertIn("LeetCode Design extra", (original / "README.md").read_text())
+            self.assertIn("[Design](../problems/design/README.md)", self.index("medium"))
 
-            question["topicTags"] = [{"name": "Tree"}]
+            load_neetcode.return_value = [
+                {"link": "/problems/study-example/", "neetcode150": True, "pattern": "Trees"}
+            ]
             question["difficulty"] = "Hard"
             self.run_fetch("--slugs", "study-example")
 
