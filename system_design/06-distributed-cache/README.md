@@ -1,6 +1,6 @@
 # 06. Distributed Cache
 
-**Difficulty:** Medium | **Key concepts:** cache-aside, sharding, eviction, replication, hot keys, invalidation | **Related LeetCode:** [LFU Cache](../../design/0460-lfu-cache-hard/README.md)
+**Difficulty:** Medium | **Key concepts:** cache-aside, sharding, eviction, replication, hot keys, invalidation | **Related LeetCode:** [LFU Cache](../../problems/design/0460-lfu-cache-hard/README.md)
 
 ## 1. Requirements
 

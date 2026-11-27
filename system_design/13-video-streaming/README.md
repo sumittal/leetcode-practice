@@ -1,6 +1,6 @@
 # 13. Video Streaming
 
-**Difficulty:** Hard | **Key concepts:** ingest, transcoding, adaptive bitrate, manifests, CDN, playback analytics | **Related LeetCode:** [Design Video Sharing Platform](../../design/2254-design-video-sharing-platform-hard/README.md)
+**Difficulty:** Hard | **Key concepts:** ingest, transcoding, adaptive bitrate, manifests, CDN, playback analytics | **Related LeetCode:** [Design Video Sharing Platform](../../problems/design/2254-design-video-sharing-platform-hard/README.md)
 
 ## 1. Requirements
 

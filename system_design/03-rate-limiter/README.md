@@ -1,6 +1,6 @@
 # 03. Rate Limiter
 
-**Difficulty:** Medium | **Key concepts:** admission control, token bucket, distributed counters, policy, fairness | **Related LeetCode:** [Logger Rate Limiter](../../design/0359-logger-rate-limiter-easy/README.md), [Design Hit Counter](../../design/0362-design-hit-counter-medium/README.md)
+**Difficulty:** Medium | **Key concepts:** admission control, token bucket, distributed counters, policy, fairness | **Related LeetCode:** [Logger Rate Limiter](../../problems/design/0359-logger-rate-limiter-easy/README.md), [Design Hit Counter](../../problems/design/0362-design-hit-counter-medium/README.md)
 
 ## 1. Requirements
 

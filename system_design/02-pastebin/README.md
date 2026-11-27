@@ -1,6 +1,6 @@
 # 02. Pastebin
 
-**Difficulty:** Easy | **Key concepts:** text ingestion, immutable objects, expiry, access control, abuse prevention | **Related LeetCode:** [In-memory file system](../../design/0588-design-in-memory-file-system-hard/README.md)
+**Difficulty:** Easy | **Key concepts:** text ingestion, immutable objects, expiry, access control, abuse prevention | **Related LeetCode:** [In-memory file system](../../problems/design/0588-design-in-memory-file-system-hard/README.md)
 
 ## 1. Requirements
 

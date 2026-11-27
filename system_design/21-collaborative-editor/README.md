@@ -1,6 +1,6 @@
 # 21. Collaborative Editor
 
-**Difficulty:** Hard | **Key concepts:** operational transformation, CRDTs, operation log, snapshots, presence, conflict recovery | **Related LeetCode:** [Design a Text Editor](../../design/2296-design-a-text-editor-hard/README.md)
+**Difficulty:** Hard | **Key concepts:** operational transformation, CRDTs, operation log, snapshots, presence, conflict recovery | **Related LeetCode:** [Design a Text Editor](../../problems/design/2296-design-a-text-editor-hard/README.md)
 
 ## 1. Requirements
 

@@ -1,6 +1,6 @@
 # 11. Chat System
 
-**Difficulty:** Hard | **Key concepts:** persistent messaging, per-conversation order, WebSockets, offline sync, presence, delivery receipts | **Related LeetCode:** [Front-Middle-Back Queue](../../design/1670-design-front-middle-back-queue-medium/README.md)
+**Difficulty:** Hard | **Key concepts:** persistent messaging, per-conversation order, WebSockets, offline sync, presence, delivery receipts | **Related LeetCode:** [Front-Middle-Back Queue](../../problems/design/1670-design-front-middle-back-queue-medium/README.md)
 
 ## 1. Requirements
 
