@@ -1,6 +1,6 @@
 # 01. URL Shortener
 
-**Difficulty:** Easy | **Key concepts:** ID generation, redirects, cache, expiry, analytics | **Related LeetCode:** [Encode and Decode TinyURL](../../design/0535-encode-and-decode-tinyurl-medium/README.md)
+**Difficulty:** Easy | **Key concepts:** ID generation, redirects, cache, expiry, analytics | **Related LeetCode:** [Encode and Decode TinyURL](../../problems/design/0535-encode-and-decode-tinyurl-medium/README.md)
 
 ## 1. Requirements
 

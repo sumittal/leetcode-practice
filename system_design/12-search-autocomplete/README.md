@@ -1,6 +1,6 @@
 # 12. Search Autocomplete
 
-**Difficulty:** Medium | **Key concepts:** prefix index, top-k ranking, freshness, privacy filtering, snapshots | **Related LeetCode:** [Implement Trie II](../../design/1804-implement-trie-ii-prefix-tree-medium/README.md)
+**Difficulty:** Medium | **Key concepts:** prefix index, top-k ranking, freshness, privacy filtering, snapshots | **Related LeetCode:** [Implement Trie II](../../problems/design/1804-implement-trie-ii-prefix-tree-medium/README.md)
 
 ## 1. Requirements
 

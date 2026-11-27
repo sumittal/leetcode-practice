@@ -1,6 +1,6 @@
 # 16. Proximity Service
 
-**Difficulty:** Medium | **Key concepts:** geospatial indexing, cell expansion, ranking, freshness, regional sharding | **Related LeetCode:** [K Closest Points to Origin](../../neetcode_150/0973-k-closest-points-to-origin-medium/README.md)
+**Difficulty:** Medium | **Key concepts:** geospatial indexing, cell expansion, ranking, freshness, regional sharding | **Related LeetCode:** [K Closest Points to Origin](../../problems/heap-priority-queue/0973-k-closest-points-to-origin-medium/README.md)
 
 ## 1. Requirements
 

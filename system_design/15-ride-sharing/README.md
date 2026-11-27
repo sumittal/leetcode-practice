@@ -1,6 +1,6 @@
 # 15. Ride Sharing
 
-**Difficulty:** Hard | **Key concepts:** geospatial indexing, dispatch, trip state machine, pricing, location freshness | **Related LeetCode:** [Design Ride Sharing System](../../design/3829-design-ride-sharing-system-medium/README.md)
+**Difficulty:** Hard | **Key concepts:** geospatial indexing, dispatch, trip state machine, pricing, location freshness | **Related LeetCode:** [Design Ride Sharing System](../../problems/design/3829-design-ride-sharing-system-medium/README.md)
 
 ## 1. Requirements
 

@@ -1,6 +1,6 @@
 # 14. File Storage and Sync
 
-**Difficulty:** Hard | **Key concepts:** chunking, content hashes, versions, delta sync, conflict handling, sharing | **Related LeetCode:** [Design In-Memory File System](../../design/0588-design-in-memory-file-system-hard/README.md), [Design File Sharing System](../../design/1500-design-a-file-sharing-system-medium/README.md)
+**Difficulty:** Hard | **Key concepts:** chunking, content hashes, versions, delta sync, conflict handling, sharing | **Related LeetCode:** [Design In-Memory File System](../../problems/design/0588-design-in-memory-file-system-hard/README.md), [Design File Sharing System](../../problems/design/1500-design-a-file-sharing-system-medium/README.md)
 
 ## 1. Requirements
 

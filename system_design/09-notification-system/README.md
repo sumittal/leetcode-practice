@@ -1,6 +1,6 @@
 # 09. Notification System
 
-**Difficulty:** Medium | **Key concepts:** fan-out, preferences, channel adapters, retries, delivery receipts, idempotency | **Related LeetCode:** [Design Event Manager](../../design/3885-design-event-manager-medium/README.md)
+**Difficulty:** Medium | **Key concepts:** fan-out, preferences, channel adapters, retries, delivery receipts, idempotency | **Related LeetCode:** [Design Event Manager](../../problems/design/3885-design-event-manager-medium/README.md)
 
 ## 1. Requirements
 

@@ -1,6 +1,6 @@
 # 18. Payment System
 
-**Difficulty:** Hard | **Key concepts:** idempotency, payment state machine, double-entry ledger, provider adapters, reconciliation, risk controls | **Related LeetCode:** [Design an ATM Machine](../../design/2241-design-an-atm-machine-medium/README.md), [Order Management System](../../design/3822-design-order-management-system-medium/README.md)
+**Difficulty:** Hard | **Key concepts:** idempotency, payment state machine, double-entry ledger, provider adapters, reconciliation, risk controls | **Related LeetCode:** [Design an ATM Machine](../../problems/design/2241-design-an-atm-machine-medium/README.md), [Order Management System](../../problems/design/3822-design-order-management-system-medium/README.md)
 
 ## 1. Requirements
 

@@ -1,6 +1,6 @@
 # 19. Ticket Booking and Seat Holds
 
-**Difficulty:** Medium | **Key concepts:** inventory, expiring holds, contention, idempotency, payment confirmation | **Related LeetCode:** [Booking Concert Tickets in Groups](../../design/2286-booking-concert-tickets-in-groups-hard/README.md)
+**Difficulty:** Medium | **Key concepts:** inventory, expiring holds, contention, idempotency, payment confirmation | **Related LeetCode:** [Booking Concert Tickets in Groups](../../problems/design/2286-booking-concert-tickets-in-groups-hard/README.md)
 
 ## 1. Requirements
 
