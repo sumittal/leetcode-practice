@@ -136,3 +136,17 @@ class StudyIndexesTest(unittest.TestCase):
         self.assertFalse(legacy.exists())
         self.assertEqual((topic / name / "solution.py").read_bytes(), solution)
         self.assertIn(f"../problems/binary-search/{name}/solution.py", self.index("easy"))
+
+        (legacy / "__pycache__").mkdir(parents=True)
+        orphan = self.root / "blind_75" / "4321-orphan-easy"
+        (orphan / "__pycache__").mkdir(parents=True)
+        duplicate = self.root / "neetcode_150" / "1234-study-example-medium"
+        duplicate.mkdir(parents=True)
+        (duplicate / "solution.py").write_text("raise AssertionError('stale copy')\n")
+        self.run_fetch("--index-only")
+
+        self.assertEqual(self.index("easy").count("| 1234 |"), 1)
+        self.assertNotIn("4321", self.index("easy"))
+        self.assertNotIn("1234", self.index("medium"))
+        self.assertTrue((legacy / "__pycache__").is_dir())
+        self.assertTrue((duplicate / "solution.py").is_file())

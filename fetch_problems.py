@@ -558,14 +558,22 @@ def problem_directory_path(
 
 
 def iter_problem_directories() -> List[Path]:
-    candidates = sorted((ROOT / "problems").glob("*/*"))
+    directories = []
+    current_problems = set()
+    for path in sorted((ROOT / "problems").glob("*/*")):
+        parsed = parse_problem_directory(path.name)
+        if path.is_dir() and parsed is not None:
+            directories.append(path)
+            current_problems.add(parsed[:2])
+
     for group in LEGACY_STUDY_LISTS:
-        candidates.extend(sorted((ROOT / group).glob("*")))
-    return [
-        path
-        for path in candidates
-        if path.is_dir() and parse_problem_directory(path.name) is not None
-    ]
+        for path in sorted((ROOT / group).glob("*")):
+            parsed = parse_problem_directory(path.name)
+            if parsed is None or parsed[:2] in current_problems:
+                continue
+            if (path / "README.md").is_file() or (path / "solution.py").is_file():
+                directories.append(path)
+    return directories
 
 
 def parse_problem_directory(
